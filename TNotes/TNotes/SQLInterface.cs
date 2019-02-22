@@ -8,6 +8,7 @@ public class SQLInterface
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
     string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
     MySqlConnection conn;
+    static int transcount = 0;
 
     public SQLInterface()
     {
@@ -105,6 +106,8 @@ public class SQLInterface
     //Retuern -1 if the login failed, or -2 if there's a database error. 
     public int login(string un, string pw)
     {
+        un = un.Trim();
+        pw = pw.Trim();
         int id;
         string q = "select user.user_id, user.first_name, user.last_name from user where user.username = '"+un+"' and user.password = '"+pw+"';";
         Console.WriteLine(q);
@@ -124,6 +127,47 @@ public class SQLInterface
             id = -1;
         }
         return id;
+    }
+
+    public bool changeUserName(int id, string oldUN, string newUN)
+    {
+        oldUN = oldUN.Trim();
+        newUN = newUN.Trim();
+        string q = "select * from user where username = \'" + oldUN + "\' and user_id = " + id;
+        List<List<string>> r = query(q);
+
+        if (r.Count == 1)
+        {
+            q = "update User set username = '"+newUN+"' where username = '"+oldUN+ "' and user_id = " + id+";";
+            query(q);
+            q = "select username from user where username = \'" + newUN + "\' and user_id = " + id;
+            r = query(q);
+            if (r.ElementAt(0).ElementAt(0).Equals(newUN))
+                return true;
+            else return false;
+
+        }
+        else return false;
+    }
+    public bool changePassword(int id, string oldPW, string newPW)
+    {
+        oldPW = oldPW.Trim();
+        newPW = newPW.Trim();
+        string q = "select * from user where password = \'" + oldPW + "\' and user_id = " + id;
+        List<List<string>> r = query(q);
+
+        if (r.Count == 1)
+        {
+            q = "update User set password = '" + newPW + "' where password = '" + oldPW + "' and user_id = " + id + ";";
+            query(q);
+            q = "select password from user where password = \'" + newPW + "\' and user_id = " + id;
+            r = query(q);
+            if (r.ElementAt(0).ElementAt(0).Equals(newPW))
+                return true;
+            else return false;
+
+        }
+        else return false;
     }
 
 }

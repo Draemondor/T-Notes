@@ -16,15 +16,17 @@ namespace TNotes
             
             SQLInterface sql = new SQLInterface();
 
-            
 
 
+            /*
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1());       
+            */
 
-            
-            
+            Console.WriteLine(sql.changeUserName(1, "bob", "BOB"));
+            Console.WriteLine(sql.changePassword(1, "Frank", "frank"));
+            sql.login("BOB", "frank");
             
         }
     }
