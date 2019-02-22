@@ -107,6 +107,7 @@ public class SQLInterface
     {
         int id;
         string q = "select user.user_id, user.first_name, user.last_name from user where user.username = '"+un+"' and user.password = '"+pw+"';";
+        Console.WriteLine(q);
         List<List<string>> result = query(q);
         if (result.Count == 1)
         {

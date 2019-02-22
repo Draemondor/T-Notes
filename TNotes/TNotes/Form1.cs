@@ -14,6 +14,7 @@ namespace TNotes
     {
         public Form1()
         {
+            
             InitializeComponent();
         }
 
@@ -23,6 +24,31 @@ namespace TNotes
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            Console.WriteLine(this.textBox1.Text);
+            Console.WriteLine(this.textBox2.Text);
+            
+            int user_id = user.login(this.textBox1.Text, this.textBox2.Text);
+            Console.WriteLine("user_id: " + user_id);
+            if (user_id >=0)
+            {
+                this.Login.Hide();
+                this.textBox1.Hide();
+                this.textBox2.Hide();
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Show();
+            }
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
