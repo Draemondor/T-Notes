@@ -15,9 +15,14 @@ namespace TNotes
         {
             
             SQLInterface sql = new SQLInterface();
+
+            User user = new User();
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
             //Demo query:
             string s = "select* from keyword";
 
@@ -28,7 +33,7 @@ namespace TNotes
             Console.WriteLine(sql.query_to_string(s));
 
             //Demo of login functionality:
-            int user_id = sql.login("user", "password");
+            int user_id = user.login();
             Console.WriteLine("user_id: " + user_id);
         }
     }
