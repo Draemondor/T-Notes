@@ -11,8 +11,8 @@ namespace TNotes
         {//takes in username and password as strings
          //returns userID
             SQLInterface connection = new SQLInterface();
-            connection.login(username, password);
-            return 0;
+            
+            return connection.login(username, password);
         }
         public int changePass()
         {//takes in userID, old password and new password
