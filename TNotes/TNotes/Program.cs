@@ -15,7 +15,13 @@ namespace TNotes
         {
             
             SQLInterface sql = new SQLInterface();
+
             User user = new User();
+
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
 
             //Demo query:
             string s = "select* from keyword";
