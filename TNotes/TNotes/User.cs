@@ -4,13 +4,15 @@ namespace TNotes
 {
     public class User
     {
+        SQLInterface connection = new SQLInterface();
         public User()
         {
+
         }
         public int login(string username, string password)
         {//takes in username and password as strings
          //returns userID
-            SQLInterface connection = new SQLInterface();
+            
             
             return connection.login(username, password);
         }
