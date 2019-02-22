@@ -7,9 +7,11 @@ namespace TNotes
         public User()
         {
         }
-        public int login()
+        public int login(string username, string password)
         {//takes in username and password as strings
          //returns userID
+            SQLInterface connection = new SQLInterface();
+            connection.login(username, password);
             return 0;
         }
         public int changePass()
