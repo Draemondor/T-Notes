@@ -65,7 +65,7 @@ public class SQLInterface
         return result;
     }
     //Print a query directly to console. 
-    public void print_query(string s)
+    private void print_query(string s)
     {
         //Submit the query to the server.
         List<List<string>> result = query(s);
@@ -81,7 +81,7 @@ public class SQLInterface
         }
     }
     //This generates a string identical to that which would be produced in the console by print_query. 
-    public string query_to_string(string s)
+    private string query_to_string(string s)
     {
         string output = "";
         //Submit the query to the server. 
