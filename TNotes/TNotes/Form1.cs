@@ -40,6 +40,13 @@ namespace TNotes
                 this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Show();
+                this.label4.Hide();
+            }
+            else
+            {
+                this.textBox1.ResetText();
+                this.textBox2.ResetText();
+                this.label4.Show();
             }
             
         }
