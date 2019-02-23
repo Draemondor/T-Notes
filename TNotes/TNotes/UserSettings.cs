@@ -26,7 +26,8 @@ namespace TNotes
         //Changes username
         private void button1_Click(object sender, EventArgs e)
         {
-            user.changeUser(this.textBox1.Text, this.textBox2.Text);
+            int user_id = user.login(this.textBox9.Text, this.textBox2.Text);
+            user.changeUser(user_id, this.textBox9.Text, this.textBox1.Text);
         }
         //Changes password
         private void button2_Click(object sender, EventArgs e)

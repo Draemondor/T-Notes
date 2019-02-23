@@ -30,12 +30,12 @@ namespace TNotes
             }
             else return 0;
         }
-        public int changeUser(string oldUser, string newUser)
+        public int changeUser(int uid, string oldUser, string newUser)
         {
             //takes in userID, old username, new username
             //passes these into an interface function along with userID
             //returns 0 or 1 on success or fail
-            if (connection.changeUserName(user_id, oldUser, newUser))
+            if (connection.changeUserName(uid, oldUser, newUser))
             {
                 return 1;
             }
