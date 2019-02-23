@@ -188,6 +188,7 @@ public class SQLInterface
         }
         else return false;
     }
+    //Add a user to the database. Return the user id. Return -1 on failure.
     public int addUser(string username, string password, string first, string last)
     {
         //Check to see if username is already taken. 
@@ -218,9 +219,28 @@ public class SQLInterface
         {
             return -1;
         }
+    }
+    //Remove a user from the database. Return boolean success or fail. 
+    //Additionally modifies trailing ids to keep count and latest id in lockstep.
+    public bool removeUser(int id, string password)
+    {
 
-        
+        //Verify that the id and password pair is good. 
+        string s = "select id from user where id = " + id + "and password = '" + password + "';";
+        List<List<string>> r = query(s);
+        if (Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
+        {
+            //Delete user. 
+            s = "delete from User where user_id = " + id + ";";
+            r = query(s);
+            //Generate cascade of id adjustments for remainder of users.
+            s = "update User set user_id = user_id - 1 where user_id > " + id + ";";
+            r = query(s);
 
-
+            //report success.
+            return true;
+        }        
+        //Report Failure.
+        return false;
     }
 }
