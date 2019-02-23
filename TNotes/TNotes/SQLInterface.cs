@@ -131,15 +131,30 @@ public class SQLInterface
 
     public bool changeUserName(int id, string oldUN, string newUN)
     {
+        //Trim input.
         oldUN = oldUN.Trim();
         newUN = newUN.Trim();
+
+        //Pull old information from the database to verify it.
         string q = "select * from user where username = \'" + oldUN + "\' and user_id = " + id;
         List<List<string>> r = query(q);
 
+        //If a unique id - UN was found, proceed. 
         if (r.Count == 1)
         {
+            //Check to see if the new username is currently in use. 
+            q = "select username from user where username = \'" + newUN + "\';";
+            r = query(q);
+            if (r.ElementAt(0).ElementAt(0).Equals(newUN))
+            {
+                //Immediately fail if it is. 
+                return false;
+            } //Otherwise, continue.
+
+            //Generate the update query.
             q = "update User set username = '"+newUN+"' where username = '"+oldUN+ "' and user_id = " + id+";";
             query(q);
+            //Verify the update query succeeded in changing the username.
             q = "select username from user where username = \'" + newUN + "\' and user_id = " + id;
             r = query(q);
             if (r.ElementAt(0).ElementAt(0).Equals(newUN))
@@ -151,15 +166,19 @@ public class SQLInterface
     }
     public bool changePassword(int id, string oldPW, string newPW)
     {
+        //Trim the information. 
         oldPW = oldPW.Trim();
         newPW = newPW.Trim();
+        //Verify existing information.
         string q = "select * from user where password = \'" + oldPW + "\' and user_id = " + id;
         List<List<string>> r = query(q);
-
+        //If the info checks out, go ahead with the password change.
         if (r.Count == 1)
         {
+            //Generate the password change query.
             q = "update User set password = '" + newPW + "' where password = '" + oldPW + "' and user_id = " + id + ";";
             query(q);
+            //Verify that the password was changed correctly.
             q = "select password from user where password = \'" + newPW + "\' and user_id = " + id;
             r = query(q);
             if (r.ElementAt(0).ElementAt(0).Equals(newPW))
@@ -169,5 +188,39 @@ public class SQLInterface
         }
         else return false;
     }
+    public int addUser(string username, string password, string first, string last)
+    {
+        //Check to see if username is already taken. 
+        string q = "select count(username) from user where username = '" + username + "';";
+        List<List<string>> r = query(q);
+        //If it's not, then proceed to add the user. 
+        if(Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == 0)
+        {
+            //Get the current count of users.
+            q = "select count(*) from user;";
+            r = query(q);
+            //Add 1 to it for the new id.
+            int id = Convert.ToInt32(r.ElementAt(0).ElementAt(0)) + 1;
+            //Generate the new user record.
+            q = "insert into user(user_id, username, password, first_name, last_name) value ("
+                + id + ", '"
+                + username + "', '"
+                + password + "', '"
+                + first + "', '"
+                + last + "');";
+            //Submit it to the database.
+            r = query(q);
+            //return the id for the new user. 
+            return id;
+        }
+        //Otherwise, return -1.
+        else
+        {
+            return -1;
+        }
 
+        
+
+
+    }
 }

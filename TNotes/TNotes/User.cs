@@ -46,7 +46,7 @@ namespace TNotes
             //takes in username and password for new user
             //passes these into an interface function
             //returns userID
-            //user_id = connection.addUser(username, password, first, last);
+            user_id = connection.addUser(username, password, first, last);
             if (user_id >=0)
             {
                 return 1;
