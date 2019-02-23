@@ -12,6 +12,7 @@ namespace TNotes
 {
     public partial class Form1 : Form
     {
+        User user = new User();
         public Form1()
         {
             
@@ -25,7 +26,7 @@ namespace TNotes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User user = new User();
+            
             Console.WriteLine(this.textBox1.Text);
             Console.WriteLine(this.textBox2.Text);
             
@@ -39,6 +40,13 @@ namespace TNotes
                 this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Show();
+                this.label4.Hide();
+            }
+            else
+            {
+                this.textBox1.ResetText();
+                this.textBox2.ResetText();
+                this.label4.Show();
             }
             
         }
