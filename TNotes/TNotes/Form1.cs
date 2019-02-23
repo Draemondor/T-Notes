@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace TNotes
 {
@@ -41,6 +42,11 @@ namespace TNotes
                 this.label2.Hide();
                 this.label3.Show();
                 this.label4.Hide();
+
+                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form2()); });
+                myThread.Start();
+                this.Dispose();
+
             }
             else
             {
