@@ -202,7 +202,7 @@
             this.Controls.Add(this.Logo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ForgotPassword";
-            this.Text = "T-notes  | Forgot Password";
+            this.Text = "T-Notes  | Forgot Password ";
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();

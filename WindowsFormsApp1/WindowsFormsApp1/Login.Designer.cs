@@ -184,9 +184,9 @@
             this.label_Tnotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(222)))), ((int)(((byte)(240)))));
             this.label_Tnotes.Location = new System.Drawing.Point(190, 59);
             this.label_Tnotes.Name = "label_Tnotes";
-            this.label_Tnotes.Size = new System.Drawing.Size(197, 37);
+            this.label_Tnotes.Size = new System.Drawing.Size(213, 37);
             this.label_Tnotes.TabIndex = 5;
-            this.label_Tnotes.Text = "T-notes Login";
+            this.label_Tnotes.Text = "T-Notes Login ";
             this.label_Tnotes.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox4
@@ -211,7 +211,7 @@
             this.Controls.Add(this.bgPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "T-notes  |  Login";
+            this.Text = "T-Notes  |  Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.password_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usrname_icon)).EndInit();
