@@ -81,9 +81,9 @@
             this.pleaseChoiceNewPassword_label.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pleaseChoiceNewPassword_label.Location = new System.Drawing.Point(19, 46);
             this.pleaseChoiceNewPassword_label.Name = "pleaseChoiceNewPassword_label";
-            this.pleaseChoiceNewPassword_label.Size = new System.Drawing.Size(226, 16);
+            this.pleaseChoiceNewPassword_label.Size = new System.Drawing.Size(210, 16);
             this.pleaseChoiceNewPassword_label.TabIndex = 10;
-            this.pleaseChoiceNewPassword_label.Text = "Please choose a new password to.";
+            this.pleaseChoiceNewPassword_label.Text = "Please choose a new password.";
             // 
             // Reset_lable
             // 
