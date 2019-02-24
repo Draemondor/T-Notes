@@ -36,5 +36,28 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void CreateAnAccount_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Show();
+            form.FormClosing += (obj, args) => { this.Close(); };
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

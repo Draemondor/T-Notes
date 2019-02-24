@@ -29,107 +29,128 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkbox_RememberMe = new System.Windows.Forms.CheckBox();
+            this.password_icon = new System.Windows.Forms.PictureBox();
+            this.usrname_icon = new System.Windows.Forms.PictureBox();
+            this.bgPanel = new System.Windows.Forms.Panel();
+            this.btnCreateAnAccount = new System.Windows.Forms.Button();
+            this.btnLink_ForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnCheckbox_RememberMe = new System.Windows.Forms.CheckBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.label_Tnotes = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.password_icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usrname_icon)).BeginInit();
+            this.bgPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // password_icon
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(19, 73);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 26);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.password_icon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.password_icon.BackColor = System.Drawing.Color.Transparent;
+            this.password_icon.Image = ((System.Drawing.Image)(resources.GetObject("password_icon.Image")));
+            this.password_icon.Location = new System.Drawing.Point(22, 63);
+            this.password_icon.Name = "password_icon";
+            this.password_icon.Size = new System.Drawing.Size(17, 20);
+            this.password_icon.TabIndex = 1;
+            this.password_icon.TabStop = false;
+            this.password_icon.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pictureBox2
+            // usrname_icon
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(19, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 26);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.usrname_icon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.usrname_icon.BackColor = System.Drawing.Color.Transparent;
+            this.usrname_icon.Image = ((System.Drawing.Image)(resources.GetObject("usrname_icon.Image")));
+            this.usrname_icon.Location = new System.Drawing.Point(21, 26);
+            this.usrname_icon.Name = "usrname_icon";
+            this.usrname_icon.Size = new System.Drawing.Size(17, 20);
+            this.usrname_icon.TabIndex = 2;
+            this.usrname_icon.TabStop = false;
+            this.usrname_icon.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // panel1
+            // bgPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.checkbox_RememberMe);
-            this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(137, 99);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 209);
-            this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.bgPanel.BackColor = System.Drawing.Color.Transparent;
+            this.bgPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bgPanel.BackgroundImage")));
+            this.bgPanel.Controls.Add(this.btnCreateAnAccount);
+            this.bgPanel.Controls.Add(this.btnLink_ForgotPassword);
+            this.bgPanel.Controls.Add(this.btnLogin);
+            this.bgPanel.Controls.Add(this.btnCheckbox_RememberMe);
+            this.bgPanel.Controls.Add(this.txtUsername);
+            this.bgPanel.Controls.Add(this.txtPassword);
+            this.bgPanel.Controls.Add(this.password_icon);
+            this.bgPanel.Controls.Add(this.usrname_icon);
+            this.bgPanel.Location = new System.Drawing.Point(137, 99);
+            this.bgPanel.Name = "bgPanel";
+            this.bgPanel.Size = new System.Drawing.Size(312, 200);
+            this.bgPanel.TabIndex = 3;
+            this.bgPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // linkLabel1
+            // btnCreateAnAccount
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.linkLabel1.Location = new System.Drawing.Point(201, 122);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(92, 13);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot Password?";
+            this.btnCreateAnAccount.AutoSize = true;
+            this.btnCreateAnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.btnCreateAnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAnAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.btnCreateAnAccount.Location = new System.Drawing.Point(144, 148);
+            this.btnCreateAnAccount.Name = "btnCreateAnAccount";
+            this.btnCreateAnAccount.Size = new System.Drawing.Size(145, 29);
+            this.btnCreateAnAccount.TabIndex = 8;
+            this.btnCreateAnAccount.Text = "Create An Account";
+            this.btnCreateAnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreateAnAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAnAccount.Click += new System.EventHandler(this.CreateAnAccount_Click);
             // 
-            // button1
+            // btnLink_ForgotPassword
             // 
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.button1.Location = new System.Drawing.Point(19, 162);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLink_ForgotPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLink_ForgotPassword.AutoSize = true;
+            this.btnLink_ForgotPassword.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.btnLink_ForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.btnLink_ForgotPassword.Location = new System.Drawing.Point(197, 111);
+            this.btnLink_ForgotPassword.Name = "btnLink_ForgotPassword";
+            this.btnLink_ForgotPassword.Size = new System.Drawing.Size(92, 13);
+            this.btnLink_ForgotPassword.TabIndex = 7;
+            this.btnLink_ForgotPassword.TabStop = true;
+            this.btnLink_ForgotPassword.Text = "Forgot Password?";
+            this.btnLink_ForgotPassword.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             // 
-            // checkbox_RememberMe
+            // btnLogin
             // 
-            this.checkbox_RememberMe.AutoSize = true;
-            this.checkbox_RememberMe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.checkbox_RememberMe.Location = new System.Drawing.Point(19, 122);
-            this.checkbox_RememberMe.Name = "checkbox_RememberMe";
-            this.checkbox_RememberMe.Size = new System.Drawing.Size(95, 17);
-            this.checkbox_RememberMe.TabIndex = 5;
-            this.checkbox_RememberMe.Text = "Remember Me";
-            this.checkbox_RememberMe.UseVisualStyleBackColor = true;
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.btnLogin.Location = new System.Drawing.Point(22, 148);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(95, 29);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btn_login_Click);
+            // 
+            // btnCheckbox_RememberMe
+            // 
+            this.btnCheckbox_RememberMe.AutoSize = true;
+            this.btnCheckbox_RememberMe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.btnCheckbox_RememberMe.Location = new System.Drawing.Point(22, 111);
+            this.btnCheckbox_RememberMe.Name = "btnCheckbox_RememberMe";
+            this.btnCheckbox_RememberMe.Size = new System.Drawing.Size(95, 17);
+            this.btnCheckbox_RememberMe.TabIndex = 5;
+            this.btnCheckbox_RememberMe.Text = "Remember Me";
+            this.btnCheckbox_RememberMe.UseVisualStyleBackColor = true;
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.txtUsername.Location = new System.Drawing.Point(50, 19);
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
+            this.txtUsername.Location = new System.Drawing.Point(46, 25);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(243, 23);
             this.txtUsername.TabIndex = 4;
@@ -138,48 +159,35 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.txtPassword.Location = new System.Drawing.Point(50, 76);
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
+            this.txtPassword.Location = new System.Drawing.Point(46, 62);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(243, 23);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Password";
             // 
-            // button2
+            // Logo
             // 
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.button2.Location = new System.Drawing.Point(148, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 27);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Create An Account";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Logo.BackColor = System.Drawing.Color.Transparent;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(12, 12);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(85, 84);
+            this.Logo.TabIndex = 4;
+            this.Logo.TabStop = false;
             // 
-            // pictureBox3
+            // label_Tnotes
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(85, 84);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(222)))), ((int)(((byte)(240)))));
-            this.label1.Location = new System.Drawing.Point(190, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 37);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "T-notes Login";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label_Tnotes.AutoSize = true;
+            this.label_Tnotes.BackColor = System.Drawing.Color.Transparent;
+            this.label_Tnotes.Font = new System.Drawing.Font("Times New Roman", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Tnotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(222)))), ((int)(((byte)(240)))));
+            this.label_Tnotes.Location = new System.Drawing.Point(190, 59);
+            this.label_Tnotes.Name = "label_Tnotes";
+            this.label_Tnotes.Size = new System.Drawing.Size(197, 37);
+            this.label_Tnotes.TabIndex = 5;
+            this.label_Tnotes.Text = "T-notes Login";
+            this.label_Tnotes.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox4
             // 
@@ -198,17 +206,18 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(573, 383);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label_Tnotes);
+            this.Controls.Add(this.Logo);
+            this.Controls.Add(this.bgPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "T-notes";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.Text = "T-notes  |  Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.password_icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usrname_icon)).EndInit();
+            this.bgPanel.ResumeLayout(false);
+            this.bgPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,17 +225,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkbox_RememberMe;
+        private System.Windows.Forms.PictureBox password_icon;
+        private System.Windows.Forms.PictureBox usrname_icon;
+        private System.Windows.Forms.Panel bgPanel;
+        private System.Windows.Forms.LinkLabel btnLink_ForgotPassword;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.CheckBox btnCheckbox_RememberMe;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCreateAnAccount;
+        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Label label_Tnotes;
         private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
