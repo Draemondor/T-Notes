@@ -146,7 +146,7 @@ public class SQLInterface
             //Check to see if the new username is currently in use. 
             q = "select username from user where username = \'" + newUN + "\';";
             r = query(q);
-            if (r.ElementAt(0).ElementAt(0).Equals(newUN))
+            if (r.Count != 0)
             {
                 //Immediately fail if it is. 
                 return false;
