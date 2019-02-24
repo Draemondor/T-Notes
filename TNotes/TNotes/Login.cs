@@ -16,55 +16,49 @@ namespace TNotes
         User user = new User();
         public Form1()
         {
-            
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            Console.WriteLine(this.textBox1.Text);
-            Console.WriteLine(this.textBox2.Text);
-            
-            int user_id = user.login(this.textBox1.Text, this.textBox2.Text);
+            int user_id = user.login(this.txtUsername.Text, this.txtPassword.Text);
             Console.WriteLine("user_id: " + user_id);
-            if (user_id >=0)
+            if (user_id >= 0)
             {
-                this.Login.Hide();
-                this.textBox1.Hide();
-                this.textBox2.Hide();
-                this.label1.Hide();
-                this.label2.Hide();
-                this.label3.Show();
-                this.label4.Hide();
+                this.button1.Hide();
+                this.txtUsername.Hide();
+                this.txtPassword.Hide();
 
                 Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form2()); });
                 myThread.Start();
                 this.Dispose();
-
             }
             else
             {
-                this.textBox1.ResetText();
-                this.textBox2.ResetText();
+                this.txtUsername.ResetText();
+                this.txtPassword.ResetText();
                 this.label4.Show();
             }
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
