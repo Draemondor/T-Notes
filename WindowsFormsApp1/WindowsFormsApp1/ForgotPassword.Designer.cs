@@ -40,10 +40,12 @@
             this.usrname_icon = new System.Windows.Forms.PictureBox();
             this.Tnotes_lable = new System.Windows.Forms.Label();
             this.CreateAccount_lable = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.password_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usrname_icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // Logo
@@ -69,7 +71,7 @@
             this.bgPanel.Controls.Add(this.usrname_icon);
             this.bgPanel.Location = new System.Drawing.Point(130, 111);
             this.bgPanel.Name = "bgPanel";
-            this.bgPanel.Size = new System.Drawing.Size(357, 200);
+            this.bgPanel.Size = new System.Drawing.Size(312, 200);
             this.bgPanel.TabIndex = 6;
             this.bgPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.bgPanel_Paint);
             // 
@@ -77,11 +79,11 @@
             // 
             this.pleaseChoiceNewPassword_label.AutoSize = true;
             this.pleaseChoiceNewPassword_label.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pleaseChoiceNewPassword_label.Location = new System.Drawing.Point(18, 46);
+            this.pleaseChoiceNewPassword_label.Location = new System.Drawing.Point(19, 46);
             this.pleaseChoiceNewPassword_label.Name = "pleaseChoiceNewPassword_label";
-            this.pleaseChoiceNewPassword_label.Size = new System.Drawing.Size(327, 16);
+            this.pleaseChoiceNewPassword_label.Size = new System.Drawing.Size(226, 16);
             this.pleaseChoiceNewPassword_label.TabIndex = 10;
-            this.pleaseChoiceNewPassword_label.Text = "Please choose a new password to finish signing in.";
+            this.pleaseChoiceNewPassword_label.Text = "Please choose a new password to.";
             // 
             // Reset_lable
             // 
@@ -102,7 +104,7 @@
             this.btnResetYourPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
             this.btnResetYourPassword.Location = new System.Drawing.Point(22, 150);
             this.btnResetYourPassword.Name = "btnResetYourPassword";
-            this.btnResetYourPassword.Size = new System.Drawing.Size(323, 29);
+            this.btnResetYourPassword.Size = new System.Drawing.Size(267, 29);
             this.btnResetYourPassword.TabIndex = 8;
             this.btnResetYourPassword.Text = "Reset Your Password";
             this.btnResetYourPassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -115,7 +117,7 @@
             this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
             this.txtNewPassword.Location = new System.Drawing.Point(46, 76);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(299, 23);
+            this.txtNewPassword.Size = new System.Drawing.Size(243, 23);
             this.txtNewPassword.TabIndex = 4;
             this.txtNewPassword.Text = "New Password";
             // 
@@ -125,7 +127,7 @@
             this.txtRe_enterPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
             this.txtRe_enterPassword.Location = new System.Drawing.Point(46, 113);
             this.txtRe_enterPassword.Name = "txtRe_enterPassword";
-            this.txtRe_enterPassword.Size = new System.Drawing.Size(299, 23);
+            this.txtRe_enterPassword.Size = new System.Drawing.Size(243, 23);
             this.txtRe_enterPassword.TabIndex = 3;
             this.txtRe_enterPassword.Text = "Re-Enter Password";
             // 
@@ -159,9 +161,9 @@
             this.Tnotes_lable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(222)))), ((int)(((byte)(240)))));
             this.Tnotes_lable.Location = new System.Drawing.Point(230, 41);
             this.Tnotes_lable.Name = "Tnotes_lable";
-            this.Tnotes_lable.Size = new System.Drawing.Size(112, 37);
+            this.Tnotes_lable.Size = new System.Drawing.Size(120, 37);
             this.Tnotes_lable.TabIndex = 10;
-            this.Tnotes_lable.Text = "T-notes";
+            this.Tnotes_lable.Text = "T-Notes";
             this.Tnotes_lable.Click += new System.EventHandler(this.Tnotes_lable_Click);
             // 
             // CreateAccount_lable
@@ -177,12 +179,23 @@
             this.CreateAccount_lable.Text = "Forgot Password";
             this.CreateAccount_lable.Click += new System.EventHandler(this.CreateAccount_lable_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(515, 341);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 30);
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
             // ForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(573, 383);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.Tnotes_lable);
             this.Controls.Add(this.CreateAccount_lable);
             this.Controls.Add(this.bgPanel);
@@ -195,6 +208,7 @@
             this.bgPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.password_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usrname_icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +227,6 @@
         private System.Windows.Forms.Label CreateAccount_lable;
         private System.Windows.Forms.Label pleaseChoiceNewPassword_label;
         private System.Windows.Forms.Label Reset_lable;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

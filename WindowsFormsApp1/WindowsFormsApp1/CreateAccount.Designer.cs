@@ -220,9 +220,9 @@
             this.Tnotes_lable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(222)))), ((int)(((byte)(240)))));
             this.Tnotes_lable.Location = new System.Drawing.Point(230, 30);
             this.Tnotes_lable.Name = "Tnotes_lable";
-            this.Tnotes_lable.Size = new System.Drawing.Size(112, 37);
+            this.Tnotes_lable.Size = new System.Drawing.Size(120, 37);
             this.Tnotes_lable.TabIndex = 8;
-            this.Tnotes_lable.Text = "T-notes";
+            this.Tnotes_lable.Text = "T-Notes";
             // 
             // shsu_icon
             // 
