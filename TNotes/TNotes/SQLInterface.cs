@@ -8,7 +8,6 @@ public class SQLInterface
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
     string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
     MySqlConnection conn;
-    static int transcount = 0;
 
     public SQLInterface()
     {
@@ -153,14 +152,12 @@ public class SQLInterface
             } //Otherwise, continue.
 
             //Generate the update query.
-            q = "update User set username = '"+newUN+"' where username = '"+oldUN+ "' and user_id = " + id+";";
-            query(q);
-            //Verify the update query succeeded in changing the username.
-            q = "select username from user where username = \'" + newUN + "\' and user_id = " + id;
+            q =  "update User set username = '"+newUN+"' where username = '"+oldUN+ "' and user_id = " + id+";";
+            //Generate and append verification query.            
+            q += "select username from user where username = \'" + newUN + "\' and user_id = " + id +";";
             r = query(q);
-            if (r.ElementAt(0).ElementAt(0).Equals(newUN))
-                return true;
-            else return false;
+            //Verify the update query succeeded in changing the username.
+            return r.ElementAt(0).ElementAt(0).Equals(newUN);
 
         }
         else return false;
@@ -177,14 +174,13 @@ public class SQLInterface
         if (r.Count == 1)
         {
             //Generate the password change query.
-            q = "update User set password = '" + newPW + "' where password = '" + oldPW + "' and user_id = " + id + ";";
-            query(q);
-            //Verify that the password was changed correctly.
-            q = "select password from user where password = \'" + newPW + "\' and user_id = " + id;
+            q =  "update User set password = '" + newPW + "' where password = '" + oldPW + "' and user_id = " + id + ";";
+            //Generate and appaned a verification query.
+            q += "select password from user where password = \'" + newPW + "\' and user_id = " + id + ";";
+            //Execute the query.
             r = query(q);
-            if (r.ElementAt(0).ElementAt(0).Equals(newPW))
-                return true;
-            else return false;
+            //Verify that the password was changed correctly.
+            return r.ElementAt(0).ElementAt(0).Equals(newPW);
 
         }
         else return false;
@@ -243,5 +239,54 @@ public class SQLInterface
         }        
         //Report Failure.
         return false;
+    }
+    public void include(string keyword, int note_id)
+    {
+        //Trim the keyword of leading and trailing spaces.
+        keyword = keyword.Trim();
+        //Check to see if the keyword is already registered as a keyword.
+        string s = "keyword_id from keyword where keyword LIKE '" + keyword + "';";
+        List<List<string>> r = query(s);
+        int count = r.Count;
+
+        //If it's a keyword already, follow up with the contains table.
+        if (count > 0)
+        {
+            //See if the keyword is already associated with the note_id provided. 
+            int keyword_id = Convert.ToInt32(r.ElementAt(0).ElementAt(0));
+            s = "select keyword_id, note_id from contains where keyword_id = " + keyword_id + " and note_id = " +note_id + ";";
+            r = query(s);
+            // If they're already associated, say so.
+            if(r.Count > 0)
+            {
+                Console.WriteLine(keyword + " is alreardy registered for Note ID "+note_id+".");
+            }
+            //If the keyword isn't associated, we need to add an entry in the contains table.
+            else
+            {
+                //Generate the value.
+                string value = "("+keyword_id+","+note_id+")";
+                //Generate the query.
+                s = "insert into contains(keyword_id, note_id) value " + value + ";";
+                //Execture the query.
+                query(s);
+            }
+        }
+        //If the keyword doesn't already exist, we need to create it.
+        else
+        {
+            //The keyword id will be one more than the number of existing keywords.
+            int keyword_id = count + 1;
+            //Generate keyword table record.
+            string value = "(" + keyword_id + "," + keyword + ")";
+            //Generate instruction to add record to keyword.
+            s = "insert into keyword(keyword_id, keyword) value " + value + ";";
+            //Generate contains table record.
+            value = "(" + keyword_id + "," + note_id + ")";
+            //Generate and append an instruction to add the contains record.
+            s += "insert into contains(keyword_id, note_id) value "+value+";";
+            //Execute the query.
+            query(s);
+        }
     }
 }
