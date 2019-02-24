@@ -240,6 +240,7 @@ public class SQLInterface
         //Report Failure.
         return false;
     }
+    //Associate a keyword with a note by note_id.
     public void include(string keyword, int note_id)
     {
         //Trim the keyword of leading and trailing spaces.
@@ -288,5 +289,18 @@ public class SQLInterface
             //Execute the query.
             query(s);
         }
+    }
+    //Associate a list of keywords with a note by note_id.
+    public void includeMultiple(List<string> keysIn, int note_id)
+    {
+        List<string> keywords = new List<string>();
+        //Trim the elements of the list: 
+        for(int i = 0; i < keysIn.Count; i++)
+            keywords.Add(keywords.ElementAt(i).Trim());
+        //Eliminate Duplicates.
+        List<string> keys = keywords.Distinct().ToList();
+        //For each keyword, include it in the database.
+        for (int i = 0; i < keys.Count; i++)
+            include(keys.ElementAt(i), note_id);
     }
 }
