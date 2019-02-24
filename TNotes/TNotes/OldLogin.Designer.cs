@@ -1,6 +1,6 @@
 ﻿namespace TNotes
 {
-    partial class Form1
+    partial class OldLogin
     {
         /// <summary>
         /// Required designer variable.

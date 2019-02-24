@@ -137,6 +137,7 @@ public class SQLInterface
 
         //Pull old information from the database to verify it.
         string q = "select * from user where username = \'" + oldUN + "\' and user_id = " + id;
+        Console.WriteLine(q);
         List<List<string>> r = query(q);
 
         //If a unique id - UN was found, proceed. 

@@ -19,7 +19,7 @@ namespace TNotes
             user_id = connection.login(username, password);
             return user_id;
         }
-        public int changePass(string oldPass, string newPass)
+        public int changePass(int uid, string oldPass, string newPass)
         {
             //takes in userID, old password and new password
             //passes these into an interface function along with userID
@@ -30,12 +30,12 @@ namespace TNotes
             }
             else return 0;
         }
-        public int changeUser(string oldUser, string newUser)
+        public int changeUser(int uid, string oldUser, string newUser)
         {
             //takes in userID, old username, new username
             //passes these into an interface function along with userID
             //returns 0 or 1 on success or fail
-            if (connection.changeUserName(user_id, oldUser, newUser))
+            if (connection.changeUserName(uid, oldUser, newUser))
             {
                 return 1;
             }
@@ -53,15 +53,15 @@ namespace TNotes
             }
             else return 0;
         }
-        public int removeUser(string username, string password)
+        public int removeUser(int uid, string password)
         {
             //takes in username and password for user to remove
             //passes these to an interface function along with userID
-            //if (connection.removeUser(user_id, username, password))
-           // {
+            if (connection.removeUser(uid,  password))
+            {
                 return 1;
-           // }
-           // else return 0;
+            }
+            else return 0;
         }
     }
 }
