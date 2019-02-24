@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace TNotes
 {
-    public partial class Form1 : Form
+    public partial class OldLogin : Form
     {
-        public Form1()
+        User user = new User();
+        public OldLogin()
         {
             
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace TNotes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User user = new User();
+            
             Console.WriteLine(this.textBox1.Text);
             Console.WriteLine(this.textBox2.Text);
             
@@ -39,6 +41,18 @@ namespace TNotes
                 this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Show();
+                this.label4.Hide();
+
+                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form2()); });
+                myThread.Start();
+                this.Dispose();
+
+            }
+            else
+            {
+                this.textBox1.ResetText();
+                this.textBox2.ResetText();
+                this.label4.Show();
             }
             
         }

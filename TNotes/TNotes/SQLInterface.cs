@@ -8,6 +8,7 @@ public class SQLInterface
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
     string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
     MySqlConnection conn;
+    static int transcount = 0;
 
     public SQLInterface()
     {
@@ -65,7 +66,7 @@ public class SQLInterface
         return result;
     }
     //Print a query directly to console. 
-    public void print_query(string s)
+    private void print_query(string s)
     {
         //Submit the query to the server.
         List<List<string>> result = query(s);
@@ -81,7 +82,7 @@ public class SQLInterface
         }
     }
     //This generates a string identical to that which would be produced in the console by print_query. 
-    public string query_to_string(string s)
+    private string query_to_string(string s)
     {
         string output = "";
         //Submit the query to the server. 
@@ -105,6 +106,8 @@ public class SQLInterface
     //Retuern -1 if the login failed, or -2 if there's a database error. 
     public int login(string un, string pw)
     {
+        un = un.Trim();
+        pw = pw.Trim();
         int id;
         string q = "select user.user_id, user.first_name, user.last_name from user where user.username = '"+un+"' and user.password = '"+pw+"';";
         Console.WriteLine(q);
@@ -126,4 +129,119 @@ public class SQLInterface
         return id;
     }
 
+    public bool changeUserName(int id, string oldUN, string newUN)
+    {
+        //Trim input.
+        oldUN = oldUN.Trim();
+        newUN = newUN.Trim();
+
+        //Pull old information from the database to verify it.
+        string q = "select * from user where username = \'" + oldUN + "\' and user_id = " + id;
+        Console.WriteLine(q);
+        List<List<string>> r = query(q);
+
+        //If a unique id - UN was found, proceed. 
+        if (r.Count == 1)
+        {
+            //Check to see if the new username is currently in use. 
+            q = "select username from user where username = \'" + newUN + "\';";
+            r = query(q);
+            if (r.ElementAt(0).ElementAt(0).Equals(newUN))
+            {
+                //Immediately fail if it is. 
+                return false;
+            } //Otherwise, continue.
+
+            //Generate the update query.
+            q = "update User set username = '"+newUN+"' where username = '"+oldUN+ "' and user_id = " + id+";";
+            query(q);
+            //Verify the update query succeeded in changing the username.
+            q = "select username from user where username = \'" + newUN + "\' and user_id = " + id;
+            r = query(q);
+            if (r.ElementAt(0).ElementAt(0).Equals(newUN))
+                return true;
+            else return false;
+
+        }
+        else return false;
+    }
+    public bool changePassword(int id, string oldPW, string newPW)
+    {
+        //Trim the information. 
+        oldPW = oldPW.Trim();
+        newPW = newPW.Trim();
+        //Verify existing information.
+        string q = "select * from user where password = \'" + oldPW + "\' and user_id = " + id;
+        List<List<string>> r = query(q);
+        //If the info checks out, go ahead with the password change.
+        if (r.Count == 1)
+        {
+            //Generate the password change query.
+            q = "update User set password = '" + newPW + "' where password = '" + oldPW + "' and user_id = " + id + ";";
+            query(q);
+            //Verify that the password was changed correctly.
+            q = "select password from user where password = \'" + newPW + "\' and user_id = " + id;
+            r = query(q);
+            if (r.ElementAt(0).ElementAt(0).Equals(newPW))
+                return true;
+            else return false;
+
+        }
+        else return false;
+    }
+    //Add a user to the database. Return the user id. Return -1 on failure.
+    public int addUser(string username, string password, string first, string last)
+    {
+        //Check to see if username is already taken. 
+        string q = "select count(username) from user where username = '" + username + "';";
+        List<List<string>> r = query(q);
+        //If it's not, then proceed to add the user. 
+        if(Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == 0)
+        {
+            //Get the current count of users.
+            q = "select count(*) from user;";
+            r = query(q);
+            //Add 1 to it for the new id.
+            int id = Convert.ToInt32(r.ElementAt(0).ElementAt(0)) + 1;
+            //Generate the new user record.
+            q = "insert into user(user_id, username, password, first_name, last_name) value ("
+                + id + ", '"
+                + username + "', '"
+                + password + "', '"
+                + first + "', '"
+                + last + "');";
+            //Submit it to the database.
+            r = query(q);
+            //return the id for the new user. 
+            return id;
+        }
+        //Otherwise, return -1.
+        else
+        {
+            return -1;
+        }
+    }
+    //Remove a user from the database. Return boolean success or fail. 
+    //Additionally modifies trailing ids to keep count and latest id in lockstep.
+    public bool removeUser(int id, string password)
+    {
+
+        //Verify that the id and password pair is good. 
+        string s = "select id from user where id = " + id + "and password = '" + password + "';";
+        List<List<string>> r = query(s);
+        if (Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
+        {
+            //Delete user. 
+            s = "delete from User where user_id = " + id + ";";
+            r = query(s);
+            //Generate cascade of id adjustments for remainder of users.
+            s = "update User set user_id = user_id - 1 where user_id > " + id + ";";
+            r = query(s);
+
+            //report success.
+            return true;
+        }        
+        //Report Failure.
+        return false;
+    }
 }
