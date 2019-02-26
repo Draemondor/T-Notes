@@ -158,6 +158,14 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 't-notes'
 --
+
+-- Trigger Will go here*JNB
+-- Capture the id of the user who is being deleted
+-- Delete the notes for this user
+-- Delete the course records for this user
+-- Decrement the user ID in all note and course records for UserID > the deleted UserID
+-- Trigger for Notes - when we have a delete from the user
+-- Trigger for Course - when we have a delete from the user
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
