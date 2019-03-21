@@ -241,7 +241,7 @@ public class SQLInterface
         return false;
     }
     //Associate a keyword with a note by note_id.
-    public void include(string keyword, int note_id)
+    private void include(string keyword, int note_id)
     {
         //Trim the keyword of leading and trailing spaces.
         keyword = keyword.Trim();
