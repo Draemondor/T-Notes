@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset1 Cambria Math;}{\f3\fnil\fcharset161 Calibri;}}
+{\*\generator Riched20 10.0.17134}{\*\mmathPr\mmathFont2\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 3 STRATIFIED SIMPLE RANDOM SAMPLING \f1\bullet  Suppose the population is partitioned into disjoint sets of sampling units called strata. If a sample is selected within each stratum, then this sampling procedure is known as strati\u-1279?ed sampling. \bullet  If we can assume the strata are sampled independently across strata, then (i) the estimator of t or yU can be found by combining stratum sample sums or means using appropriate weights (ii) the variances of estimators associated with the individual strata can be summed to obtain the variance an estimator associated with the whole population. (Given independence, the variance of a sum equals the sum of the individual variances.) \bullet  (ii) implies that only within-stratum variances contribute to the variance of an estimator. Thus, the basic motivating principle behind using strati\u-1279?cation to produce an estimator with small variance is to partition the population so that units within each stratum are as similar as possible. This is known as the strati\u-1279?cation principle. \bullet  In ecological studies, it is common to stratify a geographical region into subregions that are similar with respect to a known variable such as elevation, animal habitat type, vegetation types, etc. because it is suspected that the y-values may vary greatly across strata while they will tend to be similar within each stratum. Analogously, when sampling people, it is common to stratify on variables such as gender, age groups, income levels, education levels, marital status, etc. \bullet  Sometimes strata are formed based on sampling convenience. For example, suppose a large study region appears to be homogeneous (that is, there are no spatial patterns) and is strati\u-1279?ed based on the geographical proximity of sampling units. Taking a strati\u-1279?ed sample ensures the sample is spread throughout the study region. It may not, however, lead to any signi\u-1279?cant reduction in the variance of an estimator. \bullet  But, if the y-values are spatially correlated (y values tend to be similar for neighboring units), geographically determined strata can improve estimation of population parameters.\par
+Notation: H = the number of strata Nh = number of population units in stratum h h = 1,2,...,H N =PH h=1 Nh = the number of units in the population nh = number of sampled units in stratum h h = 1,2,...,H n =PH h=1 nh = the total number of units sampled yhj = the y-value associated with unit j in stratum h yh = the sample mean for stratum h\par
+th =\par
+Nh X j=1\par
+yhj = stratum h total t =\par
+H X h=1\par
+Nh X j=1\par
+yhj =\par
+H X h=1\par
+th = the population total\par
+yhU =\par
+th Nh\par
+= stratum h mean yU =\par
+1 N\par
+H X h=1\par
+Nh X j=1\par
+yhj =\par
+t N\par
+= the population mean\par
+45\par
+\bullet  If a simple random sample (SRS) is taken within each stratum, then the sampling design is called strati\u-1279?ed simple random sampling. \bullet  For stratum h, there areNh nh\'01possible SRSs of size nh. Therefore, there areN1 n1\'01N2 n2\'01\f0\'b7\'b7\'b7NH nH\'01possible strati\f1\u-1279?ed SRSs for speci\u-1279?ed stratum sample sizes n1,\f0\'b7\'b7\'b7 ,nH. \f1\bullet  If Sstrat is a strati\u-1279?ed SRS, then the probability of selecting Sstrat is\par
+P(Sstrat) =\par
+H Y h=1\par
+1 Nh nh\'01 =\par
+1\par
+N1 n1\'01N2 n2\'01\f0\'b7\'b7\'b7NH nH\'01 \f1\bullet  Thus, every possible strati\u-1279?ed SRS having stratum sample sizes n1,\f0\'b7\'b7\'b7 ,nH has the same probability of being selected.\par
+3.1 Estimation of yU and t \f1\bullet  Because a SRS was taken within each stratum, we can apply the estimator formulas for simple random sampling to each stratum. We can estimate each stratum population mean yhU and each stratum population total th. The formulas are: d yhU = yh = 1 nh nh X j=1 yhj b th = Nhyh = (24) \bullet  Because eachb th is an unbiased estimator of the stratum total th for i = 1,2,...,k, their sum will be an unbiased estimator of the population total t. That is, b tstr = is an unbiased estimator of t. An unbiased estimator of yU is a weighted average of the stratum sample means c yUstr = b tstr N = 1 N H X h=1 Nhyh or, equivalently, c yUstr = where is the weighting factor for stratum h. \bullet  Before we can study V (b tstr) and V (c yUstr), we need to look at the within-stratum variances. \bullet  Because a SRS is taken within stratum h, we can apply the results for simple random sampling estimators to each stratum. The variances of the strati\u-1279?ed SRS estimators of the mean and total are: V (c yUh) = V (b th) = (25) where S2 h = 1 Nh \f2\u8722?\f0 1 Nh X j=1 (yhj \f2\u8722?\f0 yhU)2 is the \f1\u-1279?nite population variance for stratum h. 46\par
+\bullet  Because the simple random samples are independent across the strata, the variance ofb tstr is the sum of the individual stratum variances: V (b tstr) = H X i=1 V (b th) = H X i=1 (26) \bullet  Dividing by N2, gives the V (c yUstr): V (c yUstr) = \'12 1 N2\'13V (b tstr) = \'12 1 N2\'13 H X i=1 Nh(Nh \f2\u8722?\f0 nh) S2 h nh (27) \f1\bullet  Because S2 h is unknown, we use s2 h to get an unbiased estimator of V (b th): b V (b th) = (28) where s2 h is the sample variance of the nh y-values sampled from stratum h. \bullet  Substitution of (28) into (26) and (27) produce the estimated variances of the strati\u-1279?ed SRS estimators: b V (b tstr) = H X h=1 Nh(Nh \f2\u8722?\f0 nh) s2 h nh b V (c yUstr) = \'12 1 N2\'13 H X h=1 Nh(Nh \f2\u8722?\f0 nh) s2 h nh (29) \f1\bullet  Taking a square root of b V (b tstr) or b V (c yUstr) yields the corresponding standard error. This will be used when generating con\u-1279?dence intervals for t or yU. \bullet  For the estimated variances of the estimators given in (29), we are assuming that all nh > 1 (because s2 h is unde\u-1279?ned for nh = 1). Cochran (1977 pages 138-140) discusses two potential methods of dealing with the extreme case where all nh = 1.\par
+Strati\u-1279?cation Example with Strong Spatial Correlation\par
+\bullet  Abundance counts for the population in Figures 5a and 5b show a strong diagonal spatial correlation. The region has been gridded into a 20\f0\'d720 grid of 10 m \'d710 m quadrats. The total abundance t = 13354. This population was strati\f1\u-1279?ed in two di\u-1280?erent ways: (i) Into the four 10\f0\'d710 strata shown in Figure 5a. Stratum sizes are Nh = 100 and stratum sample sizes are nh = 5 for h = 1,2,3,4. Stratum sample totalsPnh j=1 yhj are 124, 158, 172, and 223 for h = 1,2,3,4. Stratum sample means yh are 24.8, 31.6, 34.4, and 44.6 for h = 1,2,3,4. Stratum sample variances are s2 1 = 21.7, s2 2 = 13.3, s2 3 = 45.3, and s2 4 = 41.3.\par
+47\par
+(ii) Into seven unequal size diagonally-oriented strata shown in Figure 5b. Stratum sizes are N1 = N7 = 45, N2 = N6 = 60, N3 = N5 = 66, and N4 = 58. Stratum sample sizes are n1 = n7 = 3, n2 = n3 = n5 = n6 = 5, and n4 = 4. Stratum sample totalsPnh j=1 yhj are 65, 122, 153, 143, 178, 203, and 143 for h = 1,2,3,4,5,6,7, respectively. Stratum sample means yh are 21.6, 24.4, 30.6, 35.75, 35.6, 40.6, and 47.6 for h = 1,2,3,4,5,6,7, respectively. Stratum sample variances are s2 1 = 10.3, s2 2 = 14.8, s2 3 = 19.3, s2 4 = 4.25, s2 5 = 8.3, s2 6 = 10.8, and s2 7 = 26.3, respectively. \f1\bullet  For the strati\u-1279?ed SRSs in Figure 5a and Figure 5b: \endash  Calculateb tstr,c yUstr, and their standard errors. \endash  Calculate 95% con\u-1279?dence intervals for t and yU. 3.1.1 Con\u-1279?dence Intervals for yU and t \bullet  If all of the stratum sample sizes nh are su\u-1277?ciently large (Thompson suggests nh \f2\u8805?\f0  30), approximate 100(1\f2\u8722?\f3\lang1032\'e1)% con\f1\u-1279?dence intervals for yU and t are c yUstr \f0\lang1033\'b1z\f2\u8727?\f0 qb V (c yUstr) b tstr \'b1z\f2\u8727?\f0 qb V (b tstr) (30) where z\f2\u8727?\f0  is the upper \f3\lang1032\'e1/2 critical value from the standard normal distribution. \f1\bullet  For smaller sample sizes, the following con\u-1279?dence intervals have been recommended: c yUstr \f0\lang1033\'b1t\f2\u8727?\f0 qb V (c yUstr) b tstr \'b1t\f2\u8727?\f0 qb V (b tstr) (31) where t\f2\u8727?\f0  is the upper \f3\lang1032\'e1/2 critical value from the t(d) distribution. In this case, d is Satterthwaite\rquote s (1946) approximate degrees of freedom d where d = \'10PH h=1 ahs2 h\'112 PH h=1(ahs2 h)2/(nh \f2\u8722?\f0 1) = (b V (b tstr))2 PH h=1(ahs2 h)2/(nh \f2\u8722?\f0 1) (32) where ah = Nh(Nh \f2\u8722?\f0 nh)/nh. \f1\bullet  Lohr (page 79) mentions that some software packages will use n\f2\u8722?\f0 H degrees of freedom (instead of the approximate degrees of freedom). Both R and SAS use n\f2\u8722?\f0 H as the default degrees of freedom. \f1\bullet  If the stratum sample sizes nh are all equal and the stratum sizes Nh are all equal, then the degrees of freedom reduces to d = n\f2\u8722?\f0 H where n =Pnh is the total sample size.\f1\bullet  One-sided con\u-1279?dence intervals can by generated just like those using SRS. Just use t\f2\u8727?\f0  using the upper \f3\lang1032\'e1 critical value from the t(d) distribution.\par
+48\par
+49 49\par
+3.2 Using R and SAS to Analyze a Strati\f1\u-1279?ed SRS Datasets used in the R code\par
+R dataset from Figure 5a R dataset from Figure 5b ------------------------ -----------------------count fpc stratum count fpc stratum 25 100 1 18 45 1 30 100 1 23 45 1 18 100 1 24 45 1 28 100 1 23 60 2 23 100 1 21 60 2 30 100 2 21 60 2 26 100 2 28 60 2 35 100 2 29 60 2 34 100 2 25 66 3 33 100 2 32 66 3 38 100 3 27 66 3 27 100 3 35 66 3 30 100 3 34 66 3 44 100 3 34 58 4 33 100 3 37 58 4 36 100 4 38 58 4 41 100 4 34 58 4 53 100 4 33 66 5 47 100 4 38 66 5 46 100 4 37 66 5 38 66 5 32 66 5 40 60 6 44 60 6 38 60 6 44 60 6 37 60 6 49 45 7 42 45 7 52 45 7\par
+R code for Strati\u-1279?ed SRS (Figure 5a)\par
+source("c:/courses/st446/rcode/confintt.r")\par
+# t-based confidence intervals for SRS in Figure 5a\par
+library(survey) strat5adat <- read.table("c:/courses/st446/rcode/fig5a.txt", header=T) # strat5adat\par
+strat_design <- svydesign(id=~1, fpc=~fpc, strata=~stratum, data=strat5adat) strat_design\par
+esttotal <- svytotal(~count,strat_design) print(esttotal,digits=15) confint.t(esttotal,degf(strat_design),level=.95) confint.t(esttotal,degf(strat_design),level=.95,tails=\rquote lower\rquote ) confint.t(esttotal,degf(strat_design),level=.95,tails=\rquote upper\rquote )\par
+estmean <- svymean(~count,strat_design) print(estmean,digits=15) confint.t(estmean,degf(strat_design),level=.95) confint.t(estmean,degf(strat_design),level=.95,tails=\rquote lower\rquote ) confint.t(estmean,degf(strat_design),level=.95,tails=\rquote upper\rquote )\par
+50\par
+R output for Strati\u-1279?ed SRS (Figure 5a)\par
+(For the population total)\par
+------------------------------------------------------------------mean( count ) = 13540.00000 SE( count ) = 480.66620 Two-Tailed CI for count where alpha = 0.05 with 16 df 2.5 % 97.5 % 12521.03317 14558.96683 ------------------------------------------------------------------\par
+------------------------------------------------------------------mean( count ) = 13540.00000 SE( count ) = 480.66620 One-Tailed (Lower) CI for count where alpha = 0.05 with 16 df 5 % upper 12700.81272 infinity ------------------------------------------------------------------\par
+------------------------------------------------------------------mean( count ) = 13540.00000 SE( count ) = 480.66620 One-Tailed (upper) CI for count where alpha = 0.05 with 16 df lower 95 % -infinity 14379.18728 ------------------------------------------------------------------\par
+(For the population mean)\par
+------------------------------------------------------------------mean( count ) = 33.85000 SE( count ) = 1.20167 Two-Tailed CI for count where alpha = 0.05 with 16 df 2.5 % 97.5 % 31.30258 36.39742 ------------------------------------------------------------------\par
+------------------------------------------------------------------mean( count ) = 33.85000 SE( count ) = 1.20167 One-Tailed (Lower) CI for count where alpha = 0.05 with 16 df 5 % upper 31.75203 infinity ------------------------------------------------------------------\par
+------------------------------------------------------------------mean( count ) = 33.85000 SE( count ) = 1.20167 One-Tailed (upper) CI for count where alpha = 0.05 with 16 df lower 95 % -infinity 35.94797 ------------------------------------------------------------------\par
+51\par
+R code for Strati\u-1279?ed SRS (Figure 5b) The R code is exactly the same as the R code for the Figure 5a data analysis except you read in the data \u-1279?le \u-1279?g5b.txt. R output for Strati\u-1279?ed SRS (Figure 5b) (For the population total) ------------------------------------------------------------------mean( count ) = 13462.70000 SE( count ) = 256.02201 Two-Tailed CI for count where alpha = 0.05 with 23 df 2.5 % 97.5 % 12933.07812 13992.32188 ------------------------------------------------------------------\par
+------------------------------------------------------------------mean( count ) = 13462.70000 SE( count ) = 256.02201 One-Tailed (Lower) CI for count where alpha = 0.05 with 23 df 5 % upper 13023.91117 infinity ------------------------------------------------------------------\par
+------------------------------------------------------------------mean( count ) = 13462.70000 SE( count ) = 256.02201 One-Tailed (upper) CI for count where alpha = 0.05 with 23 df lower 95 % -infinity 13901.48883 ------------------------------------------------------------------\par
+(For the population mean) ------------------------------------------------------------------mean( count ) = 33.65675 SE( count ) = 0.64006 Two-Tailed CI for count where alpha = 0.05 with 23 df 2.5 % 97.5 % 32.33270 34.98080 ------------------------------------------------------------------\par
+------------------------------------------------------------------mean( count ) = 33.65675 SE( count ) = 0.64006 One-Tailed (Lower) CI for count where alpha = 0.05 with 23 df 5 % upper 32.55978 infinity ------------------------------------------------------------------\par
+------------------------------------------------------------------mean( count ) = 33.65675 SE( count ) = 0.64006 One-Tailed (upper) CI for count where alpha = 0.05 with 23 df lower 95 % -infinity 34.75372 ------------------------------------------------------------------\par
+52\par
+Using Proc Surveymeans in SAS: \bullet  When the stratum unit totals (Nd) are known, you must create a variable called total that assigns Nh to each stratum level. It must be called total . In the following examples, the stratum variable is called Area. \bullet  You also need to create a weight variable which takes on the value Nh/nh. In the following examples, the weight variable is called W and it appears in the Weight statement. \bullet  Include the option total=(dataname) in the Proc Surveymeans statement. (dataname) is the name of the data set. In the \u-1279?rst example, the dataname is \u-1279?g 5a. In the second example, the dataname is \u-1279?g 5b. \bullet  Include a Stratum statement that contains the stratum variable. \bullet  In the Var statement, include the response variable y. In these examples, y is Count. \bullet  If you want one-sided con\u-1279?dence intervals for yU or t, in the Proc Surveymeans statement enter lclm or uclm for yU and lclmsum or uclmsum for t. In the second example, I included all 4 options. \bullet  The list option in the Stratum statement produces a table containing information about each stratum. Analysis of the Strati\u-1279?ed SRS in Figure 5a\par
+data fig5a; input Area Count @@; datalines; 1 18 1 23 1 28 1 25 1 30 2 35 2 30 2 26 2 33 2 34 3 33 3 27 3 30 3 44 3 38 4 47 4 36 4 41 4 53 4 46 ; data fig5a; set fig5a;\par
+if Area = 1 then _total_= 100; *** _total_ = Nh ; if Area = 2 then _total_= 100; if Area = 3 then _total_= 100; if Area = 4 then _total_= 100;\par
+if Area=1 then W = 100/5; *** W = Nh / nh ; if Area=2 then W = 100/5; if Area=3 then W = 100/5; if Area=4 then W = 100/5; title1 \rquote Analysis of Stratified SRS in Figure 5a\rquote ;\par
+proc surveymeans data=fig5a total=fig5a mean clm sum clsum df; Stratum Area / list; Var Count; Weight W; run; =============================================================== Analysis of Stratified SRS in Figure 5a\par
+The SURVEYMEANS Procedure\par
+Data Summary\par
+Number of Strata 4 Number of Observations 20 Sum of Weights 400\par
+53\par
+Stratum Information\par
+Stratum Population Sampling Index Area Total Rate N Obs Variable N -----------------------------------------------------------------------1 1 100 5.00% 5 Count 5 2 2 100 5.00% 5 Count 5 3 3 100 5.00% 5 Count 5 4 4 100 5.00% 5 Count 5 -----------------------------------------------------------------------\par
+Statistics\par
+Std Error Variable DF Mean of Mean 95% CL for Mean -------------------------------------------------------------------Count 16 33.850000 1.201666 31.3025829 36.3974171 -------------------------------------------------------------------\par
+Variable Sum Std Dev 95% CL for Sum ------------------------------------------------------------------Count 13540 480.666204 12521.0332 14558.9668 ------------------------------------------------------------------\par
+Analysis of Strati\u-1279?ed SRS in Figure 5b\par
+data fig5b; input Area Count @@; datalines; 1 18 1 24 1 23 2 28 2 29 2 21 2 21 2 23 3 34 3 27 3 35 3 32 3 25 4 34 4 38 4 37 4 34 5 32 5 38 5 37 5 38 5 33 6 37 6 38 6 44 6 44 6 40 7 42 7 49 7 52 ; data fig5b; set fig5b;\par
+if Area = 1 then _total_= 45; *** _total_ = Nh ; if Area = 2 then _total_= 60; if Area = 3 then _total_= 66; if Area = 4 then _total_= 58; if Area = 5 then _total_= 66; if Area = 6 then _total_= 60; if Area = 7 then _total_= 45;\par
+if Area=1 then W = 45/3; *** W = Nh / nh ; if Area=2 then W = 60/5; if Area=3 then W = 66/5; if Area=4 then W = 58/4; if Area=5 then W = 66/5; if Area=6 then W = 60/5; if Area=7 then W = 45/3;\par
+title1 \rquote Analysis of Stratified SRS in Figure 5b\rquote ;\par
+proc surveymeans data=fig5b total=fig5b mean clm sum clsum df lclm uclm lclmsum uclmsum ; Stratum Area / list; Var Count; Weight W; run;\par
+54\par
+Analysis of Stratified SRS in Figure 5b\par
+The SURVEYMEANS Procedure\par
+Data Summary\par
+Number of Strata 7 Number of Observations 30 Sum of Weights 400\par
+Stratum Information\par
+Stratum Population Sampling Index Area Total Rate N Obs Variable N ---------------------------------------------------------------------1 1 45 6.67% 3 Count 3 2 2 60 8.33% 5 Count 5 3 3 66 7.58% 5 Count 5 4 4 58 6.90% 4 Count 4 5 5 66 7.58% 5 Count 5 6 6 60 8.33% 5 Count 5 7 7 45 6.67% 3 Count 3 ---------------------------------------------------------------------\par
+Statistics\par
+Std Error Variable DF Mean of Mean 95% CL for Mean ----------------------------------------------------------------------Count 23 33.656750 0.640055 32.3326953 34.9808047 ----------------------------------------------------------------------\par
+Lower 95% Upper 95% One-Sided CL One-Sided CL Variable for Mean for Mean Sum Std Dev ----------------------------------------------------------------------Count 32.559778 34.753722 13463 256.022011 ----------------------------------------------------------------------\par
+Lower 95% Upper 95% One-Sided One-Sided Variable 95% CL for Sum CL for Sum CL for Sum ----------------------------------------------------------------Count 12933.0781 13992.3219 13024 13901 ----------------------------------------------------------------\par
+3.3 E\u-1277?ciency of Strati\u-1279?ed Simple Random Sampling \bullet  Because the variance formulas forb tstr andc yUstr are determined only from within-stratum variances, the precision of the estimators can be improved by forming strata with small S2 h values (strata with similar y-values within each stratum). We will compareb V (c yU) from a SRS tob V (d ystr) from a strati\u-1279?ed SRS. \bullet  The population variance can be rewritten as the weighted sum of within-stratum and between-stratum variabilities:\par
+S2 =\par
+1 N \f2\u8722?\f0 1\par
+H X h=1\par
+Nh X j=1\par
+(yhj \f2\u8722?\f0 yU)2\par
+=\par
+1 N \f2\u8722?\f0 1"H X h=1 (Nh \f2\u8722?\f0 1)S2 h +\par
+H X h=1\par
+Nh(yhU \f2\u8722?\f0 yU)2#\par
+55\par
+\f1\bullet  By substituting this alternative form of S2 into V (c yU) and V (c yUstr), it can be shown that: V (c yU)\f2\u8722?\f0 V (c yUstr) = N \f2\u8722?\f0 n Nn(N \f2\u8722?\f0 1)"H X h=1 Nh(yhU \f2\u8722?\f0 yU)2 \f2\u8722?\f0  1 N H X h=1 (N \f2\u8722?\f0 Nh)S2 h#. \f1\bullet  If this di\u-1280?erence in variances is positive, or, equivalently, if H X h=1 Nh(yhU \f2\u8722?\f0 yU)2 > 1 N H X h=1 (N \f2\u8722?\f0 Nh)S2 h , then we say thatc yUstr is more e\f1\u-1277?cient thanc yU. \bullet  A strati\u-1279?ed SRS estimator will be more e\u-1277?cient than the SRS estimator of yU or t if the variability between stratum means is su\u-1277?ciently large relative to the within-stratum variability. This is what happened with the strati\u-1279?cation used in Figures 5a and 5b.\par
+3.4 Allocation of Sampling Units \bullet  Given that we have enough resources to allocate n units among the H strata, how do we determine the stratum sample sizes nh? \bullet  Situation 1: If all strata are the same size and no prior information is available about the population, a reasonable choice would be to assign equal (or nearly equal) sample sizes to the strata. That is, nh \f2\u8776?\f0  . \f1\endash  Example: Consider the strati\u-1279?ed population in Figure 5a. Suppose there are enough resources to take a sample of size n = 50. How many samples should be taken for each stratum assuming Situation 1? \bullet  Situation 2: If the strata are not all the same size and no prior information is available about the population, a reasonable choice would be to assign sample sizes proportional to the sizes of the strata relative to the population size N. That is, nh . This is known as proportional allocation.\par
+\endash  Example: Consider the strati\u-1279?ed population in Figure 5b. Suppose there are enough resources to take a sample of size n = 50. How many samples should be taken for each stratum assuming proportional allocation? \bullet  Situation 3: The allocation scheme that minimizes V (b tstr) is called optimum allocation and requires nh =\par
+Because the S2 h values are unknown, we would need prior estimates (possibly from past data or published studies) to attempt optimum allocation.\par
+\endash  Example: Consider the strati\u-1279?ed population in Figure 5b. Suppose there are enough resources to take a sample of size n = 50 and we have prior estimates of s1 = 3.2, s2 = 3.8, s3 = 4.4, s4 = 2.1, s5 = 2.9, s6 = 3.3, and s7 = 5.1. How many samples should be taken for each stratum assuming optimum allocation?\par
+56\par
+\bullet  Situation 4: In some cases, if the cost of sampling units varies from stratum to stratum, then the total cost of taking a strati\u-1279?ed SRS may determine how to allocate units to strata.\par
+\endash  Let c0 be the \u-1279?xed (also called \ldblquote overhead\rdblquote ) cost of the survey that does not depend on what units are in sample. Let ch be the cost to sample a unit from stratum h.\par
+The total cost C of the sample will be C = c0 +\par
+H X h=1\par
+chnh. \endash  Case I: For a \u-1279?xed total cost C, the smallest variance V (c yU) or V (b t) is achieved by choosing nh such that: nh = (C \f2\u8722?\f0 c0)NhSh/\f2\u8730?\f0 ch PH h=1 NhSh\f2\u8730?\f0 ch \f1\endash  Case II: For a \u-1279?xed (speci\u-1279?ed) variance V (c yU), the smallest cost is achieved by \u-1279?rst determining the total sample size n such that n = \'10PH h=1 NhSh\f2\u8730?\f0 ch\'11\'10PH h=1 NhSh/\f2\u8730?\f0 ch\'11N 2V +PH h=1 NhS2 h where V is the \f1\u-1279?xed variance speci\u-1279?ed by the researcher. Then, the stratum sample size nh for h = 1,2,...,H is\par
+nh =\par
+nNhSh/\f2\u8730?\f0 ch PH h=1 NhSh/\f2\u8730?\f0 ch\par
+For a \f1\u-1279?xed V (b t), use V = V (b t)/N2 in the formula. \bullet  If all of the costs (ch) are the same, then the total sample size formula reduces to n = \'10PH h=1 NhSh\'112N 2V +PH h=1 NhS2 h \bullet  Because the Sh values are unknown in either Case I or Case II, we would need prior estimates (possibly from past data or published studies) to attempt optimum allocation.\par
+Example of Situation 4: Case I: Suppose there is a \u-1279?xed total cost C = $3000 and a \u-1279?xed overhead cost of c0 = $500. Consider the strati\u-1279?cation used in Figure 5b. The unit sampling costs are c1 = $20 per unit from stratum 1 c2 = c3 = $25 per unit from stratum 2 or 3 c4 = $30 per unit from stratum 4 c5 = c6 = $35 per unit from stratum 5 or 6 c7 = $40 per unit from stratum 7\par
+57\par
+Then, using s2 h as an estimate of S2 h: nh =\par
+(C \f2\u8722?\f0 c0)Nhsh/\f2\u8730?\f0 ch PH h=1 Nhsh\f2\u8730?\f0 ch =\par
+2500Nhsh/\f2\u8730?\f0 ch 7657.776\par
+rounded projected Stratum Nh sh ch Nhsh\f2\u8730?\f0 ch Nhsh/\f2\u8730?\f0 ch nh nh cost 1 45 3.215 20 647.006 32.350 10.6 11 $220 2 60 3.847 25 1154.100 46.164 15.1 15 $375 3 66 4.393 25 1449.690 57.988 18.9 19 $475 4 58 2.062 30 655.054 21.835 7.1 7 $210 5 66 2.881 35 1124.919 32.141 10.5 10 $350 6 60 3.286 35 1166.414 33.326 10.9 11 $385 7 45 5.132 40 1460.593 36.515 11.9 12 $480\par
+The estimated total cost is $ + c0 = + $500 = requiring sampling units. Example of Situation 4: Case II: Suppose there is a \f1\u-1279?xed variance of V = V (b t) = .35. Consider the strati\u-1279?cation used in Figure 5b. The costs are the same as Case I. Then, using sh as an estimate of Sh: n = \'10PH h=1 NhSh\f2\u8730?\f0 ch\'11\'10PH h=1 NhSh/\f2\u8730?\f0 ch\'11N 2V +PH h=1 NhS2 h \f2\u8776?\f0  (7657.776)(260.319) (4002)(.35) + 5254.1 = Then, substitution yields\par
+nh =\par
+nNhSh/\f2\u8730?\f0 ch PH h=1 NhSh/\f2\u8730?\f0 ch =\par
+(37.433)NhSh/\f2\u8730?\f0 ch 260.319 \f2\u8776?\f0  NhSh/\f2\u8730?\f0 ch.\par
+rounded projected\par
+Stratum Nh sh ch Nhsh\f2\u8730?\f0 ch Nhsh/\f2\u8730?\f0 ch NhS2 h nh nh cost 1 45 3.215 20 647.006 32.350 465.0 4.65 5 $100 2 60 3.847 25 1154.100 46.164 888.0 6.64 7 $175 3 66 4.393 25 1449.690 57.988 1273.8 8.34 8 $200 4 58 2.062 30 655.054 21.835 246.5 3.14 3 $ 90 5 66 2.881 35 1124.919 32.141 547.8 4.62 5 $175 6 60 3.286 35 1166.414 33.326 648.0 4.79 5 $175 7 45 5.132 40 1460.593 36.515 1185.0 5.25 5 $200 7657.776 260.319\par
+Thus, the minimum cost to achieve V is $ + c0 = + $500 = requiring a total of sampling units.\lang9\par
+}
+ 

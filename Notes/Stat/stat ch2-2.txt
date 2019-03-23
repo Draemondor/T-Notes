@@ -1,0 +1,195 @@
+2.3 Simple Random Sampling • Simple random sampling without replacement (srswor) of size n is the probability sampling design for which a ?xed number of n units are selected from a population of N units without replacement such that every possible sample of n units has equal probability of being selected. A resulting sample is called a simple random sample or srs. • Note: I will use SRS to denote a simple random sample and SR as an abbreviation of ‘simple random’. • Some necessary combinatorial notation: – (n factorial) n! = n × (n ? 1) × (n ? 2) ×···× 2 × 1. This is the number of unique arrangements or orderings (or permutations) of n distinct items. For example: 6! = 6×5×4×3×2×1 = 720. – (N choose n) N n = N(N ?1)···(N ?n + 1) n! = N! n!(N ?n)! . This is the number of combinations of n items selected from N distinct items (and the order of selection doesn’t matter). For example,6 2= 6! 2!4! = (6)(5)(4!) 2!4! = (6)(5) (2)(1) = 15. • There areN npossible SRSs of size n selected from a population of size N. • For any SRS of size n from a population of size N, we have P(S) = 1/N n.• Unless otherwise speci?ed, we will assume sampling is without replacement.
+2.3.1 Estimation of yU and t • A natural estimator for the population mean yU is the sample mean y. Because y is an estimate of an individual unit’s y-value, multiplication by the population size N will give us an estimateb t of the population total t. That is: c yU = y = 1 n n X i=1 yi b t = N n n X i=1 yi = (10) •c yU andb t are design unbiased. That is, the average values of y and Ny taken over all possible SRSs equal yU and t, respectively. Demonstration of Unbiasedness: Suppose we have a population consisting of ?ve y-values:
+Unit i 1 2 3 4 5 yi 0 2 3 4 7
+which has the following parameters: N = t = yU = S2 = S ? Suppose a SRS of size n = 2 is selected. Then P(S) = 1/5 2= 1/10 for each of the 10 possibleSRSs.
+22
+All Possible Samples and Statistics from Example Population Sample Units y-values Pyi c yU = y b t = Ny b S2 = s2 b S = s S1 1,2 0,2 2 1 5 2 1.4142 S2 1,3 0,3 3 1.5 7.5 4.5 2.1213 S3 1,4 0,4 4 2 10 8 2.8284 S4 1,5 0,7 7 3.5 17.5 24.5 4.9497 S5 2,3 2,3 5 2.5 12.5 .5 0.7071 S6 2,4 2,4 6 3 15 2 1.4142 S7 2,5 2,7 9 4.5 22.5 12.5 3.5355 S8 3,4 3,4 7 3.5 17.5 .5 0.7071 S9 3,5 3,7 10 5 25 8 2.8284 S10 4,5 4,7 11 5.5 27.5 4.5 2.1213 Column Sum 32 160 67 22.6274 Expected value 32 10 = 3.2 160 10 = 16 67 10 = 6.7 22.6274 10 = 2.26274 = E(estimator) = yU = t = S2 6= S The averages for estimatorsc yU = y, b t = Ny, andb S2 = s2 equal the parameters that they are estimating. This implies that y, Ny, and s2 are unbiased estimators of yU, t, and S2. Notation: E(c yU) = yU, E(b t) = t, E(b S2) = S2 or E(y) = yU, E(Ny) = t, E(s2) = S2. The average for estimatorb S = s does not equal the parameter S. This implies that s is a biased estimator of S. Notation: E(b S) 6= S or E(s) 6= S. • The next problem is to study the variances ofc yU = y and b t = Ny. • Warning: In an introductory statistics course, you were told that the variance of the sample mean V (Y ) = S2/n (= ?2/n) and its standard deviation is S/?n (= ?/?n). This is appropriate if a sample was to be taken from an in?nite or extremely large population. • However, we are dealing with ?nite populations that often are not considered extremely large. In such cases, we have to adjust our variance formulas by N ?n N which is known as the ?nite population correction (f.p.c.).
+• Texts may rewrite the f.p.c.
+N ?n N
+as either 1?
+n N
+or 1?f where f = n/N is the fraction of the population that was sampled. By de?nition : V (c yU) = V (y) = V (b t) = N2V (y) = N(N ?n) S2 n (11) • Because S2 is unknown, we use s2 to get unbiased estimators of the variances in (11):: b V (c yU) = b V (y) = b V (b t) = N2b V (y) = N(N ?n) s2 n (12) • Taking a square root of a variance in (11) yields the standard deviation of the estimator. • Taking a square root of an estimated variance in (12) yields the standard error of the estimate.
+23
+• Thus, V (y) =N ?n N S2 n
+=
+3 5
+6.7 2
+= and
+V (b t) = N2V (y) = N(N ?n)
+S2 n
+= (5)(3)
+6.7 2
+= .
+• Likec yU andb t, the variances b V (c yU) and b V (b t) are design unbiased. That is the average of b V (c yU) and b V (b t) taken over all possible SRSs equal V (c yU) = 2.01 and V (b t) = 50.25, respectively. • For the estimated variances we haveb V (c yU) =N ?n N s2 n = 3 5 s2 2 = and b V (b t) = N(N ?n) s2 n = (5)(3) s2 2 = where s2 is a particular sample variance. Example: We will use our population from the previous example: Unit, i 1 2 3 4 5 yi 0 2 3 4 7 which have the following parameters N = 5 t = 16 yU = 3.2 S2 = 6.7 S ? 2.588 Estimated Variances ofc yU andb t for All Samples Sample Units y-values s2 b V (c yU) = .3s2 b V (b t) = 7.5s2 S1 1,2 0,2 2 0.6 15 S2 1,3 0,3 4.5 1.35 33.75 S3 1,4 0,4 8 2.4 60 S4 1,5 0,7 24.5 7.35 183.75 S5 2,3 2,3 .5 0.15 3.75 S6 2,4 2,4 2 0.6 15 S7 2,5 2,7 12.5 3.75 93.75 S8 3,4 3,4 .5 0.15 3.75 S9 3,5 3,7 8 2.4 60 S10 4,5 4,7 4.5 1.35 33.75 Column Sum • From the table we have E(b V (c yU)) = 20.1/10 = 2.01 = V (c yU) and E(b V (b t)) = 502.5/10 = 50.25 = V (b t). Thus, we see that both variance estimators are unbiased. • If N is large relative to n, then the ?nite population correction (f.p.c.) will be close to (but less than) 1. Omitting the ?nite population correction from the variance formulas (i.e., replacing (N ?n)/N with 1) will slightly overestimate the true variance. That is, there is a small positive bias. I personally would not recommend omitting the f.p.c.. • If N is not large relative to n, then omitting the f.p.c. from the variance formulas can seriously overestimate the true variance. That is, there can be a large positive bias.
+• As n ? N,
+N ?n N ? 0. That is, as the sample size approaches the population size, the f.p.c. approaches 0. Thus, in (11) and (12) the variances ? 0 as n ? N.
+24
+2.3.2 SRS With Replacement • Consider a sampling procedure in which a sampling unit is randomly selected from the population, its y-value recorded, and is then returned to the population. This process of randomly selecting units with replacement after each stage is repeated n times. Thus, a sampling unit may be sampled multiple times. A sample of n units selected by such a procedure is called a simple random sample with replacement. • The estimators for SRS with replacement are: c yU = y b V (c yU) =b V (b y) = s2 n • Suppose we have two estimatorsb ?1 andb ?2 of some parameter ?. b ?1 is less e?cient thanb ?2 for estimating ? if V (b ?1) > V (b ?2). b ?1 is more e?cient thanb ?2 for estimating ? if V (b ?1) < V (b ?2). • For most situations, the estimator for a SRS with replacement is less e?cient than the estimator for a SRS without replacement. • There will be circumstances (such as sampling proportional to size) where we will consider sampling with replacement. Unless otherwise stated, we assume that sampling is done without replacement.
+2.4 Two-Sided Con?dence Intervals for yU and t • In an introductory statistics course, you were given con?dence interval formulas y ± z? s ?n and y ± t? s ?n (13) These formulas are applicable if a sample was to be taken from an in?nitely or extremely large population. But when we are dealing with ?nite populations, we adjust our variance formulas by the ?nite population correction . • In the ?nite population version of the Central Limit Theorem, we assume the estimators c yU = y andb t = Ny have sampling distributions that are approximately normal. That is, c yU ? ? NyU , N ?n N S2 n  and b t ? ? Nt, N(N ?n)S2 n  • For large samples, approximate 100(1??)% con?dence intervals for yU (µ) and t (?) are For yU : For t : (14) y ± z?sN ?n N s2 n Ny ± z?rN(N ?n)s2 n y ± z?ssN ?n N /n Ny ± z?spN(N ?n)/n (15) where z? is the upper ?/2 critical value from the standard normal distribution. Or, in standard error (s.e.) notation, c yU ± b t ± For 90%, 95%, and 99%, z? = 1.645,1.96, and 2.576, respectively. 25
+• For smaller samples, approximate 100(1??)% con?dence intervals for yU and t are For yU : For t : (16) y ± t?sN ?n N s2 n Ny ± t?rN(N ?n)s2 n y ± t?ssN ?n N /n Ny ± t?spN(N ?n)/n (17) where t? is the upper ?/2 critical value from the t(n?1) distribution. • The quantity being added and subtracted from c yU = y orb t = Ny in the con?dence interval is known as the margin of error. Example: Use the small population data again. For n = 2, t? ? 6.314 for a nominal 90% con?dence level.
+All Possible Samples and Con?dence Intervals from Example Population Sample y-values Pyi c yU = y b t = Ny b S2 = s2 b S = s b V (c yU) b V (b t) 90% ci for t 1 0,2 2 1 5 2 1.4142 0.6 15 (-19.45, 29.45) 2 0,3 3 1.5 7.5 4.5 2.1213 1.35 33.75 (-29.18, 44.18) 3 0,4 4 2 10 8 2.8284 2.4 60 (-38.91, 58.91) 4 0,7 7 3.5 17.5 24.5 4.9497 7.35 183.75 (-68.09, 103.09) 5 2,3 5 2.5 12.5 .5 0.7071 0.15 3.75 (0.27, 24.73) 6 2,4 6 3 15 2 1.4142 0.6 15 (-9.45, 39.45) 7 2,7 9 4.5 22.5 12.5 3.5355 3.75 93.75 (-38.63, 83.63) 8 3,4 7 3.5 17.5 .5 0.7071 0.15 3.75 (5.27, 29.73) 9 3,7 10 5 25 8 2.8284 2.4 60 (-23.91, 73.91) 10 4,7 11 5.5 27.5 4.5 2.1213 1.35 33.75 (-9.18, 64.18)
+2.4.1 One-Sided Con?dence Intervals for yU and t • Occasionally, a researcher may want a one-sided con?dence interval. There are two types of one-sided con?dence intervals: upper and lower. • Approximate upper and lower 100(1??)% con?dence intervals for yU and t are: For yU : For t : y?t?ssN ?n N /n , ?! Ny?t?spN(N ?n)/n , ? upper ?? , y + t?ssN ?n N /n! ?? , Ny + t?spN(N ?n)/n lower where t? is the upper ? critical value from the t(n?1) distribution. • If the y-values cannot be negative, replace ?? with 0 in the lower con?dence interval formulas. If the y-values cannot be positive, replace ? with 0 in the upper con?dence interval formulas.
+26
+• Later, we will discuss another method of generating a con?dence interval called bootstrapping. This will be useful when the sample size may be small and the central limit theorem cannot be applied.
+SRS Example with Strong Spatial Correlation
+• To illustrate the application of simple random sampling to population mean per unit µ estimation, consider the abundance data in Figure 1. The abundance counts are arti?cial but show a strong diagonal spatial correlation. • The region has been gridded into a 20×20 grid of 10×10 m quadrats. The total abundance t = 13354 and the mean per unit is yU = 33.385. The population variance S2 = 75.601. • This data will be used to compare estimation properties of various sampling designs when data are spatially correlated.
+Figure 1
+Data Exhibiting Strong Spatial Correlation
+18 20 15 20 20 15 19 18 24 23 20 26 29 28 28 31 31 34 28 32 13 20 16 20 15 23 19 26 21 21 24 30 23 26 25 33 31 28 32 38 16 18 20 24 25 26 22 23 26 26 22 27 25 25 34 28 37 36 38 31 17 17 16 22 21 23 22 27 27 24 28 32 29 33 27 37 37 38 35 33 15 19 23 17 21 23 21 23 24 25 31 26 32 34 32 33 31 31 36 37 21 24 20 21 28 26 30 22 31 25 29 29 27 30 29 37 35 32 38 43 23 17 24 25 24 27 31 29 31 34 27 36 29 29 34 39 37 37 40 36 18 24 21 25 27 22 32 32 31 26 28 34 34 37 35 34 38 38 37 40 22 26 28 26 24 29 33 26 27 27 34 31 39 32 36 38 37 40 44 43 23 27 28 29 26 32 25 31 35 34 32 33 37 32 42 40 40 37 42 44 23 21 31 23 30 27 31 30 32 35 30 40 32 37 37 36 40 44 44 40 26 29 31 26 30 31 34 36 30 38 36 32 38 38 37 42 42 41 40 49 28 24 28 27 26 31 32 29 32 33 38 34 39 38 40 37 41 43 42 43 32 25 31 32 29 29 35 38 38 32 36 35 39 42 39 40 44 42 41 45 27 29 35 28 35 35 31 40 35 37 38 44 40 40 47 39 49 48 51 49 30 29 32 32 33 30 36 38 42 36 35 38 44 47 45 49 41 43 44 51 28 35 35 34 34 33 41 33 34 35 39 44 44 48 44 50 49 48 53 54 29 33 32 36 39 33 33 34 35 42 46 47 48 47 46 45 44 52 54 55 28 37 38 37 33 33 34 37 45 40 39 42 42 46 47 48 52 47 46 53 38 39 39 37 34 38 39 45 39 42 45 41 44 51 46 50 52 51 51 53
+27
+29
+SRS taken from Figure 1 (n = 10, t = 13354, yU = 33.385, y = 34.1, s2 = 18.32)
+18 20 15 20 20 15 19 18 24 23 20 26 29 28 28 31 31 34 28 32 13 20 16 20 15 23 19 26 21 21 24 30 23 26 25 (33) 31 28 32 38 16 18 20 24 25 26 22 23 26 26 22 27 25 25 34 28 37 36 38 31 17 17 16 22 21 23 22 27 27 24 28 32 29 (33) 27 37 37 38 35 33 15 19 23 17 21 23 21 23 24 25 31 26 32 34 32 33 31 31 36 37 21 24 20 21 28 26 (30) 22 31 25 29 29 27 30 29 37 35 32 38 43 23 17 24 25 24 27 31 29 31 34 27 36 29 29 34 39 37 37 40 36 18 24 21 25 27 22 32 32 31 26 28 34 34 37 35 (34) 38 38 37 40 22 26 28 26 24 29 33 26 27 27 34 31 (39) 32 36 38 37 40 44 43 23 27 28 29 26 32 25 31 35 34 32 33 37 32 42 40 40 37 42 44 23 21 31 23 30 27 31 30 32 35 30 40 32 37 37 36 40 44 44 40 26 29 31 26 30 31 34 36 30 38 36 32 38 38 37 42 42 41 40 49 28 24 28 (27) 26 31 32 29 32 33 38 34 39 38 40 37 41 43 42 43 32 25 31 (32) 29 29 35 38 38 32 (36) 35 39 42 39 40 44 42 41 45 27 29 35 28 35 35 31 40 35 37 38 44 40 40 47 39 49 48 51 49 30 29 32 32 33 30 36 38 42 36 35 38 44 47 45 49 41 43 44 51 28 (35) 35 34 34 33 41 33 34 35 39 44 44 48 44 50 49 48 53 54 29 33 32 36 39 33 33 34 35 42 46 47 48 47 46 45 44 52 54 55 28 37 38 37 33 33 34 37 45 40 39 42 (42) 46 47 48 52 47 46 53 38 39 39 37 34 38 39 45 39 42 45 41 44 51 46 50 52 51 51 53
+28
+SRS Example using Rathbun and Cressie (1994) Data • To illustrate the application of simple random sampling to population total t estimation, consider the abundance data in Figure 2. The abundance counts correspond to the census data studied by Rathbun and Cressie (1994). • This 200×200 m study region is located in an old-growth forest in Thomas County, Georgia. This data represents the number of longleaf pine trees located in each quadrat. The coordinates of the 584 tree locations are given in Cressie (1991). • I have gridded the region into a 20 × 20 grid of 10 × 10 m quadrats. The total abundance t = 584 and the mean abundance per quadrat yU = 584/400 = 1.435. The population variance S2 = 3.853. • There is only a weak spatial correlation of tree counts within the study region. • The pineleaf census data will be used to compare estimation properties of various sampling designs. • Note the two relatively large boldfaced values (14 and 16).
+Figure 2
+Longleaf Pine Data (Rathbun and Cressie 1994)
+1 1 1 1 1 2 1 0 0 0 4 5 0 1 0 1 2 1 0 1 3 2 1 0 1 0 0 0 1 2 2 2 0 2 2 2 0 2 0 1 7 4 1 1 1 1 0 0 0 2 2 0 4 3 2 4 2 1 2 2 0 1 2 0 0 0 0 0 4 6 5 1 5 0 0 0 2 1 2 0 1 1 0 2 3 2 0 0 2 1 3 1 4 1 1 1 2 2 1 1 2 0 0 0 4 3 3 0 1 16 5 0 1 3 8 0 0 1 3 3 0 0 1 14 3 3 1 2 0 8 0 2 0 3 9 0 4 2 1 0 0 0 5 1 8 7 6 6 6 1 0 4 0 0 1 2 2 0 1 2 0 0 2 2 3 2 2 3 1 1 1 3 0 0 2 2 0 3 4 0 0 0 0 0 1 0 3 1 1 1 2 0 2 0 2 0 2 1 1 0 1 8 7 7 8 0 5 0 1 0 1 2 0 0 2 4 2 2 2 4 0 9 1 0 0 1 1 1 0 0 0 1 2 4 0 2 1 3 3 1 0 0 0 1 0 2 4 3 1 2 2 0 0 1 1 2 2 0 2 4 0 1 0 0 1 2 0 2 3 5 2 0 0 2 1 1 2 0 1 3 1 0 0 1 1 0 0 0 2 2 2 1 1 1 0 0 2 0 0 0 0 2 0 2 2 0 1 1 0 2 0 0 1 0 0 1 1 1 5 3 0 0 0 3 2 1 0 0 0 0 0 2 1 0 1 1 1 3 1 2 1 0 0 1 0 3 0 1 0 0 2 1 2 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 1 1 0 1 0 3 0 2 0 1 1 0 2 0 0 0 0 0 0 0 1 2 0 1 3 0 0 1 0 1 2 4
+REFERENCES (for Figure 2 data)
+Cressie, Noel (1991) Statistics for Spatial Data. Wiley, New York.
+Rathbun, S.L. and Cressie, N. (1994) A space-time survival point process for a longleaf pine forest in southern Georgia. Journal of the American Statistical Association, 89, 1164-1174.
+29
+29 SRS taken from Figure 2 (n = 20, t = 584, yU = 1.435, y = 1.55, s2 = 10.9974)
+1 1 1 1 1 2 1 0 0 0 4 5 0 1 0 1 2 1 0 1 3 2 1 0 1 0 0 0 1 2 2 2 0 2 2 2 0 2 0 1 7 4 1 1 1 1 0 0 0 2 2 0 4 3 2 4 2 1 2 2 0 1 2 0 0 (0) 0 0 4 6 5 1 5 0 0 0 2 1 2 0 1 (1) 0 2 3 2 (0) 0 2 1 3 1 4 1 1 1 2 2 1 1 2 0 0 0 4 3 3 0 1 16 5 0 1 (3) 8 0 0 1 3 3 0 (0) 1 (14) 3 (3) 1 2 0 8 (0) 2 0 3 9 0 4 2 1 0 0 0 5 (1) 8 7 (6) 6 6 1 0 4 0 0 1 2 2 0 1 2 0 0 2 2 3 2 2 3 1 1 1 3 0 0 2 2 0 3 4 (0) 0 0 0 0 1 0 3 1 1 1 2 0 2 0 2 (0) 2 1 1 0 1 8 7 7 8 0 5 0 1 (0) 1 2 0 (0) 2 4 2 2 2 4 0 9 1 0 (0) 1 1 1 0 0 0 1 2 4 0 2 1 3 3 1 0 0 0 1 0 2 4 3 1 2 2 0 0 1 1 2 2 0 2 4 0 1 0 0 1 2 0 2 3 5 2 0 0 2 1 1 2 0 1 3 1 0 0 1 1 0 0 0 2 2 2 (1) 1 1 0 0 (2) 0 0 0 0 2 0 2 2 0 1 1 0 2 0 0 1 0 0 1 1 1 5 3 0 0 0 3 2 1 0 0 0 0 0 2 1 0 1 1 1 3 1 2 1 (0) 0 1 0 3 (0) 1 0 0 2 1 2 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 1 1 0 1 0 3 0 2 0 1 1 0 2 0 0 0 0 0 0 0 1 2 0 1 3 (0) 0 1 0 1 2 4
+30
+2.4.2 Using the R Survey Package for a SRS R Code and Output for Figure 1 SRS Analysis
+"count" "fpc" <- This is the contents of the data file fig1.txt 33 400 <- The first column are the recorded responses 33 400 <- The second column is the population size N 30 400 34 400 39 400 27 400 32 400 36 400 35 400 42 400
+R Code
+source("c:/courses/st446/rcode/confintt.r")
+# t-based confidence intervals for SRS in Figure 1
+library(survey) srsdat <- read.table("c:/courses/st446/rcode/fig1.txt", header=T) srsdat
+srs_design <- svydesign(id=~1, fpc=~fpc, data=srsdat) srs_design
+esttotal <- svytotal(~count,srs_design) print(esttotal,digits=15) confint.t(esttotal,degf(srs_design),level=.95) confint.t(esttotal,degf(srs_design),level=.95,tails=’lower’) confint.t(esttotal,degf(srs_design),level=.95,tails=’upper’)
+estmean <- svymean(~count,srs_design) print(estmean,digits=15) confint.t(estmean,degf(srs_design),level=.95) confint.t(estmean,degf(srs_design),level=.95,tails=’lower’) confint.t(estmean,degf(srs_design),level=.95,tails=’upper’)
+R output for t-based con?dence interval for SRS
+> srsdat count fpc 1 33 400 2 33 400 3 30 400 4 34 400 5 39 400 6 27 400 7 32 400 8 36 400 9 35 400 10 42 400
+31
+Independent Sampling design
+total SE count 13640 534.63
+------------------------------------------------------------------mean( count ) = 13640.00000 SE( count ) = 534.62760 Two-Tailed CI for count where alpha = 0.05 with 9 df 2.5 % 97.5 % 12430.58835 14849.41165 ------------------------------------------------------------------
+------------------------------------------------------------------mean( count ) = 13640.00000 SE( count ) = 534.62760 One-Tailed (Lower) CI for count where alpha = 0.05 with 9 df 5 % upper 12659.96724 infinity ------------------------------------------------------------------
+------------------------------------------------------------------mean( count ) = 13640.00000 SE( count ) = 534.62760 One-Tailed (upper) CI for count where alpha = 0.05 with 9 df lower 95 % -infinity 14620.03276 ------------------------------------------------------------------
+mean SE count 34.1 1.3366
+------------------------------------------------------------------mean( count ) = 34.10000 SE( count ) = 1.33657 Two-Tailed CI for count where alpha = 0.05 with 9 df 2.5 % 97.5 % 31.07647 37.12353 ------------------------------------------------------------------
+------------------------------------------------------------------mean( count ) = 34.10000 SE( count ) = 1.33657 One-Tailed (Lower) CI for count where alpha = 0.05 with 9 df 5 % upper 31.64992 infinity ------------------------------------------------------------------
+------------------------------------------------------------------mean( count ) = 34.10000 SE( count ) = 1.33657 One-Tailed (upper) CI for count where alpha = 0.05 with 9 df lower 95 % -infinity 36.55008 ------------------------------------------------------------------
+32
+R Code and Output for Figure 2 SRS Analysis
+source("c:/courses/st446/rcode/confintt.r")
+# t-based confidence intervals for SRS in Figure 2
+library(survey) srsdat <- read.table("c:/courses/st446/rcode/fig2.txt", header=T) srsdat
+srs_design <- svydesign(id=~1, fpc=~fpc, data=srsdat) srs_design
+esttotal <- svytotal(~count,srs_design) print(esttotal,digits=15) confint.t(esttotal,degf(srs_design),level=.95) confint.t(esttotal,degf(srs_design),level=.95,tails=’lower’) confint.t(esttotal,degf(srs_design),level=.95,tails=’upper’)
+estmean <- svymean(~count,srs_design) print(estmean,digits=15) confint.t(estmean,degf(srs_design),level=.95) confint.t(estmean,degf(srs_design),level=.95,tails=’lower’) confint.t(estmean,degf(srs_design),level=.95,tails=’upper’)
+R output for t-based con?dence interval for SRS
+The data file: count fpc "count" "fpc" 1 1 400 1 400 2 0 400 0 400 3 0 400 0 400 4 14 400 14 400 5 1 400 1 400 6 0 400 0 400 7 0 400 0 400 8 3 400 3 400 9 0 400 0 400 10 6 400 6 400 11 0 400 0 400 12 0 400 0 400 13 0 400 0 400 14 1 400 1 400 15 3 400 3 400 16 0 400 0 400 17 0 400 0 400 18 0 400 0 400 19 2 400 2 400 20 0 400 0 400
+total SE count 620 289.1
+33
+------------------------------------------------------------------mean( count ) = 620.00000 SE( count ) = 289.10206 Two-Tailed CI for count where alpha = 0.05 with 19 df 2.5 % 97.5 % 14.90244 1225.09756 ------------------------------------------------------------------
+------------------------------------------------------------------mean( count ) = 620.00000 SE( count ) = 289.10206 One-Tailed (Lower) CI for count where alpha = 0.05 with 19 df 5 % upper 120.10415 infinity ------------------------------------------------------------------
+------------------------------------------------------------------mean( count ) = 620.00000 SE( count ) = 289.10206 One-Tailed (upper) CI for count where alpha = 0.05 with 19 df lower 95 % -infinity 1119.89585 ------------------------------------------------------------------
+mean SE count 1.55 0.7228
+------------------------------------------------------------------mean( count ) = 1.55000 SE( count ) = 0.72276
+Two-Tailed CI for count where alpha = 0.05 with 19 df 2.5 % 97.5 % 0.03726 3.06274 ------------------------------------------------------------------
+------------------------------------------------------------------mean( count ) = 1.55000 SE( count ) = 0.72276 One-Tailed (Lower) CI for count where alpha = 0.05 with 19 df 5 % upper 0.30026 infinity ------------------------------------------------------------------
+------------------------------------------------------------------mean( count ) = 1.55000 SE( count ) = 0.72276 One-Tailed (upper) CI for count where alpha = 0.05 with 19 df lower 95 % -infinity 2.79974 ------------------------------------------------------------------
+34
+2.4.3 Using SAS PROC Surveymeans for a SRS
+DM ’LOG;CLEAR;OUT;CLEAR’; *** I recommend putting these two lines of code; OPTIONS NODATE NONUMBER; *** at the beginning of every SAS program ;
+data SRS_Fig1; wgt= 400/10; * wgt = N/n ; input count @@; datalines; 33 33 30 34 39 27 32 36 35 42 ; proc surveymeans data=SRS_Fig1 total=400 mean clm sum clsum; var count; weight wgt; title1 ’Simple Random Sample -- Example 1’; title2 ’Estimating the population mean and total from the data in Figure 1’; run; ===========================================================================
+Simple Random Sample -- Example 1 Estimating the population mean and total from the data in Figure 1
+The SURVEYMEANS Procedure
+Data Summary
+Number of Observations 10 Sum of Weights 400
+Statistics
+Std Error Variable Mean of Mean 95% CL for Mean -------------------------------------------------------------count 34.100000 1.336569 31.0764709 37.1235291 -------------------------------------------------------------
+Variable Sum Std Dev 95% CL for Sum --------------------------------------------------------------count 13640 534.627596 12430.5884 14849.4116 --------------------------------------------------------------
+35
+DM ’LOG;CLEAR;OUT;CLEAR’; OPTIONS NODATE NONUMBER LS=80 PS=400;
+data SRS_Fig2; wgt= 400/20; * wgt = N/n ; input trees @@; datalines; 1 0 0 14 1 0 0 3 0 6 0 0 0 1 3 0 0 0 2 0 ; proc surveymeans data=SRS_Fig2 total=400 mean clm sum clsum; var trees; weight wgt; title1 ’Simple Random Sample -- Example 2’; title2 ’Estimating the population mean and total from the data in Figure 2’; run; ============================================================================
+Simple Random Sample -- Example 2 Estimating the population mean and total from the data in Figure 2
+The SURVEYMEANS Procedure
+Data Summary
+Number of Observations 20 Sum of Weights 400
+Statistics
+Std Error Variable Mean of Mean 95% CL for Mean -------------------------------------------------------------trees 1.550000 0.722755 0.03725610 3.06274390 -------------------------------------------------------------
+Variable Sum Std Dev 95% CL for Sum --------------------------------------------------------------trees 620.000000 289.102058 14.9024382 1225.09756 --------------------------------------------------------------
+36
+2.5 Attribute Proportion Estimation • Suppose we are interested in an attribute (characteristic) associated with the sampling units. The population proportion p is the proportion of population units having that attribute. • Statistically, the goal is to estimate proportion p. • Examples: the proportion of females (or males) in an animal population, the proportion of consumers who own motorcycles, the proportion of married couples with at least 1 child... • Statistically, we use an indicator function that assigns a yi value to unit i as follows: yi = 1 if unit i possesses the attribute 0 otherwise
+Then t =
+N X i=1
+yi and yU =
+1 N
+N X i=1
+yi = p. The population proportion p can be
+expressed as a population mean yU. Therefore, we will, under certain conditions, be able to apply the SRS methods for estimating yU. • By taking a SRS of size n, we can estimate p with the sample proportionb p of units that possess that attribute: b p = Pn i=1 yi n = y. The sample proportionb p is unbiased for p. • For a ?nite population of 0 and 1 values, the population variance
+S2 =
+1 N ?1
+N X i=1 (yi ?p)2 =
+• Therefore, the variance ofb p is V (b p) = N ?n N S2 n = N ?n N  N N ?1p(1?p) n
+=
+(18)
+• Because S2 is unknown, we estimate it with s2 =
+n n?1b p(1?b p). Substitution provides
+the unbiased estimator of V (b p): b V (b p) = N ?n N s2 n
+= (19)
+• The square root of V (b p) in (18) is the standard deviation of the estimatorb p. • The square root ofb V (b p) in (19) is the standard error ofb p. • The e?ects of omitting the ?nite population correction (f.p.c.) from the formulas for large and small samples apply here as they did earlier.
+37
+Figure 3: The Presence/Absence of Longleaf Pine
+Rathbun/Cressie data (t = 249 N = 400 p = .6225) 1 1 1 1 1 1 1 0 0 0 1 1 0 1 0 1 1 1 0 1 1 1 1 0 1 0 0 0 1 1 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 0 0 0 1 1 0 1 1 1 1 1 1 1 1 0 1 1 0 0 0 0 0 1 1 1 1 1 0 0 0 1 1 1 0 1 1 0 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 0 1 1 1 0 1 1 1 0 0 1 1 1 0 0 1 1 1 1 1 1 0 1 0 1 0 1 1 0 1 1 1 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 1 1 1 0 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 1 1 0 1 1 0 0 0 0 0 1 0 1 1 1 1 1 0 1 0 1 0 1 1 1 0 1 1 1 1 1 0 1 0 1 0 1 1 0 0 1 1 1 1 1 1 0 1 1 0 0 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 0 0 0 1 0 1 1 1 1 1 1 0 0 1 1 1 1 0 1 1 0 1 0 0 1 1 0 1 1 1 1 0 0 1 1 1 1 0 1 1 1 0 0 1 1 0 0 0 1 1 1 1 1 1 0 0 1 0 0 0 0 1 0 1 1 0 1 1 0 1 0 0 1 0 0 1 1 1 1 1 0 0 0 1 1 1 0 0 0 0 0 1 1 0 1 1 1 1 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 1 1 0 1 0 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 1 1 0 1 1 0 0 1 0 1 1 1
+A simple random sample of size n = 25
+1 1 1 1 1 1 1 0 0 0 1 1 0 1 0 1 1 (1) 0 1 (1) 1 1 0 1 0 0 0 1 (1) 1 (1) 0 1 1 1 0 1 0 1 1 1 1 1 1 1 0 0 0 1 1 0 1 (1) 1 1 1 (1) 1 1 0 (1) 1 0 0 0 0 (0) 1 1 1 1 1 0 0 (0) 1 1 1 0 1 1 0 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 (1) 1 0 0 0 1 1 1 0 1 1 1 0 1 1 1 0 0 1 1 1 0 0 1 1 (1) 1 1 1 0 1 0 1 0 1 1 (0) 1 1 1 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 1 1 1 0 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 (1) 1 0 1 1 0 0 0 0 0 1 0 1 1 (1) 1 1 0 1 0 1 0 1 1 1 0 1 1 1 1 1 0 1 0 1 0 1 1 0 0 (1) 1 1 1 1 1 0 1 1 0 0 1 1 1 0 0 0 (1) 1 1 0 1 1 1 1 1 0 0 0 1 0 1 1 1 1 1 1 0 (0) 1 1 (1) (1) 0 1 1 0 1 0 0 1 1 0 (1) 1 1 1 0 0 1 1 1 1 0 1 1 1 0 0 1 1 0 0 0 1 1 1 1 1 1 0 0 1 0 0 0 (0) 1 0 (1) 1 0 1 1 0 1 0 0 1 0 0 1 1 1 1 1 0 0 0 1 1 1 0 0 0 0 0 1 1 0 (1) 1 1 1 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 0 0 0 1 1 1 0 0 0 (0) 0 0 0 (0) 1 1 1 0 1 0 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 1 1 0 1 1 0 0 1 0 1 1 1
+38
+2.5.1 Con?dence Intervals for p • Let the random variable Y = the number of units in a SRS of size n that possess the attribute of interest. We know (in theory) that the sampling distribution of Y follows a hypergeometric distribution. • Hypergeometric distribution for a SRS: The probability that a SRS of size n will have exactly j sampling units possessing the attribute is Pr(Y = j) = t jN?t n?j N n= the probability that a SRS will consist of j ones and n ? j zeroes selected from thepopulation containing t ones (1’s) and N ?t zeroes (0’s). • Although con?dence interval calculations can be based on probability tables of hypergeometric distributions, we will use a more common approach that will apply to many sampling situations. • Remember there are t ones and N ?t zeros in the population. However, t is unknown. If we can assume that n is small relative to both t and N ?t, we can use the binomial approximation to the hypergeometric distribution. That is, Y ? ? BIN(n,p). • Although the problem no longer depends on t, it still depends on the unknown proportion parameter p. • What is commonly done is to apply the normal approximation to the binomial distribution: b p ? ? N (p,V (b p)). • Thus, if the sample size n is large enough, we useb V (b p) to estimate V (b p). An approximate 100(1??)% con?dence interval for p is: b p±z?qb V (b p) OR b p±z?sN ?n N b p(1?b p) n?1 (20) where z? is the upper ?/2 critical value from the standard normal distribution. Sample sizes are typically large enough to use z? instead of t?. • The normal approximation will be reasonable given 1. n is not too large relative to t or N ?t. This will be a problem if p is close to 0 or 1. 2. The smaller of nb p and n(1?b p) is not too small. In most texts, it is suggested that both nb p and n(1?b p) should be ? 5, while some texts use ? 10.
+39
+R Code and Output for Figure 3 Example
+source("c:/courses/st446/rcode/confintt.r")
+# t-based confidence intervals for SRS in Figure 3
+library(survey) srsdat <- read.table("c:/courses/st446/rcode/fig3.txt", header=T) srsdat
+srs_design <- svydesign(id=~1, fpc=~fpc, data=srsdat)
+estmean <- svymean(~presence,srs_design) print(estmean,digits=15) confint.t(estmean,degf(srs_design),level=.90) confint.t(estmean,degf(srs_design),level=.90,tails=’lower’) confint.t(estmean,degf(srs_design),level=.90,tails=’upper’) R output for t-based con?dence interval for SRS
+> srsdat presence fpc 1 1 400 2 1 400 3 1 400 : : : 23 0 400 24 0 400 25 0 400
+mean SE presence 0.72 0.0887
+------------------------------------------------------------------mean( presence ) = 0.72000 SE( presence ) = 0.08874 Two-Tailed CI for presence where alpha = 0.1 with 24 df 5 % 95 % 0.56817 0.87183 ------------------------------------------------------------------
+------------------------------------------------------------------mean( presence ) = 0.72000 SE( presence ) = 0.08874 One-Tailed (Lower) CI for presence where alpha = 0.1 with 24 df 10 % upper 0.60305 infinity ------------------------------------------------------------------
+------------------------------------------------------------------mean( presence ) = 0.72000 SE( presence ) = 0.08874 One-Tailed (upper) CI for presence where alpha = 0.1 with 24 df lower 90 % -infinity 0.83695 ------------------------------------------------------------------
+40
+SAS Code and Output for Figure 3 Example
+DM ’LOG;CLEAR;OUT;CLEAR’; OPTIONS NODATE NONUMBER LS=72 PS=54;
+DATA SRS_Fig3; INPUT ind @@; DATALINES; 1 1 1 1 1 1 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 1 1 0 0 ; DATA SRS_Fig3; set SRS_Fig3; IF ind = 0 then pa = ’absent ’; IF ind = 1 then pa = ’present’;
+PROC SURVEYMEANS DATA=SRS_Fig3 TOTAL = 400 ALPHA = .10; VAR pa; TITLE ’Simple Random Sample -- Figure 3’; TITLE2 ’Estimating population proportion p’; RUN; ==================================================================
+Simple Random Sample -- Figure 3 Estimating population proportion p
+The SURVEYMEANS Procedure
+Data Summary
+Number of Observations 25
+Class Level Information
+Class Variable Levels Values
+pa 2 absent present
+Statistics
+Std Error Variable Level N Mean of Mean 90% CL for Mean ------------------------------------------------------------------------pa absent 7 0.280000 0.088741 0.12817428 0.43182572 present 18 0.720000 0.088741 0.56817428 0.87182572 ------------------------------------------------------------------------
+41
+2.6 Sample Size Determination with Simple Random Sampling • It is well known that an increase in sample size n will lead to a more precise estimator of yU or t. It is also obvious that an increase in the sample size n will make the sample more expensive to collect. There will, however, be a limited amount of resources available (allocated, budgeted) for data collection. • When designing a sampling plan, the researcher wants to achieve a desired degree of reliability at the lowest possible cost while satisfying the resource limitations for data collection. That is, the goal is to get the most information given resources and constraints. • To do this, the researcher tries to achieve a balance to avoid the following mistakes: – Oversampling: The sampling plan may provide more precision than is needed. Oversampling will lead to increased sampling e?ort, time, and cost. – Undersampling: The sampling plan may yield insu?cient precision resulting in producing overly-wide con?dence intervals. Undersampling will lead to wasted time and money. • To determine a sample size n when estimating a parameter ?, we do the following: – Estimate the sample size n required so that the probability of the di?erence between the estimatorb ? and the parameter being estimated ? exceeds some maximum allowable di?erence d = |b ? ? ?| is at most ?. Or, equivalently, ?nd n such that Pr(|b ???| > d) < ?. • This is equivalent to ?nding n large enough so that the margin of error
+2.6.1 When Estimating yU • Situation: Estimate the SRS size required so the probability that the di?erence between the estimatorc yU = y and the population mean yU does not exceed a maximum allowable di?erence d is at most ?. • Mathematically, ?nd n such that Pr(|c yU ?yU| > d) < ? for a speci?ed maximumallowable di?erence d. • Assuming y is approximately normally distributed, this is equivalent to ?nding n so that the margin of error z?/2sN ?n N S2 n ? d. Solving this inequality for n yields
+n =
+1
+d2 z2S2 + 1 N
+= (21)
+where n0 = and z is the critical ?/2 value from a N(0,1) distribution.
+• Rounding-up the value of n in (21) yields the desired sample size. If this value is < 30, I recommend adding 2 or 3 to this value to account for the use of the large sample z? in the previous formulas instead of a smaller sample t?.
+42
+– For example, consider the spatially correlated population in Figure 1. How large a sample would be required so thatc yU = y is within 1 of yU with probability at least .95 (? = .05)? (Assume S2 ? 18.3) • If the population size N is very large, then 1/N ? 0. In this case, n ? n0. This is the formula given in introductory statistics books. • There remains one major problem. This sample size formula assumes that you know the population variance S2. Therefore, to estimate the sample size n, we need a prior estimate of S2. Barnett (1997, pages 33-34) describes 4 ways to do this:
+1. A Pilot Study: A small sample size pilot study can be conducted prior to the primary study to provide an estimate of S2.
+2. Previous Studies: Other similar studies may have been conducted elsewhere and appear in the professional journals. Measures of variability from earlier studies may provide an estimate of S2.
+3. Double Sampling: A preliminary SRS of size n1 is taken and the sample variance s2 1 is used to estimate S2. Using s2 1 in (21) will approximate an adequate sample size n. Then, a further SRS of size n?n1 is taken from the remaining unsampled N ?n1 sampling units. This is an example of double sampling.
+4. Exploiting the structure of the population: Sometimes we may have some knowledge of the structure of the population which can provide information about S2. – A common case is when you have count data and it is reasonable to assume the distribution of counts follows a Poisson distribution. Because the mean and the variance of a Poisson distribution are the same, all we need is a prior estimate of the population mean. – A second case occurs with estimation of a proportion p for a binomial distribution. If we have a prior estimate of p, we also have a prior estimate of the variance which is a function of p.
+2.6.2 When Estimating t • Situation: Estimate the SRS size required so the probability that the di?erence between the estimatorb t = Ny and the population total t does not exceed a maximum allowable di?erence d is at most ?. • Mathematically, ?nd n such that Pr(|b t?t| > d) < ? for a speci?ed maximum allowabledi?erence d. • Assuming Ny is approximately normally distributed, this is equivalent to ?nding n so that the margin of error z?/2rN(N ?n) S2 n ? d. Solving this inequality for n yields
+n =
+1
+d2 N2z2S2 + 1 N
+= (22)
+where n0 = and z is the critical ?/2 value from a N(0,1) distribution.
+43
+• Rounding-up the value of n in (22) yields the desired sample size. If this value is < 30, I recommend adding 2 or 3 to this value.
+– For example, consider the longleaf pine population in Figure 2. How large a sample would be required so thatb t is within 15 of t with probability at least .95 (? = .05)? (Assume S2 ? 4) • If the population size N is very large, then 1/N ? 0. In this case, n ? n0.
+2.6.3 When Estimating p • Situation: Estimate the SRS size required so the probability that the di?erence between the sample proportionb p and the population proportion p does not exceed a maximum allowable di?erence d is at most ?. – For example, consider the longleaf pine presence/absence population in Figure 3. How large a sample would be required so thatb p is within .05 of p with probability at least .95? • Mathematically, ?nd n such that Pr(|b p ? p| > d) ? ? for a speci?ed maximumallowable di?erence d. • Assumingb p is approximately normally distributed, this is equivalent to ?nding n so that the margin of error z?/2sN ?n N ?1p(1?p) n ? d. • Solving this inequality for n yields n = Np(1?p (N ?1)d2 z2 + p(1?p) = ? 1 1 n0 + 1 N (23)
+where n0 = and z is the critical ?/2 value from a N(0,1) distribution. • Rounding-up the value of n in (23) yields the desired sample size. • Because N is typically large when estimating p, it is common to ignore the f.p.c. If you, the estimated sample size is n ? n0. • Unfortunately, the sample size formulas assume you know the population proportion p, the quantity you are trying to estimate. Thus, to estimate an adequate sample size, we need a prior estimate of p. In addition to the four methods of Barnett (pp 33-34), there is also the following conservative approach. • Note that the standard deviation ofb p = s.d.(b p) =qN?n N?1p(1?p) n is largest when p = 1/2. Thus, it is conservative to use p = 1/2 in (23) if there is no prior reasonable estimate. • Example: Consider the longleaf pine presence/absence population in Figure 3. How large a sample would be required so thatb p is within .05 of p with probability at least .95? (i) Assume we use p ? .72 based on the earlier SRS with n = 25. (ii) Assume we have no prior estimate of p and use the conservative estimate of p = .5.
