@@ -27,12 +27,11 @@ DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
   `course_name` varchar(45) DEFAULT NULL,
-  `user_id` int(11) NOT NULL REFERENCES User(user_id),
   `subject` varchar(45) DEFAULT NULL,
   `prof` varchar(45) DEFAULT NULL,
   `semester` varchar(45) DEFAULT NULL,
   `year` int(11) DEFAULT NULL,
-  PRIMARY KEY (`course_id`)
+  PRIMARY KEY (course_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,6 +42,33 @@ CREATE TABLE `course` (
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+
+--
+-- Table structure for table `is_taking`
+--
+
+DROP TABLE IF EXISTS `is_taking`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `is_taking` (
+  `course_id` int(11) NOT NULL REFERENCES Course(course_id),
+  `user_id` int(11) NOT NULL REFERENCES User(user_id),
+  `note-id` int(11) NOT NULL REFERENCES Note(Note_id),
+  PRIMARY KEY (course_id, user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `is_taking`
+--
+
+LOCK TABLES `is_taking` WRITE;
+/*!40000 ALTER TABLE `is_taking` DISABLE KEYS */;
+/*!40000 ALTER TABLE `is_taking` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -93,8 +119,8 @@ CREATE TABLE `contains` (
 --
 
 LOCK TABLES `contains` WRITE;
-/*!40000 ALTER TABLE `keyword` DISABLE KEYS */;
-/*!40000 ALTER TABLE `keyword` ENABLE KEYS */;
+/*!40000 ALTER TABLE `contains` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contains` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -106,9 +132,7 @@ DROP TABLE IF EXISTS `note`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `note` (
   `note_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL references User(user_id),
   `note_title` varchar(45) DEFAULT NULL,
-  `course_id` int(11) NOT NULL references Course(course_id),
   `chapter` int(11) DEFAULT NULL,
   `Section` int(11) DEFAULT NULL,
   `Summary` varchar(1000) DEFAULT NULL,
@@ -158,6 +182,14 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 't-notes'
 --
+
+-- Trigger Will go here*JNB
+-- Capture the id of the user who is being deleted
+-- Delete the notes for this user
+-- Delete the course records for this user
+-- Decrement the user ID in all note and course records for UserID > the deleted UserID
+-- Trigger for Notes - when we have a delete from the user
+-- Trigger for Course - when we have a delete from the user
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
