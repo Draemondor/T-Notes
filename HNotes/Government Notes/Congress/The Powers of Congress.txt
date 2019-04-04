@@ -1,0 +1,11 @@
+The Powers of Congress
+Under the Constitution, Congress has both specific and implied powers. These powers have been expanded through the amendment process as well as by Congress's own legislative action. Moreover, both houses are granted authority in certain areas.
+Specific powers
+Congress is given 27 specific powers under Article I, Section 8, of the Constitution. These are commonly known as the enumerated powers, and they cover such areas as the rights to collect taxes, regulate foreign and domestic commerce, coin money, declare war, support an army and navy, and establish lower federal courts. In addition, Congress can admit new states to the Union (Article IV, Section 3), propose amendments to the Constitution (Article V), collect federal income taxes (Sixteenth Amendment), and enforce protection and extension of civil rights (Thirteenth, Fifteenth, Nineteenth, Twenty-third, Twenty-fourth, and Twenty-sixth amendments).
+
+Implied powers
+Implied powers are not stated directly in the Constitution. They derive from the right of Congress to make all laws "necessary and proper" to carry out its enumerated powers. Located at the end of Article I, Section 8, this sentence is often called the elastic clause because it stretches the authority of Congress. The Supreme Court upheld the concept of implied powers in the landmark case McCulloch v. Maryland (1819), ruling that the federal government had the right to establish a national bank under the power delegated to Congress to borrow money and control commerce. A more recent example of implied powers is the War Powers Act of 1973, which limited the ability of the president to send American troops into combat without consulting and notifying Congress.
+
+Limitations on the powers of Congress
+The Constitution lists powers that are denied to Congress (Article I, Section 9). The Bill of Rights prohibits Congress from making laws that limit individual liberties. Under the system of checks and balances, the president can veto a law passed by Congress, or the Supreme Court can declare a law unconstitutional. Voters can ignore unpopular laws and press for their repeal, as happened with the Eighteenth Amendment establishing Prohibition.
+

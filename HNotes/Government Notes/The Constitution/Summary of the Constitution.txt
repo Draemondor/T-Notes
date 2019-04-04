@@ -1,0 +1,23 @@
+Summary of the Constitution
+The Constitution was a spare document, providing few details about how the U.S. government would run itself. It explained the rough organization of the three branches, how they would interact with the states, and how the document could be amended. Filling in the details was left to future leaders.
+
+Article I
+The longest article in the Constitution vests legislative power in the Senate and the House of Representatives. It describes the organization of Congress and lists its specific powers, known as enumerated or delegated powers. Through the necessary and proper clause (also called the elastic clause), Congress can make laws needed to carry out its enumerated powers. Article I also lists the powers denied to Congress and the states.
+
+Article II
+This article deals with the executive branch and describes the election of the president (and vice president), the qualifications for holding the office, and the procedures if a president can no longer serve. The powers of the president include serving as commander in chief of the army and navy, making treaties, and, with the "advice and consent of the Senate," appointing ambassadors, officials, and Supreme Court justices. The president is required to periodically report to Congress on the state of the union, can propose legislation, and can call Congress into special session.
+
+Article III
+This article established the Supreme Court and authorizes Congress to establish lower federal courts. The types of cases the courts have jurisdiction over are given, and a provision is made for the right to trial by jury. While not specifically stated, the power of the courts to declare a law unconstitutional is implied.
+
+Article IV
+The full faith and credit clause requires that the legislative and judicial actions of one state be honored by the other states. Additionally, a citizen of any state has the same privileges as citizens of all the other states. Article IV also provides for adding new states to the union, guarantees each state a republican form of government, and ensures protection against invasion or domestic violence.
+
+Article V
+The process for amending the Constitution is described. The states are responsible for ratifying amendments.
+
+Article VI
+The Constitution, the laws of the United States, and treaties entered into by the United States are the supreme law of the land. This is known as the supremacy clause.
+
+Article VII
+Approval by conventions of nine of the states was required to ratify the Constitution.
