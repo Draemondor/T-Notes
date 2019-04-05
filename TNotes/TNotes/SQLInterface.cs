@@ -103,10 +103,19 @@ public class SQLInterface
     //Create login query to the database according to the username and password provided. 
     //Return user_id of logged in user if successful.
     //Retuern -1 if the login failed, or -2 if there's a database error. 
+    //Return -3 if illegal character detected.
     public int login(string un, string pw)
     {
         un = un.Trim();
         pw = pw.Trim();
+
+        //Illegal Character detection and filtration:
+        char[] illegalChars = { '\'', '\"', ';', '@'};
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (pw.Contains(illegalChars[i]))
+                return -3;
+
+        //If no illegal characters were detected, proceed.
         int id;
         string q = "select user.user_id, user.first_name, user.last_name from user where user.username = '"+un+"' and user.password = '"+pw+"';";
         Console.WriteLine(q);
