@@ -194,9 +194,16 @@ public class SQLInterface
         }
         else return false;
     }
-    //Add a user to the database. Return the user id. Return -1 on failure.
+    //Add a user to the database. Return the user id. Return -1 on failure. 
+    //Return -3 for illegal characters. 
     public int addUser(string username, string password, string first, string last)
     {
+        //Illegal Character detection and filtration:
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (password.Contains(illegalChars[i]) || username.Contains(illegalChars[i]))
+                return -3;
+
         //Check to see if username is already taken. 
         string q = "select count(username) from user where username = '" + username + "';";
         List<List<string>> r = query(q);
