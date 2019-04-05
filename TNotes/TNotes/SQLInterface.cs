@@ -111,8 +111,8 @@ public class SQLInterface
 
         //Illegal Character detection and filtration:
         char[] illegalChars = { '\'', '\"', ';', '@'};
-        for (int i = 0; i < illegalChars.Length; i++)
-            if (pw.Contains(illegalChars[i]))
+        for (int i = 0; i < illegalChars.Length; i++)  
+            if (pw.Contains(illegalChars[i]) || un.Contains(illegalChars[i]))
                 return -3;
 
         //If no illegal characters were detected, proceed.
