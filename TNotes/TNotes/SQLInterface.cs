@@ -143,6 +143,12 @@ public class SQLInterface
         oldUN = oldUN.Trim();
         newUN = newUN.Trim();
 
+        //Illegal Character detection and filtration:
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (newUN.Contains(illegalChars[i]))
+                return false;
+
         //Pull old information from the database to verify it.
         string q = "select * from user where username = \'" + oldUN + "\' and user_id = " + id;
         Console.WriteLine(q);
