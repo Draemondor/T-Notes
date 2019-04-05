@@ -176,6 +176,13 @@ public class SQLInterface
         //Trim the information. 
         oldPW = oldPW.Trim();
         newPW = newPW.Trim();
+
+        //Illegal Character detection and filtration:
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (newPW.Contains(illegalChars[i]))
+                return false;
+
         //Verify existing information.
         string q = "select * from user where password = \'" + oldPW + "\' and user_id = " + id;
         List<List<string>> r = query(q);
