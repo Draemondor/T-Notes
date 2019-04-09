@@ -214,7 +214,8 @@ public class SQLInterface
         //Illegal Character detection and filtration:
         char[] illegalChars = { '\'', '\"', ';', '@' };
         for (int i = 0; i < illegalChars.Length; i++)
-            if (password.Contains(illegalChars[i]) || username.Contains(illegalChars[i]))
+            if(password.Contains(illegalChars[i]) || username.Contains(illegalChars[i])
+            || first.Contains(illegalChars[i])    || last.Contains(illegalChars[i]))
                 return -3;
 
         //Check to see if username is already taken. 
@@ -331,5 +332,25 @@ public class SQLInterface
         //For each keyword, include it in the database.
         for (int i = 0; i < keys.Count; i++)
             include(keys.ElementAt(i), note_id);
+    }
+
+    void deleteNote(int id)
+    {
+        //Delete the note directly.
+        string s = "delete from Note where note_id = " + id + ";";
+        //Delete references to the note in the is_taking relation.
+              s += "delete from is_taking where note_id = " + id + ";";
+        //Delete isolated keywords:
+        //Get the keywords associated with the notes.
+        string t = "select C.keyword_id, count(C.keyword_id) from (select keyword_id, from contains where note_id = " + id + ") as T, contains as C where C.keyword_id = T.keyword_id;";
+        List<List<string>> q = query(t);
+        for(int i = 0; i < q.Count; i++)
+        {
+            if(Convert.ToInt32(q[i][1]) == 1)
+                s += "deleteNote from keywords where keyword_id = "+q[i][0]+";";
+        }
+        //Delete contains entries associated with the note.
+              s += "delete from contains where note_id = " + id + ";";
+        query(s);
     }
 }
