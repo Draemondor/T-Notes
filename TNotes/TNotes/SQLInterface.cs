@@ -373,14 +373,22 @@ public class SQLInterface
 
         //Report success/fail.
         return q[0][0].Equals(title);
-    }/*
+    }
     bool changeChapter(int note_id, int chapter)
     {
         //Verify input integrity
+        if (chapter < 0) return false;
+        
         //Make the change
+        string s = "update note set chapter = " + chapter + " where note_id = " + note_id + ";";
+
         //Verify the change
+        s += "select chapter from note where note_id = " + note_id + ";";
+        List<List<string>> q = query(s);
+
         //Report success/fail.
-    }
+        return q[0][0].Equals(chapter + "");
+    }/*
     bool changeSection(int note_id, int section)
     {
         //Verify input integrity
