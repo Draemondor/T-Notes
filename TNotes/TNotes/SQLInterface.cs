@@ -353,4 +353,55 @@ public class SQLInterface
               s += "delete from contains where note_id = " + id + ";";
         query(s);
     }
+
+    //UPDATE NOTE:
+    /*
+    bool changeTitle(int note_id, string title)
+    {
+        //Verify input integrity
+        //Make the change
+        //Verify the change
+        //Report success/fail.
+    }
+    bool changeChapter(int note_id, int chapter)
+    {
+        //Verify input integrity
+        //Make the change
+        //Verify the change
+        //Report success/fail.
+    }
+    bool changeSection(int note_id, int section)
+    {
+        //Verify input integrity
+        //Make the change
+        //Verify the change
+        //Report success/fail.
+    }
+    bool changeDate(int note_id, string date)
+    {
+        //Verify input integrity
+        //Make the change
+        //Verify the change
+        //Report success/fail.
+    }
+    bool changeSummary(int note_id, string summary)
+    {
+        //Verify input integrity
+        //Make the change
+        //Verify the change
+        //Report success/fail.
+    }
+    bool changebody(int note_id, ??? body)
+    {
+        //Collect old keywords
+        //Generate new keywords
+        //Identify diference between old and new
+        //remove irrelevant keywords from contains
+        //remove isolated keywords from keywords
+        //add relevant keywords
+        //update the body
+        //verify the body updated successfully
+        //Report success/fail.
+    }
+    */
 }
