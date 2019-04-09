@@ -358,6 +358,7 @@ public class SQLInterface
     
     bool changeTitle(int note_id, string title)
     {
+        //Verify data integrity
         title = title.Trim();
         char[] illegalChars = { '\'', '\"', ';', '@' };
         for (int i = 0; i < illegalChars.Length; i++)
@@ -403,21 +404,44 @@ public class SQLInterface
 
         //Report success/fail.
         return q[0][0].Equals(section + "");
-    }/*
+    }
     bool changeDate(int note_id, string date)
     {
         //Verify input integrity
+        date = date.Trim();
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (date.Contains(illegalChars[i]))
+                return false;
         //Make the change
+        string s = "update note set date = '" + date + "' where note_id = " + note_id + ";";
+
         //Verify the change
+        s += "select date from note where note_id = " + note_id + ";";
+        List<List<string>> q = query(s);
+
         //Report success/fail.
+        return q[0][0].Equals(date);
     }
     bool changeSummary(int note_id, string summary)
     {
+        summary = summary.Trim();
         //Verify input integrity
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (summary.Contains(illegalChars[i]))
+                return false;
+
         //Make the change
+        string s = "update note set summary = '" + summary + "' where note_id = " + note_id + ";";
+
         //Verify the change
+        s += "select summary from note where note_id = " + note_id + ";";
+        List<List<string>> q = query(s);
+
         //Report success/fail.
-    }
+        return q[0][0].Equals(summary);
+    }/*
     bool changebody(int note_id, ??? body)
     {
         //Collect old keywords
