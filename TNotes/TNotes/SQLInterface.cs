@@ -355,14 +355,25 @@ public class SQLInterface
     }
 
     //UPDATE NOTE:
-    /*
+    
     bool changeTitle(int note_id, string title)
     {
-        //Verify input integrity
+        title = title.Trim();
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (title.Contains(illegalChars[i]))
+                return false;
+        
         //Make the change
+        string s = "update note set title = '" + title + "' where note_id = " + note_id + ";";
+
         //Verify the change
+        s += "select title from note where note_id = " + note_id + ";";
+        List<List<string>> q = query(s);
+
         //Report success/fail.
-    }
+        return q[0][0].Equals(title);
+    }/*
     bool changeChapter(int note_id, int chapter)
     {
         //Verify input integrity
