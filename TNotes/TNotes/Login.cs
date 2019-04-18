@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 
-namespace TNotes
+namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        User user = new User();
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -39,26 +37,30 @@ namespace TNotes
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CreateAnAccount_Click(object sender, EventArgs e)
         {
-            int user_id = user.login(this.txtUsername.Text, this.txtPassword.Text);
-            Console.WriteLine("user_id: " + user_id);
-            if (user_id >= 0)
-            {
-                this.button1.Hide();
-                this.txtUsername.Hide();
-                this.txtPassword.Hide();
+            CreateAccount form = new CreateAccount();
+            form.Show();
+            form.FormClosing += (obj, args) => { this.Close(); };
+            this.Hide();
+        }
 
-                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form2()); });
-                myThread.Start();
-                this.Dispose();
-            }
-            else
-            {
-                this.txtUsername.ResetText();
-                this.txtPassword.ResetText();
-                this.label4.Show();
-            }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            Dashboard form = new Dashboard();
+            form.Show();
+            form.FormClosing += (obj, args) => { this.Close(); };
+            this.Hide();
         }
     }
 }
