@@ -460,6 +460,23 @@ public class SQLInterface
     }/*
     */
 
+    //get all notes
+    List<List<string>> getAllNotes()
+    {
+        return query("select note_id, note_title, chapter, section, date, summary from note");
+    }
+    //get all notes under a course by id
+    List<List<string>> getNoteByCourse(int id)
+    {
+        return query("select note_id, note_title, chapter, section, date, summary from note, " +
+            "(select note_id from isTaking where course_id = "+id+") as T" +
+            "where note.note_id = T.note_id");
+    }
+    //get note by id
+    List<List<string>> getNoteById(int id)
+    {
+        return query("select * from note where note_id = " + id + ";");
+    }
     //Add course
     int addCourse(string name, string subject, string prof, int year, string semester)
     {
