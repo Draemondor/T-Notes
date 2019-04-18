@@ -442,17 +442,21 @@ public class SQLInterface
         //Report success/fail.
         return q[0][0].Equals(summary);
     }/*
-    bool changebody(int note_id, ??? body)
+    bool changeBody(int note_id, byte[] body)
     {
-        //Collect old keywords
-        //Generate new keywords
-        //Identify diference between old and new
-        //remove irrelevant keywords from contains
-        //remove isolated keywords from keywords
-        //add relevant keywords
+        updateKeywords(note_id, body);
         //update the body
+        string s = "update note set body = '" + body + "' where note_id = " + note_id + ";";
         //verify the body updated successfully
+        s += "select body from note where note_id = "+note_id + ";";
+        List<List<string>> q = query(s);
         //Report success/fail.
-    }
+        bool good = true; 
+        for(int i = 0; i < body.Count(); i++)
+        {
+            good = good && q[0][0].Equals(body[i] + "");
+        }
+        return good;
+    }/*
     */
 }
