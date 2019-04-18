@@ -499,11 +499,18 @@ public class SQLInterface
             return id;
         return -1; // Something went horribly wrong.
     }
-    //course_id int
-    //course_name
-    //subject
-    //prof 
-    //year int
-    //semester
+
+    //get all courses
+    List<List<string>> getAllCourses()
+    {
+        return query("select * from course;");
+    }
+    //get course by id
+    List<List<string>> getCourseById(int id)
+    {
+        return query("select * from course where course_id = " + id + ";");
+    }
+
+
 
 }
