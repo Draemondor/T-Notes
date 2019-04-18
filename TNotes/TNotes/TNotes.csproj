@@ -68,8 +68,27 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+	<Reference Include="System.DirectoryServices" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Dashboard.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="Dashboard.Designer.cs">
+		<DependentUpon>Dashboard.cs</DependentUpon>
+	</Compile>
+	<Compile Include="CreateAccount.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="CreateAccount.Designer.cs">
+		<DependentUpon>CreateAccount.cs</DependentUpon>
+	</Compile>
+	<Compile Include="ForgotPassword.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="ForgotPassword.Designer.cs">
+		<DependentUpon>ForgotPassword.cs</DependentUpon>
+	</Compile>
     <Compile Include="OldLogin.cs">
       <SubType>Form</SubType>
     </Compile>

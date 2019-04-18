@@ -49,7 +49,7 @@ namespace TNotes
                 this.txtUsername.Hide();
                 this.txtPassword.Hide();
 
-                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form2()); });
+                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Dashboard()); });
                 myThread.Start();
                 this.Dispose();
             }
