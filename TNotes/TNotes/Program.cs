@@ -15,7 +15,10 @@ namespace TNotes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());  
+            User currUser = new User();
+            Form1 login = new Form1(currUser);
+            //login.Show();
+            Application.Run(login);  
         }
     }
 }

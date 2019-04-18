@@ -13,9 +13,10 @@ namespace TNotes
 {
     public partial class Form1 : Form
     {
-        User user = new User();
-        public Form1()
+        User user;
+        public Form1(User user)
         {
+            this.user = user;
             InitializeComponent();
         }
 
