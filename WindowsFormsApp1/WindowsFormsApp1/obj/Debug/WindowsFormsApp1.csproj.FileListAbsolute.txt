@@ -20,3 +20,15 @@ C:\Users\djnuc\AppData\Roaming\GitHub Desktop\WindowsFormsApp1\WindowsFormsApp1\
 C:\Users\djnuc\AppData\Roaming\GitHub Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\djnuc\AppData\Roaming\GitHub Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
 C:\Users\djnuc\AppData\Roaming\GitHub Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ForgotPassword.resources
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ForgotPassword.resources
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Hamza\source\repos\Draemondor\T-Notes\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
