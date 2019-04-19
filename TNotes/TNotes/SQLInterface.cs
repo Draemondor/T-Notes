@@ -492,7 +492,7 @@ public class SQLInterface
         //generate query
         string s = "select note.note_id, note.note_title, note.chapter" +
                    ", note.section, note.date, note.summary from note, (";
-        s += "select L.note_id sum(L.note_id) from ";
+        s += "select L.note_id sum(L.note_id) from (";
         for(int i = 0; i < keys.Count-1; i++)
         {
             s += "( select note_id from keywords, contains where keywords.keyword like '" 
