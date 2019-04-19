@@ -478,7 +478,31 @@ public class SQLInterface
         return query("select * from note where note_id = " + id + ";");
     }
     //get notes by keywords
-    List<List<string>> getNoteByKeywords(List<string> keywords);
+    //getCourseByKeywords framework: See phone picture
+
+    List<List<string>> getCourseByKeywords(List<string> keywords)
+    {
+        //remove duplicates and SQL injection potentials.
+        List<string> keys = keywords.Distinct().ToList();
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            for (int j = keys.Count; j > -1; j--)
+                if (keys.ElementAt(j).Contains(illegalChars[i]))
+                    keys.RemoveAt(j);
+        //generate query
+        string s = "select note.note_id, note.note_title, note.chapter" +
+                   ", note.section, note.date, note.summary from note, (";
+        s += "select L.note_id sum(L.note_id) from ";
+        for(int i = 0; i < keys.Count-1; i++)
+        {
+            s += "( select note_id from keywords, contains where keywords.keyword like '" 
+                + keys.ElementAt(i) + "' and contains.keyword_id = keyword.keyword_id ) union";
+        }
+        s += "( select note_id from keywords, contains where keywords.keyword like '"
+                + keys.ElementAt(keys.Count-1) + "' and contains.keyword_id = keyword.keyword_id )";
+        s += ") AS L group by L.note_id order by sum(L.note_id)) AS T where note.note_id = T.note_id;";
+        return query(s);
+    }
     //Add course
     int addCourse(string name, string subject, string prof, int year, string semester)
     {
@@ -529,7 +553,5 @@ public class SQLInterface
     {
         return query("select * from course where course_id = " + id + ";");
     }
-
-    //getCourseByKeywords framework: See phone picture
 
 }
