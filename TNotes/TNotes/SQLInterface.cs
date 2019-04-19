@@ -477,6 +477,8 @@ public class SQLInterface
     {
         return query("select * from note where note_id = " + id + ";");
     }
+    //get notes by keywords
+    List<List<string>> getNoteByKeywords(List<string> keywords);
     //Add course
     int addCourse(string name, string subject, string prof, int year, string semester)
     {
@@ -528,6 +530,6 @@ public class SQLInterface
         return query("select * from course where course_id = " + id + ";");
     }
 
-
+    //getCourseByKeywords framework: See phone picture
 
 }
