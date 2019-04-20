@@ -1,4 +1,1 @@
-select * from user;
-
-
-insert into user value (3, "a", "b", "c", "d");
+SELECT * FROM `t-notes`.user;
