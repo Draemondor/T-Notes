@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Home = new System.Windows.Forms.TextBox();
             this.btnYear = new System.Windows.Forms.Button();
@@ -60,6 +59,8 @@
             this.CreateYourNote = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.buttonSettings = new System.Windows.Forms.Button();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoursesIcon)).BeginInit();
@@ -113,7 +114,6 @@
             this.btnYear.Size = new System.Drawing.Size(246, 75);
             this.btnYear.TabIndex = 14;
             this.btnYear.Text = "Year";
-           // this.btnYear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnYear.UseVisualStyleBackColor = true;
             // 
             // btnSemester
@@ -129,7 +129,6 @@
             this.btnSemester.Size = new System.Drawing.Size(246, 75);
             this.btnSemester.TabIndex = 15;
             this.btnSemester.Text = "Semester";
-           // this.btnSemester.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSemester.UseVisualStyleBackColor = true;
             // 
             // btnCourses
@@ -146,8 +145,8 @@
             this.btnCourses.Size = new System.Drawing.Size(246, 75);
             this.btnCourses.TabIndex = 16;
             this.btnCourses.Text = "Courses";
-            //this.btnCourses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCourses.UseVisualStyleBackColor = true;
+            this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
             // 
             // btnProfessor
             // 
@@ -163,7 +162,6 @@
             this.btnProfessor.Size = new System.Drawing.Size(246, 75);
             this.btnProfessor.TabIndex = 17;
             this.btnProfessor.Text = "Professor";
-          //  this.btnProfessor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfessor.UseVisualStyleBackColor = true;
             // 
             // btnLabs
@@ -180,7 +178,6 @@
             this.btnLabs.Size = new System.Drawing.Size(246, 75);
             this.btnLabs.TabIndex = 18;
             this.btnLabs.Text = "Labs";
-            //this.btnLabs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLabs.UseVisualStyleBackColor = true;
             // 
             // btnProjects
@@ -197,70 +194,59 @@
             this.btnProjects.Size = new System.Drawing.Size(246, 75);
             this.btnProjects.TabIndex = 19;
             this.btnProjects.Text = "Projects";
-           // this.btnProjects.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProjects.UseVisualStyleBackColor = true;
             // 
             // yearIcon
             // 
-            /*this.yearIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("yearIcon.BackgroundImage")));
-            this.yearIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.yearIcon.Location = new System.Drawing.Point(32, 257);
+            this.yearIcon.Location = new System.Drawing.Point(0, 0);
             this.yearIcon.Name = "yearIcon";
-            this.yearIcon.Size = new System.Drawing.Size(32, 32);
-            this.yearIcon.TabIndex = 22;
+            this.yearIcon.Size = new System.Drawing.Size(100, 50);
+            this.yearIcon.TabIndex = 52;
             this.yearIcon.TabStop = false;
             // 
             // CoursesIcon
             // 
-            this.CoursesIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CoursesIcon.BackgroundImage")));
-            this.CoursesIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.CoursesIcon.Location = new System.Drawing.Point(32, 183);
+            this.CoursesIcon.Location = new System.Drawing.Point(0, 0);
             this.CoursesIcon.Name = "CoursesIcon";
-            this.CoursesIcon.Size = new System.Drawing.Size(32, 32);
-            this.CoursesIcon.TabIndex = 21;
+            this.CoursesIcon.Size = new System.Drawing.Size(100, 50);
+            this.CoursesIcon.TabIndex = 53;
             this.CoursesIcon.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(32, 105);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.TabIndex = 54;
             this.pictureBox2.TabStop = false;
             // 
             // projectsIcon
             // 
-            this.projectsIcon.Image = ((System.Drawing.Image)(resources.GetObject("projectsIcon.Image")));
-            this.projectsIcon.Location = new System.Drawing.Point(32, 554);
+            this.projectsIcon.Location = new System.Drawing.Point(0, 0);
             this.projectsIcon.Name = "projectsIcon";
-            this.projectsIcon.Size = new System.Drawing.Size(32, 32);
-            this.projectsIcon.TabIndex = 25;
+            this.projectsIcon.Size = new System.Drawing.Size(100, 50);
+            this.projectsIcon.TabIndex = 51;
             this.projectsIcon.TabStop = false;
             // 
             // labsIcon
             // 
-            this.labsIcon.Image = ((System.Drawing.Image)(resources.GetObject("labsIcon.Image")));
-            this.labsIcon.Location = new System.Drawing.Point(35, 476);
+            this.labsIcon.Location = new System.Drawing.Point(0, 0);
             this.labsIcon.Name = "labsIcon";
-            this.labsIcon.Size = new System.Drawing.Size(32, 32);
-            this.labsIcon.TabIndex = 26;
+            this.labsIcon.Size = new System.Drawing.Size(100, 50);
+            this.labsIcon.TabIndex = 50;
             this.labsIcon.TabStop = false;
             // 
             // professorIcon
             // 
-            this.professorIcon.Image = ((System.Drawing.Image)(resources.GetObject("professorIcon.Image")));
-            this.professorIcon.Location = new System.Drawing.Point(35, 406);
+            this.professorIcon.Location = new System.Drawing.Point(0, 0);
             this.professorIcon.Name = "professorIcon";
-            this.professorIcon.Size = new System.Drawing.Size(32, 32);
-            this.professorIcon.TabIndex = 28;
+            this.professorIcon.Size = new System.Drawing.Size(100, 50);
+            this.professorIcon.TabIndex = 49;
             this.professorIcon.TabStop = false;
-           */ // 
+            // 
             // Logo
             // 
             this.Logo.BackColor = System.Drawing.Color.Transparent;
-            //this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.Location = new System.Drawing.Point(1, 2);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(85, 84);
@@ -297,8 +283,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            //this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(900, 30);
+            this.pictureBox4.Location = new System.Drawing.Point(738, 30);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 24);
             this.pictureBox4.TabIndex = 33;
@@ -308,7 +293,7 @@
             // 
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
-            this.txtLastName.Location = new System.Drawing.Point(932, 30);
+            this.txtLastName.Location = new System.Drawing.Point(770, 30);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(212, 23);
             this.txtLastName.TabIndex = 34;
@@ -338,13 +323,11 @@
             this.btnAddNew.Size = new System.Drawing.Size(145, 29);
             this.btnAddNew.TabIndex = 36;
             this.btnAddNew.Text = "Add New";
-          //  this.btnAddNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnCreateAnAccount_Click);
             // 
             // pictureBox5
             // 
-           // this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(35, 331);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
@@ -387,8 +370,8 @@
             this.buttonDelete.Size = new System.Drawing.Size(145, 29);
             this.buttonDelete.TabIndex = 40;
             this.buttonDelete.Text = "Delete";
-            //this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonSave
             // 
@@ -402,7 +385,6 @@
             this.buttonSave.Size = new System.Drawing.Size(145, 29);
             this.buttonSave.TabIndex = 41;
             this.buttonSave.Text = "Save";
-           // this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonSave.UseVisualStyleBackColor = true;
             // 
             // buttonModify
@@ -417,7 +399,6 @@
             this.buttonModify.Size = new System.Drawing.Size(145, 29);
             this.buttonModify.TabIndex = 42;
             this.buttonModify.Text = "Modify";
-           // this.buttonModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonModify.UseVisualStyleBackColor = true;
             // 
             // CreateYourNote
@@ -443,20 +424,50 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-           // this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(262, 567);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(35, 30);
             this.pictureBox6.TabIndex = 48;
             this.pictureBox6.TabStop = false;
             // 
+            // buttonSettings
+            // 
+            this.buttonSettings.AutoSize = true;
+            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.buttonSettings.Location = new System.Drawing.Point(988, 27);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(75, 29);
+            this.buttonSettings.TabIndex = 55;
+            this.buttonSettings.Text = "Settings";
+            this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
+            // 
+            // buttonLogOut
+            // 
+            this.buttonLogOut.AutoSize = true;
+            this.buttonLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.buttonLogOut.Location = new System.Drawing.Point(1069, 27);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(75, 29);
+            this.buttonLogOut.TabIndex = 56;
+            this.buttonLogOut.Text = "Log Out";
+            this.buttonLogOut.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-           // this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1156, 608);
+            this.Controls.Add(this.buttonLogOut);
+            this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.CreateYourNote);
             this.Controls.Add(this.richTextBox1);
@@ -488,7 +499,6 @@
             this.Controls.Add(this.Home);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Notes | Dashboard";
@@ -544,5 +554,7 @@
         private System.Windows.Forms.TextBox CreateYourNote;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button buttonSettings;
+        private System.Windows.Forms.Button buttonLogOut;
     }
 }

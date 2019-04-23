@@ -5,16 +5,20 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace TNotes
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        User user;
+        public Dashboard(User x)
         {
+            this.user = x;
             InitializeComponent();
+            this.Hide();
+
         }
 
         private void Logo_Click(object sender, EventArgs e)
@@ -85,6 +89,30 @@ namespace TNotes
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnCourses_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new UserSettings(user)); });
+            myThread.Start();
+        }
+
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            User newUser = new User();
+            Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
+            myThread.Start();
+            this.Close();
         }
     }
 }
