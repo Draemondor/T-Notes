@@ -1,0 +1,84 @@
+Geology
+
+Lab 1 notes
+
+Physical Properties
+
+A mineral is naturally occurring, homogenous, solid inorganic substance.
+Composed of a single element "or" combination of elements. 
+- Most are combinations.
+
+*Minerals are characterized by:
+- Specific internal structure which is determined by an arrangement of atoms.
+- Chemical Composition
+- Physical Properties
+
+*Physical Properties* 
+*Mechannial Properties* Properties that represent a minerals response to some sort of applied force.
+*Hardness - its resistance to abrasion or scratching. Scratching one mineral with another gives the relative hardness of both minerals.
+-Moh's Hardness Scale
+*Tenacity - Is a minerals toughness.
+- How difficult is it to break into pieces? To Bend? *This is different from hardness
+Please not, we don't use the tenacity method in lab because it destroys the sample.
+
+>Brittle - Breaks or powders easily			Glass/Quartz
+>Malleable - Can be flattened into thin sheets		Gold/Copper
+>Sectile - Can cut grooves into the mineral		Gold/Copper
+>Ductile - Can be stretched with outbreaking		Gold/Copper
+>Flexible - Stays bent after bending			Chlorite/Copper
+>Elastic - Goes back to original shape after bending	Mica/Muscovite - highly elastic
+
+*Cleavage - A break that occurs in specific directions along planar surfaces.
+The planar surfaces are parallel to directions of weak bonding in the atomic arrangement of the crystal.
+>cubic/Octahedral/dodecahedral/rhombohedral/prismatic/basal
+
+*Fracture - A break that occurs in relatively random directions. Occures in minerals where the chemical bonding is of approximately equal strength in all directions and
+where there are not planes of weaker bonds.
+*Types of Fractures*
+>Conchoidal - Curved broken surfaces - such as glass
+>Fibrous or Splintery - Such as frayed Rope or Slivered Wood
+>Hackly - Jagged, sharp edged such as torn metal
+>Irregular or Uneven - Rough surface such as broken concrete
+
+*Optical Properties - How light interacts with the mineral
+Interactions include:
+			Absorption
+			Transmission
+			Reflection
+
+*Color - 1st property to be noted is caused by the absorption of certain wavelengths of light caused by particular
+atoms in a mineral.  
+	Color is a characteristic
+	The atomic arrangement
+	Small amounts of impurities
+	Structural defects  
+Please note: Color is not a reliable identification method for minerals*
+
+*Streak - The color of the powdered mineral - This is more reliable than color.  Streak is usually constant.
+
+*Diaphaneity - Refers to the way in which light is transmitted through a mineral.
+>Tansparent - If an image can be seen through a mineral
+>Translucent - If an image CAN NOT be seen through a mineral
+
+*An opaque mineral does not allow light to pass through it
+
+*Luster - The way in which a mineral reflects light.
+There are 2 major Divisions - Metallic & Non-metallic
+
+>Metallic - Reflect the most light and are opaque.
+>No-metallic - Have a range of reflectivity and are transparent to translucent.
+
+>Adamantine - Brilliant play of colors			Diamonds/Shpalerite
+>Resinous - Luster of Resin				Garnets/Sulfur
+>Vitreous - Luster like glass				Quartz
+>Pearly - Irradescent shiny luster			Talc
+>Silky - Shiny & Fiberous				Serpentine/Some Gypsum
+>Greasy - As if coated thinly with oil			Nepheline
+>Earthy - Dull & Powdery				Kaolin/Bauxite
+
+*Luminescence - The ability of a mineral to emit light when ground of struck, heated, or excited by ultraviolet light.
+*Other Properties*
+>Taste - Only possible for H2O Soluble minerals
+>Magnetism - Fundamental property of the mineral due to unpaired electrons on certain atoms
+>Specific Gravity - The ratio of its density to that of H2O
+>Solubility in Acid - Some minerals are soluble in acid w/hydrochloric acid the acid reacts with carbonates
