@@ -1,0 +1,28 @@
+Calculous II 
+
+Integrals
+Basic anti-derivative formulas
+
+x^n dx = x^n+1/n+1 + C (n can not = -1)
+
+1/x dx = ln|x| + C
+
+e^x dx = e^x + C
+
+sin(x) dx = -cos(x) + C
+
+cos(x) dx = sin(x) + C
+
+tan(x) dx = ln|sec(x)| + C
+
+sec(x) dx = ln|sec(x)tan(x)| + C
+
+sec(x)tan(x) dx = sec(x) + C
+
+sec^2(x) dx = tan(x) + C
+
+tan^2(x) dx = tan(x) -x + C
+
+sec^3(x) dx = sec(x)tan(x) + ln|sec(x)tan(x)|/2 + C
+
+1/1 + x^2 dx = arctan(x) + C

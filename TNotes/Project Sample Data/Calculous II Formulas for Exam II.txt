@@ -1,0 +1,50 @@
+Calculous II
+
+Formulas for Exam II
+
+Net Distance = Integral from a to b v(t) dt
+
+Total Distance = Integral from a to b |v(t) dt
+ 
+Area between two curves using a definite integral
+
+Area = Integral from a to b (Top-Bottom) dx
+Area = Integral from a to b (Right - Left) dy
+
+Volume of a solid obtained by rotating a region bounded between
+two curves around the x-axis:
+
+Vertical Slice - Disk/Washer
+Volume = Integral from a to b pi(Top)^2 - pi(Bottom)^2 dx
+
+Horizontal Slice - Shells
+Volume = Integral from a to b 2piy(Right - Left) dy
+
+Volume of a solid obtained by rotating a region bounded between 
+two curves around the y-axis:
+
+Vertical Slice - Shells
+Volume = Integral from a to b 2pix(Top)- 2pix(Bottom) dx
+
+Horizontal Slice - Disk/Washer
+Volume = Integral from a to b pi(Right)^2 - pi(Left)^2 dy
+
+The average value of a function f(x) on [a,b] include units on computations
+favg = 1/b-a Integral from a to b f(x) dx
+
+Length of a curve y = f(x) from x = a to x = b
+Length = Integral from a to b square root 1 + (f'(x))^2 end square root dx
+
+Work required to move an object from  x = a to x = b being acted upon by a variable
+force F(x)
+Total Work = Integral from a to b F(x) dx
+
+The surface area of the surface of revolution obtained by rotating the curve y = f(x)
+from x = a to x = b about the x-axis
+
+Surface Area = Integral from a to b 2pi f(x) square root 1 +(f'(x))^2 end square root dx
+
+The surface area of the surface of revolution obtained by rotating the curve y = f(x) 
+from x = a to x = b about the y-axis
+
+Surface Area = Integral from a to b 2pix square root 1 +(f'(x))^2 end square root dx

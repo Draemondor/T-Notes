@@ -1,0 +1,56 @@
+Geology 
+
+*Earth Structure*
+
+Seismic Waves - The seismic wave velocity changes with composition
+Body waves - Pass through Earth's interior
+Two Types:
+>P-Waves - Travel across land and water - topical	
+>S-Waves aka Shear Waves - Can't go through our core as they DO NOT travel through liquid or gases
+
+*The Core - Iron rich sphere with Radius of 3,471km
+Has 2 components with differing seismic wave behavior - Iron alloy & Solid Nickel
+Inner Core - Radius of 1,220 km
+	     Density - 13g/cm^3
+	     Solid Nickel
+Outer Core - Liquid Iron, Nickel & Sulfur
+	     2,255km thick
+	     Density - 10-12g/cm^3
+
+Flow in - S-Wave Velocity = 0 km/s
+*The outer core generates the magnetic field
+
+*Mantle - Layer above the outer core.  The 
+***The mantle is 82% of the Earth's volume***
+It is 2,885km thick
+
+Soid rock layer between the crust and core.  
+Mantle Composition - Is ultramafic rock peridotite
+Ultramafic - Silica poor
+Below~100-150km the rock is hot enough to flow
+
+It convects - hot mantle rises
+	      cold matter sinks
+
+Flows at rates up to -15cm/yr = 150km/my (million years)
+Density 3.5-5.5g/cm^3
+Seismic discontinuities - 400km to 410km - Upper Mantle
+			  600km to 670km - Lower Mantle
+
+Convection - Hot material rises
+Circulation or movement of the heated and cooled parts of rock, gas, ect....
+
+*The Crust - The thickest under Mt. Ranges(25-50km)
+	     Thinnest under mid-ocean ridges(5-7km)
+
+The Mohorovicic Discontinuity is the lower boundary that seperates the crust from the mantle.
+-Base of the crust has a velocity of about 6km/s
+-Top Mantle has a velocity of about 8km/s
+>As a result, the refracted(head) P-Wave arrives before the direct P-Wave this also works for the refracted and direct S-Waves.
+
+There are two types of crust:
+*Continental Crust - makes up the continents & shelves - less dense
+*Oceanic Crust - Underlies the ocean basins
+
+*Crustal Composition - 98.5% of the crust is comprised of just a handfule of elements
+Oxygen-30%, Silicon-26%, Fe-35%, Mg-13%
