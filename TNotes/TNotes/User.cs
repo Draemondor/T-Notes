@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using static SQLInterface;
 namespace TNotes
 {
@@ -62,6 +63,10 @@ namespace TNotes
                 return 1;
             }
             else return 0;
+        }
+        public DataTable dtCourses()
+        {
+            return connection.dtAllCourses();
         }
     }
 }

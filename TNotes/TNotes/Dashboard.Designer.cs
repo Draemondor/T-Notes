@@ -80,9 +80,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 89);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 110);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(246, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(327, 92);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
@@ -93,9 +94,10 @@
             this.Home.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.Home.Location = new System.Drawing.Point(75, 112);
+            this.Home.Location = new System.Drawing.Point(100, 138);
+            this.Home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(115, 25);
+            this.Home.Size = new System.Drawing.Size(153, 31);
             this.Home.TabIndex = 2;
             this.Home.Text = "Dashboard";
             this.Home.TextChanged += new System.EventHandler(this.Home_TextChanged);
@@ -108,10 +110,11 @@
             this.btnYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnYear.Location = new System.Drawing.Point(-1, 237);
+            this.btnYear.Location = new System.Drawing.Point(-1, 292);
+            this.btnYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnYear.Name = "btnYear";
-            this.btnYear.Padding = new System.Windows.Forms.Padding(0, 0, 42, 0);
-            this.btnYear.Size = new System.Drawing.Size(246, 75);
+            this.btnYear.Padding = new System.Windows.Forms.Padding(0, 0, 56, 0);
+            this.btnYear.Size = new System.Drawing.Size(328, 92);
             this.btnYear.TabIndex = 14;
             this.btnYear.Text = "Year";
             this.btnYear.UseVisualStyleBackColor = true;
@@ -124,9 +127,10 @@
             this.btnSemester.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSemester.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnSemester.Location = new System.Drawing.Point(-1, 311);
+            this.btnSemester.Location = new System.Drawing.Point(-1, 383);
+            this.btnSemester.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSemester.Name = "btnSemester";
-            this.btnSemester.Size = new System.Drawing.Size(246, 75);
+            this.btnSemester.Size = new System.Drawing.Size(328, 92);
             this.btnSemester.TabIndex = 15;
             this.btnSemester.Text = "Semester";
             this.btnSemester.UseVisualStyleBackColor = true;
@@ -139,10 +143,11 @@
             this.btnCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnCourses.Location = new System.Drawing.Point(-1, 163);
+            this.btnCourses.Location = new System.Drawing.Point(-1, 201);
+            this.btnCourses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCourses.Name = "btnCourses";
-            this.btnCourses.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
-            this.btnCourses.Size = new System.Drawing.Size(246, 75);
+            this.btnCourses.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.btnCourses.Size = new System.Drawing.Size(328, 92);
             this.btnCourses.TabIndex = 16;
             this.btnCourses.Text = "Courses";
             this.btnCourses.UseVisualStyleBackColor = true;
@@ -156,10 +161,11 @@
             this.btnProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnProfessor.Location = new System.Drawing.Point(-1, 385);
+            this.btnProfessor.Location = new System.Drawing.Point(-1, 474);
+            this.btnProfessor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProfessor.Name = "btnProfessor";
             this.btnProfessor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnProfessor.Size = new System.Drawing.Size(246, 75);
+            this.btnProfessor.Size = new System.Drawing.Size(328, 92);
             this.btnProfessor.TabIndex = 17;
             this.btnProfessor.Text = "Professor";
             this.btnProfessor.UseVisualStyleBackColor = true;
@@ -172,10 +178,11 @@
             this.btnLabs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLabs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnLabs.Location = new System.Drawing.Point(-1, 459);
+            this.btnLabs.Location = new System.Drawing.Point(-1, 565);
+            this.btnLabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLabs.Name = "btnLabs";
-            this.btnLabs.Padding = new System.Windows.Forms.Padding(0, 0, 48, 0);
-            this.btnLabs.Size = new System.Drawing.Size(246, 75);
+            this.btnLabs.Padding = new System.Windows.Forms.Padding(0, 0, 64, 0);
+            this.btnLabs.Size = new System.Drawing.Size(328, 92);
             this.btnLabs.TabIndex = 18;
             this.btnLabs.Text = "Labs";
             this.btnLabs.UseVisualStyleBackColor = true;
@@ -188,10 +195,11 @@
             this.btnProjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProjects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnProjects.Location = new System.Drawing.Point(-1, 533);
+            this.btnProjects.Location = new System.Drawing.Point(-1, 656);
+            this.btnProjects.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProjects.Name = "btnProjects";
-            this.btnProjects.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.btnProjects.Size = new System.Drawing.Size(246, 75);
+            this.btnProjects.Padding = new System.Windows.Forms.Padding(0, 0, 23, 0);
+            this.btnProjects.Size = new System.Drawing.Size(328, 92);
             this.btnProjects.TabIndex = 19;
             this.btnProjects.Text = "Projects";
             this.btnProjects.UseVisualStyleBackColor = true;
@@ -199,48 +207,54 @@
             // yearIcon
             // 
             this.yearIcon.Location = new System.Drawing.Point(0, 0);
+            this.yearIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.yearIcon.Name = "yearIcon";
-            this.yearIcon.Size = new System.Drawing.Size(100, 50);
+            this.yearIcon.Size = new System.Drawing.Size(133, 62);
             this.yearIcon.TabIndex = 52;
             this.yearIcon.TabStop = false;
             // 
             // CoursesIcon
             // 
             this.CoursesIcon.Location = new System.Drawing.Point(0, 0);
+            this.CoursesIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CoursesIcon.Name = "CoursesIcon";
-            this.CoursesIcon.Size = new System.Drawing.Size(100, 50);
+            this.CoursesIcon.Size = new System.Drawing.Size(133, 62);
             this.CoursesIcon.TabIndex = 53;
             this.CoursesIcon.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(133, 62);
             this.pictureBox2.TabIndex = 54;
             this.pictureBox2.TabStop = false;
             // 
             // projectsIcon
             // 
             this.projectsIcon.Location = new System.Drawing.Point(0, 0);
+            this.projectsIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.projectsIcon.Name = "projectsIcon";
-            this.projectsIcon.Size = new System.Drawing.Size(100, 50);
+            this.projectsIcon.Size = new System.Drawing.Size(133, 62);
             this.projectsIcon.TabIndex = 51;
             this.projectsIcon.TabStop = false;
             // 
             // labsIcon
             // 
             this.labsIcon.Location = new System.Drawing.Point(0, 0);
+            this.labsIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labsIcon.Name = "labsIcon";
-            this.labsIcon.Size = new System.Drawing.Size(100, 50);
+            this.labsIcon.Size = new System.Drawing.Size(133, 62);
             this.labsIcon.TabIndex = 50;
             this.labsIcon.TabStop = false;
             // 
             // professorIcon
             // 
             this.professorIcon.Location = new System.Drawing.Point(0, 0);
+            this.professorIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.professorIcon.Name = "professorIcon";
-            this.professorIcon.Size = new System.Drawing.Size(100, 50);
+            this.professorIcon.Size = new System.Drawing.Size(133, 62);
             this.professorIcon.TabIndex = 49;
             this.professorIcon.TabStop = false;
             // 
@@ -248,8 +262,9 @@
             // 
             this.Logo.BackColor = System.Drawing.Color.Transparent;
             this.Logo.Location = new System.Drawing.Point(1, 2);
+            this.Logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(85, 84);
+            this.Logo.Size = new System.Drawing.Size(113, 103);
             this.Logo.TabIndex = 29;
             this.Logo.TabStop = false;
             // 
@@ -259,18 +274,20 @@
             this.label_Tnotes.BackColor = System.Drawing.Color.Transparent;
             this.label_Tnotes.Font = new System.Drawing.Font("Times New Roman", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Tnotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.label_Tnotes.Location = new System.Drawing.Point(92, 30);
+            this.label_Tnotes.Location = new System.Drawing.Point(123, 37);
+            this.label_Tnotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Tnotes.Name = "label_Tnotes";
-            this.label_Tnotes.Size = new System.Drawing.Size(120, 37);
+            this.label_Tnotes.Size = new System.Drawing.Size(152, 48);
             this.label_Tnotes.TabIndex = 30;
             this.label_Tnotes.Text = "T-Notes";
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.pictureBox3.Location = new System.Drawing.Point(245, -1);
+            this.pictureBox3.Location = new System.Drawing.Point(327, -1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(911, 90);
+            this.pictureBox3.Size = new System.Drawing.Size(1215, 111);
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
             // 
@@ -283,9 +300,10 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.pictureBox4.Location = new System.Drawing.Point(738, 30);
+            this.pictureBox4.Location = new System.Drawing.Point(984, 37);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox4.Size = new System.Drawing.Size(32, 30);
             this.pictureBox4.TabIndex = 33;
             this.pictureBox4.TabStop = false;
             // 
@@ -293,9 +311,10 @@
             // 
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
-            this.txtLastName.Location = new System.Drawing.Point(770, 30);
+            this.txtLastName.Location = new System.Drawing.Point(1027, 37);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(212, 23);
+            this.txtLastName.Size = new System.Drawing.Size(281, 26);
             this.txtLastName.TabIndex = 34;
             this.txtLastName.Text = "Search";
             // 
@@ -305,9 +324,10 @@
             this.Headder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.Headder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Headder.ForeColor = System.Drawing.Color.White;
-            this.Headder.Location = new System.Drawing.Point(258, 34);
+            this.Headder.Location = new System.Drawing.Point(344, 42);
+            this.Headder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Headder.Name = "Headder";
-            this.Headder.Size = new System.Drawing.Size(252, 20);
+            this.Headder.Size = new System.Drawing.Size(308, 25);
             this.Headder.TabIndex = 35;
             this.Headder.Text = "Note-taking application that works.";
             // 
@@ -318,9 +338,10 @@
             this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.btnAddNew.Location = new System.Drawing.Point(262, 135);
+            this.btnAddNew.Location = new System.Drawing.Point(349, 166);
+            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(145, 29);
+            this.btnAddNew.Size = new System.Drawing.Size(193, 36);
             this.btnAddNew.TabIndex = 36;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -328,18 +349,20 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(35, 331);
+            this.pictureBox5.Location = new System.Drawing.Point(47, 407);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox5.Size = new System.Drawing.Size(43, 39);
             this.pictureBox5.TabIndex = 37;
             this.pictureBox5.TabStop = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(262, 170);
+            this.dataGridView1.Location = new System.Drawing.Point(349, 209);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(447, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(596, 481);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -350,9 +373,10 @@
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonUpdate.Location = new System.Drawing.Point(413, 135);
+            this.buttonUpdate.Location = new System.Drawing.Point(551, 166);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(145, 29);
+            this.buttonUpdate.Size = new System.Drawing.Size(193, 36);
             this.buttonUpdate.TabIndex = 39;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -365,9 +389,10 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonDelete.Location = new System.Drawing.Point(564, 135);
+            this.buttonDelete.Location = new System.Drawing.Point(752, 166);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(145, 29);
+            this.buttonDelete.Size = new System.Drawing.Size(193, 36);
             this.buttonDelete.TabIndex = 40;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -380,12 +405,14 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonSave.Location = new System.Drawing.Point(999, 567);
+            this.buttonSave.Location = new System.Drawing.Point(1332, 698);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(145, 29);
+            this.buttonSave.Size = new System.Drawing.Size(193, 36);
             this.buttonSave.TabIndex = 41;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonModify
             // 
@@ -394,9 +421,10 @@
             this.buttonModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonModify.Location = new System.Drawing.Point(848, 567);
+            this.buttonModify.Location = new System.Drawing.Point(1131, 698);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(145, 29);
+            this.buttonModify.Size = new System.Drawing.Size(193, 36);
             this.buttonModify.TabIndex = 42;
             this.buttonModify.Text = "Modify";
             this.buttonModify.UseVisualStyleBackColor = true;
@@ -406,27 +434,30 @@
             this.CreateYourNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CreateYourNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateYourNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.CreateYourNote.Location = new System.Drawing.Point(734, 138);
+            this.CreateYourNote.Location = new System.Drawing.Point(979, 170);
+            this.CreateYourNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CreateYourNote.Name = "CreateYourNote";
-            this.CreateYourNote.Size = new System.Drawing.Size(410, 25);
+            this.CreateYourNote.Size = new System.Drawing.Size(547, 31);
             this.CreateYourNote.TabIndex = 47;
             this.CreateYourNote.Text = "Create Your Notes";
             this.CreateYourNote.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(734, 170);
+            this.richTextBox1.Location = new System.Drawing.Point(979, 209);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(410, 391);
+            this.richTextBox1.Size = new System.Drawing.Size(545, 480);
             this.richTextBox1.TabIndex = 46;
             this.richTextBox1.Text = "";
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Location = new System.Drawing.Point(262, 567);
+            this.pictureBox6.Location = new System.Drawing.Point(349, 698);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 30);
+            this.pictureBox6.Size = new System.Drawing.Size(47, 37);
             this.pictureBox6.TabIndex = 48;
             this.pictureBox6.TabStop = false;
             // 
@@ -437,9 +468,10 @@
             this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonSettings.Location = new System.Drawing.Point(988, 27);
+            this.buttonSettings.Location = new System.Drawing.Point(1317, 33);
+            this.buttonSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(75, 29);
+            this.buttonSettings.Size = new System.Drawing.Size(100, 36);
             this.buttonSettings.TabIndex = 55;
             this.buttonSettings.Text = "Settings";
             this.buttonSettings.UseVisualStyleBackColor = true;
@@ -452,9 +484,10 @@
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonLogOut.Location = new System.Drawing.Point(1069, 27);
+            this.buttonLogOut.Location = new System.Drawing.Point(1425, 33);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(75, 29);
+            this.buttonLogOut.Size = new System.Drawing.Size(100, 36);
             this.buttonLogOut.TabIndex = 56;
             this.buttonLogOut.Text = "Log Out";
             this.buttonLogOut.UseVisualStyleBackColor = true;
@@ -462,10 +495,10 @@
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1156, 608);
+            this.ClientSize = new System.Drawing.Size(1541, 748);
             this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.pictureBox6);
@@ -499,6 +532,7 @@
             this.Controls.Add(this.Home);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Notes | Dashboard";
