@@ -32,7 +32,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.checkbox_RememberMe = new System.Windows.Forms.CheckBox();
@@ -41,7 +42,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -57,7 +57,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(19, 73);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 26);
-            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
@@ -69,7 +69,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(19, 17);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 26);
-            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
             // panel1
@@ -77,7 +77,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnCreateAccount);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.checkbox_RememberMe);
@@ -88,21 +88,34 @@
             this.panel1.Location = new System.Drawing.Point(137, 99);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(312, 209);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button2
+            // label4
             // 
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.button2.Location = new System.Drawing.Point(148, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 27);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Create An Account";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(92, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 26);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Login Failed\r\nInvalid Username/Password";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Visible = false;
+            // 
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.btnCreateAccount.Location = new System.Drawing.Point(148, 162);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(145, 27);
+            this.btnCreateAccount.TabIndex = 3;
+            this.btnCreateAccount.Text = "Create An Account";
+            this.btnCreateAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
             // linkLabel1
             // 
@@ -112,9 +125,10 @@
             this.linkLabel1.Location = new System.Drawing.Point(201, 122);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(92, 13);
-            this.linkLabel1.TabIndex = 7;
+            this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button1
             // 
@@ -125,7 +139,7 @@
             this.button1.Location = new System.Drawing.Point(19, 162);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 27);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -148,8 +162,10 @@
             this.txtUsername.Location = new System.Drawing.Point(50, 19);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(243, 23);
-            this.txtUsername.TabIndex = 4;
+            this.txtUsername.TabIndex = 0;
             this.txtUsername.Text = "Username";
+            this.txtUsername.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtUsername.LostFocus += new System.EventHandler(this.AddText);
             // 
             // txtPassword
             // 
@@ -157,9 +173,12 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
             this.txtPassword.Location = new System.Drawing.Point(50, 76);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(243, 23);
-            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "Password";
+            this.txtPassword.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtPassword.LostFocus += new System.EventHandler(this.AddText);
             // 
             // pictureBox3
             // 
@@ -191,20 +210,8 @@
             this.pictureBox4.Location = new System.Drawing.Point(515, 341);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 30);
-            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(92, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 26);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Login Failed\r\nInvalid Username/Password";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Visible = false;
             // 
             // Form1
             // 
@@ -217,6 +224,8 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(589, 422);
+            this.MinimumSize = new System.Drawing.Size(589, 422);
             this.Name = "Form1";
             this.Text = "T-notes";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -237,9 +246,9 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkbox_RememberMe;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;

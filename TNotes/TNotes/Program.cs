@@ -13,12 +13,11 @@ namespace TNotes
         [MTAThread]
         static void Main()
         {
+            User user = new User();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            User currUser = new User();
-            Form1 login = new Form1(currUser);
-            //login.Show();
-            Application.Run(login);  
+            Application.Run(new Form1(user));  
+          
         }
     }
 }

@@ -12,9 +12,10 @@ namespace TNotes
 {
     public partial class UserSettings : Form
     {
-        User user = new User();
-        public UserSettings()
+        User user;
+        public UserSettings(User user)
         {
+            this.user = user;
             InitializeComponent();
         }
         //Removes user account
