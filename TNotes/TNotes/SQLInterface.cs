@@ -582,7 +582,7 @@ public class SQLInterface
         //Execute the query.
         r = query(q);
         //Verify that the password was changed correctly.
-        return r.ElementAt(0).ElementAt(0).Equals(pw) ? Convert.ToInt32(r.ElementAt(0).ElementAt(0)) : -1;        
+        return r.ElementAt(0).ElementAt(0).Equals(pw) ? Convert.ToInt32(r.ElementAt(0).ElementAt(1)) : -1;        
         
     }
 }
