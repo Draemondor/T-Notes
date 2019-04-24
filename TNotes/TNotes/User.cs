@@ -6,10 +6,29 @@ namespace TNotes
     {
         SQLInterface connection = new SQLInterface();
         int user_id;
+        string username;
+        string password;
         public User()
         {
 
         }
+        
+        public void setAttributes(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+
+        public string getUsername()
+        {
+            return this.username;
+        }
+
+        public string getPassword()
+        {
+            return this.password;
+        }
+
         public int login(string username, string password)
         {
             //takes in username and password as strings

@@ -57,6 +57,7 @@ namespace TNotes
                 this.button1.Hide();
                 this.txtUsername.Hide();
                 this.txtPassword.Hide();
+                user.setAttributes(txtUsername.Text, txtPassword.Text);
                 Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Dashboard(user)); });
                 myThread.Start();
                 this.Close();
@@ -102,7 +103,8 @@ namespace TNotes
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new ForgotPassword(user)); });
+            myThread.Start();
         }
     }
 }

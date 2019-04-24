@@ -22,7 +22,11 @@ namespace TNotes
         private void button3_Click(object sender, EventArgs e)
         {
             int user_id = user.login(this.textBox7.Text, this.textBox6.Text);
-            user.removeUser(user_id, this.textBox2.Text);
+            if (user_id > 0)
+            {
+                user.removeUser(user_id, this.textBox6.Text);
+                this.Close();
+            }
         }
         //Changes username
         private void button1_Click(object sender, EventArgs e)

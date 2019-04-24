@@ -24,7 +24,10 @@ namespace TNotes
 
         private void btnCreateAnAccount_Click(object sender, EventArgs e)
         {
-
+           if(user.addUser(textEmail.Text, txtConfirmPassword.Text, txtFirstName.Text, txtLastName.Text)>0)
+            {
+                this.Close();
+            }
         }
 
         private void txtCreatePassword_TextChanged(object sender, EventArgs e)
@@ -63,7 +66,7 @@ namespace TNotes
                 txtFirstName.Text = "";
             else if (txtLastName.Text.Equals("Last Name") & sender == txtLastName)
                 txtLastName.Text = "";
-            else if (textEmail.Text.Equals("Email") & sender == textEmail)
+            else if (textEmail.Text.Equals("Username") & sender == textEmail)
                 textEmail.Text = "";
         }
 
@@ -87,7 +90,7 @@ namespace TNotes
             }
             else if (String.IsNullOrWhiteSpace(textEmail.Text) & sender == textEmail)
             {
-                textEmail.Text = "Email";
+                textEmail.Text = "Username";
             }
         }
     }

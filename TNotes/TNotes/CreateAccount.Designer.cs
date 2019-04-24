@@ -68,7 +68,6 @@
             this.panel1.Location = new System.Drawing.Point(137, 99);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(312, 233);
-            this.panel1.TabIndex = 4;
             // 
             // textEmail
             // 
@@ -78,8 +77,8 @@
             this.textEmail.Multiline = true;
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(243, 20);
-            this.textEmail.TabIndex = 14;
-            this.textEmail.Text = "Email";
+            this.textEmail.TabIndex = 6;
+            this.textEmail.Text = "Username";
             this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             this.textEmail.GotFocus += new System.EventHandler(this.RemoveText);
             this.textEmail.LostFocus += new System.EventHandler(this.AddText);
@@ -93,7 +92,7 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(243, 20);
-            this.txtConfirmPassword.TabIndex = 13;
+            this.txtConfirmPassword.TabIndex = 8;
             this.txtConfirmPassword.Text = "Confirm Your Password";
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
@@ -107,7 +106,6 @@
             this.confirm_icon.Location = new System.Drawing.Point(20, 138);
             this.confirm_icon.Name = "confirm_icon";
             this.confirm_icon.Size = new System.Drawing.Size(20, 20);
-            this.confirm_icon.TabIndex = 12;
             this.confirm_icon.TabStop = false;
             // 
             // txtLastName
@@ -117,7 +115,7 @@
             this.txtLastName.Location = new System.Drawing.Point(167, 25);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(126, 23);
-            this.txtLastName.TabIndex = 11;
+            this.txtLastName.TabIndex = 5;
             this.txtLastName.Text = "Last Name";
             this.txtLastName.GotFocus += new System.EventHandler(this.RemoveText);
             this.txtLastName.LostFocus += new System.EventHandler(this.AddText);
@@ -129,7 +127,6 @@
             this.email_icon.Location = new System.Drawing.Point(20, 66);
             this.email_icon.Name = "email_icon";
             this.email_icon.Size = new System.Drawing.Size(20, 15);
-            this.email_icon.TabIndex = 9;
             this.email_icon.TabStop = false;
             // 
             // btnCreateAnAccount
@@ -142,7 +139,7 @@
             this.btnCreateAnAccount.Location = new System.Drawing.Point(19, 179);
             this.btnCreateAnAccount.Name = "btnCreateAnAccount";
             this.btnCreateAnAccount.Size = new System.Drawing.Size(274, 29);
-            this.btnCreateAnAccount.TabIndex = 8;
+            this.btnCreateAnAccount.TabIndex = 9;
             this.btnCreateAnAccount.Text = "Create Account";
             this.btnCreateAnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateAnAccount.UseVisualStyleBackColor = true;
@@ -169,7 +166,7 @@
             this.txtCreatePassword.Name = "txtCreatePassword";
             this.txtCreatePassword.PasswordChar = '*';
             this.txtCreatePassword.Size = new System.Drawing.Size(243, 20);
-            this.txtCreatePassword.TabIndex = 3;
+            this.txtCreatePassword.TabIndex = 7;
             this.txtCreatePassword.Text = "Password";
             this.txtCreatePassword.UseSystemPasswordChar = true;
             this.txtCreatePassword.TextChanged += new System.EventHandler(this.txtCreatePassword_TextChanged);
@@ -183,7 +180,6 @@
             this.password_icon.Location = new System.Drawing.Point(21, 100);
             this.password_icon.Name = "password_icon";
             this.password_icon.Size = new System.Drawing.Size(17, 20);
-            this.password_icon.TabIndex = 1;
             this.password_icon.TabStop = false;
             // 
             // usrname_icon
@@ -193,7 +189,6 @@
             this.usrname_icon.Location = new System.Drawing.Point(21, 26);
             this.usrname_icon.Name = "usrname_icon";
             this.usrname_icon.Size = new System.Drawing.Size(17, 20);
-            this.usrname_icon.TabIndex = 2;
             this.usrname_icon.TabStop = false;
             // 
             // CreateAccount_lable
@@ -205,7 +200,6 @@
             this.CreateAccount_lable.Location = new System.Drawing.Point(178, 61);
             this.CreateAccount_lable.Name = "CreateAccount_lable";
             this.CreateAccount_lable.Size = new System.Drawing.Size(217, 37);
-            this.CreateAccount_lable.TabIndex = 7;
             this.CreateAccount_lable.Text = "Create Account";
             this.CreateAccount_lable.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -215,7 +209,6 @@
             this.Logo.Location = new System.Drawing.Point(12, 12);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(85, 84);
-            this.Logo.TabIndex = 6;
             this.Logo.TabStop = false;
             // 
             // Tnotes_lable
@@ -236,7 +229,6 @@
             this.shsu_icon.Location = new System.Drawing.Point(515, 341);
             this.shsu_icon.Name = "shsu_icon";
             this.shsu_icon.Size = new System.Drawing.Size(35, 30);
-            this.shsu_icon.TabIndex = 9;
             this.shsu_icon.TabStop = false;
             // 
             // CreateAccount

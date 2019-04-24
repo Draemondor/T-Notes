@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace TNotes
 {
     partial class ForgotPassword
     {
@@ -62,7 +62,6 @@
             this.bgPanel.Location = new System.Drawing.Point(130, 111);
             this.bgPanel.Name = "bgPanel";
             this.bgPanel.Size = new System.Drawing.Size(312, 234);
-            this.bgPanel.TabIndex = 6;
             this.bgPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.bgPanel_Paint);
             // 
             // pleaseChoiceNewPassword_label
@@ -72,7 +71,6 @@
             this.pleaseChoiceNewPassword_label.Location = new System.Drawing.Point(19, 46);
             this.pleaseChoiceNewPassword_label.Name = "pleaseChoiceNewPassword_label";
             this.pleaseChoiceNewPassword_label.Size = new System.Drawing.Size(210, 16);
-            this.pleaseChoiceNewPassword_label.TabIndex = 10;
             this.pleaseChoiceNewPassword_label.Text = "Please choose a new password.";
             // 
             // Reset_lable
@@ -82,7 +80,6 @@
             this.Reset_lable.Location = new System.Drawing.Point(18, 21);
             this.Reset_lable.Name = "Reset_lable";
             this.Reset_lable.Size = new System.Drawing.Size(159, 20);
-            this.Reset_lable.TabIndex = 9;
             this.Reset_lable.Text = "Reset your password.";
             // 
             // btnResetYourPassword
@@ -95,7 +92,7 @@
             this.btnResetYourPassword.Location = new System.Drawing.Point(22, 188);
             this.btnResetYourPassword.Name = "btnResetYourPassword";
             this.btnResetYourPassword.Size = new System.Drawing.Size(267, 29);
-            this.btnResetYourPassword.TabIndex = 8;
+            this.btnResetYourPassword.TabIndex = 4;
             this.btnResetYourPassword.Text = "Reset Your Password";
             this.btnResetYourPassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetYourPassword.UseVisualStyleBackColor = true;
@@ -108,9 +105,11 @@
             this.txtNewPassword.Location = new System.Drawing.Point(46, 114);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Size = new System.Drawing.Size(243, 23);
-            this.txtNewPassword.TabIndex = 4;
+            this.txtNewPassword.TabIndex = 1;
             this.txtNewPassword.Text = "New Password";
             this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
+            this.txtNewPassword.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtNewPassword.LostFocus += new System.EventHandler(this.AddText);
             // 
             // txtRe_enterPassword
             // 
@@ -119,9 +118,11 @@
             this.txtRe_enterPassword.Location = new System.Drawing.Point(46, 151);
             this.txtRe_enterPassword.Name = "txtRe_enterPassword";
             this.txtRe_enterPassword.Size = new System.Drawing.Size(243, 23);
-            this.txtRe_enterPassword.TabIndex = 3;
-            this.txtRe_enterPassword.Text = "Re-Enter Password";
+            this.txtRe_enterPassword.TabIndex = 2;
+            this.txtRe_enterPassword.Text = "Confirm Your Password";
             this.txtRe_enterPassword.TextChanged += new System.EventHandler(this.txtRe_enterPassword_TextChanged);
+            this.txtRe_enterPassword.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtRe_enterPassword.LostFocus += new System.EventHandler(this.AddText);
             // 
             // Tnotes_lable
             // 
@@ -132,7 +133,6 @@
             this.Tnotes_lable.Location = new System.Drawing.Point(230, 41);
             this.Tnotes_lable.Name = "Tnotes_lable";
             this.Tnotes_lable.Size = new System.Drawing.Size(120, 37);
-            this.Tnotes_lable.TabIndex = 10;
             this.Tnotes_lable.Text = "T-Notes";
             this.Tnotes_lable.Click += new System.EventHandler(this.Tnotes_lable_Click);
             // 
@@ -145,7 +145,6 @@
             this.CreateAccount_lable.Location = new System.Drawing.Point(178, 72);
             this.CreateAccount_lable.Name = "CreateAccount_lable";
             this.CreateAccount_lable.Size = new System.Drawing.Size(233, 37);
-            this.CreateAccount_lable.TabIndex = 9;
             this.CreateAccount_lable.Text = "Forgot Password";
             this.CreateAccount_lable.Click += new System.EventHandler(this.CreateAccount_lable_Click);
             // 
@@ -156,9 +155,11 @@
             this.textBox1.Location = new System.Drawing.Point(46, 82);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(243, 23);
-            this.textBox1.TabIndex = 11;
+            this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Username";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.GotFocus += new System.EventHandler(this.RemoveText);
+            this.textBox1.LostFocus += new System.EventHandler(this.AddText);
             // 
             // pictureBox4
             // 
@@ -166,7 +167,6 @@
             this.pictureBox4.Location = new System.Drawing.Point(515, 341);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 30);
-            this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
             // 
             // password_icon
@@ -176,7 +176,6 @@
             this.password_icon.Location = new System.Drawing.Point(22, 151);
             this.password_icon.Name = "password_icon";
             this.password_icon.Size = new System.Drawing.Size(17, 20);
-            this.password_icon.TabIndex = 1;
             this.password_icon.TabStop = false;
             // 
             // usrname_icon
@@ -186,7 +185,6 @@
             this.usrname_icon.Location = new System.Drawing.Point(22, 85);
             this.usrname_icon.Name = "usrname_icon";
             this.usrname_icon.Size = new System.Drawing.Size(17, 20);
-            this.usrname_icon.TabIndex = 2;
             this.usrname_icon.TabStop = false;
             // 
             // Logo
@@ -195,7 +193,6 @@
             this.Logo.Location = new System.Drawing.Point(12, 12);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(85, 84);
-            this.Logo.TabIndex = 5;
             this.Logo.TabStop = false;
             // 
             // ForgotPassword

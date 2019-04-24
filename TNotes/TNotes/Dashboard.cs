@@ -114,5 +114,15 @@ namespace TNotes
             myThread.Start();
             this.Close();
         }
+
+        private void UserSettings_FormClosing(object sender, EventArgs e)
+        {
+            if (user.login(user.getUsername(), user.getPassword())<0) {
+                User newUser = new User();
+                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
+                myThread.Start();
+                this.Close();
+            }
+        }
     }
 }
