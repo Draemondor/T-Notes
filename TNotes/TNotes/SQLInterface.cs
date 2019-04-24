@@ -480,7 +480,7 @@ public class SQLInterface
     //get notes by keywords
     //getCourseByKeywords framework: See phone picture
 
-    List<List<string>> getCourseByKeywords(List<string> keywords)
+    public List<List<string>> getCourseByKeywords(List<string> keywords)
     {
         //remove duplicates and SQL injection potentials.
         List<string> keys = keywords.Distinct().ToList();
@@ -558,7 +558,7 @@ public class SQLInterface
     //! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! 
     //change password by username, and return user id or fail-state. 
     // -1 is unsuccessful change. -3 is attempted SQL injection.
-    int weakChangePassword(string un, string pw)
+    public int weakChangePassword(string un, string pw)
     {
         
         //Trim the information. 

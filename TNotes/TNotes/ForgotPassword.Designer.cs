@@ -96,7 +96,7 @@
             this.btnResetYourPassword.Text = "Reset Your Password";
             this.btnResetYourPassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetYourPassword.UseVisualStyleBackColor = true;
-            this.btnResetYourPassword.Click += new System.EventHandler(this.btnCreateAnAccount_Click);
+            this.btnResetYourPassword.Click += new System.EventHandler(this.btnResetYourPassword_Click);
             // 
             // txtNewPassword
             // 

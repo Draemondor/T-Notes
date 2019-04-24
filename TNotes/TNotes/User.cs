@@ -1,5 +1,6 @@
 ﻿using System;
 using static SQLInterface;
+using System.Collections.Generic;
 namespace TNotes
 {
     public class User
@@ -49,6 +50,14 @@ namespace TNotes
             }
             else return 0;
         }
+        public int weakChangePass(string username, string newPass)
+        {
+            if (connection.weakChangePassword(username, newPass)>0)
+            {
+                return 1;
+            }
+            else return 0;
+        }
         public int changeUser(int uid, string oldUser, string newUser)
         {
             //takes in userID, old username, new username
@@ -81,6 +90,10 @@ namespace TNotes
                 return 1;
             }
             else return 0;
+        }
+        public List<List<string>> searchByKeyword(List<string> keywords)
+        {
+            return connection.getCourseByKeywords(keywords);
         }
     }
 }

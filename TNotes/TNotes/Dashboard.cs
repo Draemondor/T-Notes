@@ -81,10 +81,6 @@ namespace TNotes
 
         }
 
-        private void btnCreateAnAccount_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -123,6 +119,46 @@ namespace TNotes
                 myThread.Start();
                 this.Close();
             }
+        }
+
+        private void searchStart_Click(object sender, EventArgs e)
+        {
+            string keywords = this.txtSearch.Text;
+            string[] keywordsArray = keywords.Split(',');
+            List<string> keywordsList = new List<string>();
+            foreach (string s in keywordsArray)
+            {
+                keywordsList.Add(s);
+            }
+
+        }
+
+        public void RemoveText(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Equals("Search") & sender == txtSearch)
+                txtSearch.Text = "";
+        }
+
+        public void AddText(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtSearch.Text) & sender == txtSearch)
+            {
+                txtSearch.Text = "Search";
+            }
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new UserSettings(user)); });
+            myThread.Start();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            User newUser = new User();
+            Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
+            myThread.Start();
+            this.Close();
         }
     }
 }

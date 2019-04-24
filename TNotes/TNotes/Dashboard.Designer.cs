@@ -34,8 +34,8 @@
             this.btnSemester = new System.Windows.Forms.Button();
             this.btnCourses = new System.Windows.Forms.Button();
             this.btnProfessor = new System.Windows.Forms.Button();
-            this.btnLabs = new System.Windows.Forms.Button();
-            this.btnProjects = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.yearIcon = new System.Windows.Forms.PictureBox();
             this.CoursesIcon = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -47,7 +47,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.Headder = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -59,8 +59,7 @@
             this.CreateYourNote = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.buttonSettings = new System.Windows.Forms.Button();
-            this.buttonLogOut = new System.Windows.Forms.Button();
+            this.searchStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoursesIcon)).BeginInit();
@@ -158,43 +157,46 @@
             this.btnProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
             this.btnProfessor.Location = new System.Drawing.Point(-1, 385);
             this.btnProfessor.Name = "btnProfessor";
-            this.btnProfessor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnProfessor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnProfessor.Size = new System.Drawing.Size(246, 75);
             this.btnProfessor.TabIndex = 17;
             this.btnProfessor.Text = "Professor";
             this.btnProfessor.UseVisualStyleBackColor = true;
+            this.btnProfessor.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // btnLabs
+            // btnSettings
             // 
-            this.btnLabs.AutoSize = true;
-            this.btnLabs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnLabs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
-            this.btnLabs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLabs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnLabs.Location = new System.Drawing.Point(-1, 459);
-            this.btnLabs.Name = "btnLabs";
-            this.btnLabs.Padding = new System.Windows.Forms.Padding(0, 0, 48, 0);
-            this.btnLabs.Size = new System.Drawing.Size(246, 75);
-            this.btnLabs.TabIndex = 18;
-            this.btnLabs.Text = "Labs";
-            this.btnLabs.UseVisualStyleBackColor = true;
+            this.btnSettings.AutoSize = true;
+            this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.btnSettings.Location = new System.Drawing.Point(-1, 459);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btnSettings.Size = new System.Drawing.Size(246, 75);
+            this.btnSettings.TabIndex = 18;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // btnProjects
+            // btnLogOut
             // 
-            this.btnProjects.AutoSize = true;
-            this.btnProjects.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.btnProjects.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
-            this.btnProjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProjects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnProjects.Location = new System.Drawing.Point(-1, 533);
-            this.btnProjects.Name = "btnProjects";
-            this.btnProjects.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.btnProjects.Size = new System.Drawing.Size(246, 75);
-            this.btnProjects.TabIndex = 19;
-            this.btnProjects.Text = "Projects";
-            this.btnProjects.UseVisualStyleBackColor = true;
+            this.btnLogOut.AutoSize = true;
+            this.btnLogOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
+            this.btnLogOut.Location = new System.Drawing.Point(-1, 533);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(246, 75);
+            this.btnLogOut.TabIndex = 19;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // yearIcon
             // 
@@ -283,21 +285,23 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.pictureBox4.Location = new System.Drawing.Point(738, 30);
+            this.pictureBox4.Location = new System.Drawing.Point(814, 30);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 24);
             this.pictureBox4.TabIndex = 33;
             this.pictureBox4.TabStop = false;
             // 
-            // txtLastName
+            // txtSearch
             // 
-            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
-            this.txtLastName.Location = new System.Drawing.Point(770, 30);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(212, 23);
-            this.txtLastName.TabIndex = 34;
-            this.txtLastName.Text = "Search";
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
+            this.txtSearch.Location = new System.Drawing.Point(846, 30);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(212, 23);
+            this.txtSearch.TabIndex = 34;
+            this.txtSearch.Text = "Search";
+            this.txtSearch.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtSearch.LostFocus += new System.EventHandler(this.AddText);
             // 
             // Headder
             // 
@@ -324,7 +328,6 @@
             this.btnAddNew.TabIndex = 36;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
-            this.btnAddNew.Click += new System.EventHandler(this.btnCreateAnAccount_Click);
             // 
             // pictureBox5
             // 
@@ -430,35 +433,15 @@
             this.pictureBox6.TabIndex = 48;
             this.pictureBox6.TabStop = false;
             // 
-            // buttonSettings
+            // searchStart
             // 
-            this.buttonSettings.AutoSize = true;
-            this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
-            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonSettings.Location = new System.Drawing.Point(988, 27);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(75, 29);
-            this.buttonSettings.TabIndex = 55;
-            this.buttonSettings.Text = "Settings";
-            this.buttonSettings.UseVisualStyleBackColor = true;
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
-            // 
-            // buttonLogOut
-            // 
-            this.buttonLogOut.AutoSize = true;
-            this.buttonLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
-            this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonLogOut.Location = new System.Drawing.Point(1069, 27);
-            this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(75, 29);
-            this.buttonLogOut.TabIndex = 56;
-            this.buttonLogOut.Text = "Log Out";
-            this.buttonLogOut.UseVisualStyleBackColor = true;
-            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
+            this.searchStart.Location = new System.Drawing.Point(1069, 30);
+            this.searchStart.Name = "searchStart";
+            this.searchStart.Size = new System.Drawing.Size(75, 23);
+            this.searchStart.TabIndex = 57;
+            this.searchStart.Text = "Go!";
+            this.searchStart.UseVisualStyleBackColor = true;
+            this.searchStart.Click += new System.EventHandler(this.searchStart_Click);
             // 
             // Dashboard
             // 
@@ -466,8 +449,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1156, 608);
-            this.Controls.Add(this.buttonLogOut);
-            this.Controls.Add(this.buttonSettings);
+            this.Controls.Add(this.searchStart);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.CreateYourNote);
             this.Controls.Add(this.richTextBox1);
@@ -479,7 +461,7 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.Headder);
-            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label_Tnotes);
@@ -490,8 +472,8 @@
             this.Controls.Add(this.yearIcon);
             this.Controls.Add(this.CoursesIcon);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnProjects);
-            this.Controls.Add(this.btnLabs);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnProfessor);
             this.Controls.Add(this.btnCourses);
             this.Controls.Add(this.btnSemester);
@@ -529,8 +511,8 @@
         private System.Windows.Forms.Button btnSemester;
         private System.Windows.Forms.Button btnCourses;
         private System.Windows.Forms.Button btnProfessor;
-        private System.Windows.Forms.Button btnLabs;
-        private System.Windows.Forms.Button btnProjects;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.PictureBox yearIcon;
         private System.Windows.Forms.PictureBox CoursesIcon;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -542,7 +524,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label Headder;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -554,7 +536,6 @@
         private System.Windows.Forms.TextBox CreateYourNote;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button buttonSettings;
-        private System.Windows.Forms.Button buttonLogOut;
+        private System.Windows.Forms.Button searchStart;
     }
 }

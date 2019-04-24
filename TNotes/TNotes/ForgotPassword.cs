@@ -34,9 +34,10 @@ namespace TNotes
 
         }
 
-        private void btnCreateAnAccount_Click(object sender, EventArgs e)
+        private void btnResetYourPassword_Click(object sender, EventArgs e)
         {
-
+            if (user.weakChangePass(this.textBox1.Text, this.txtNewPassword.Text) > 0)
+                this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
