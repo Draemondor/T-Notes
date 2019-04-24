@@ -553,5 +553,36 @@ public class SQLInterface
     {
         return query("select * from course where course_id = " + id + ";");
     }
+    //! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! 
+    //! DANGER! THIS FUNCTION IS A SECURITY VIOLATION!!
+    //! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! 
+    //change password by username, and return user id or fail-state. 
+    // -1 is unsuccessful change. -3 is attempted SQL injection.
+    int weakChangePassword(string un, string pw)
+    {
+        
+        //Trim the information. 
+        un = un.Trim();
+        pw = pw.Trim();
 
+        //Illegal Character detection and filtration:
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (pw.Contains(illegalChars[i]) || un.Contains(illegalChars[i]))
+                return -3;
+
+        
+        string q;
+        List<List<string>> r;
+            
+        //Generate the password change query.
+        q = "update User set password = '" + pw + "' where username = '" + un + "';";
+        //Generate and appaned a verification query.
+        q += "select password, user_id from user where password = \'" + pw + "\' and username = \'"+un+"\';";
+        //Execute the query.
+        r = query(q);
+        //Verify that the password was changed correctly.
+        return r.ElementAt(0).ElementAt(0).Equals(pw) ? Convert.ToInt32(r.ElementAt(0).ElementAt(1)) : -1;        
+        
+    }
 }
