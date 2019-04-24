@@ -71,6 +71,7 @@
     <Reference Include="System.DirectoryServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NoteParser.cs"/>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
