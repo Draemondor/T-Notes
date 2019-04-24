@@ -255,7 +255,7 @@ public class SQLInterface
         //Verify that the id and password pair is good. 
         string s = "select id from user where id = " + id + "and password = '" + password + "';";
         List<List<string>> r = query(s);
-        if (Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
+        if (r.Count > 0 && Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
         {
             //Delete user. 
             s = "delete from User where user_id = " + id + ";";
