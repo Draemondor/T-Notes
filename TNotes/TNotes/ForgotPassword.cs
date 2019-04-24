@@ -36,5 +36,20 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNewPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRe_enterPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

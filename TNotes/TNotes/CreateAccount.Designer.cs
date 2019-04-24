@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace TNotes
 {
     partial class CreateAccount
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateAccount));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -56,7 +55,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.textEmail);
             this.panel1.Controls.Add(this.txtConfirmPassword);
             this.panel1.Controls.Add(this.confirm_icon);
@@ -83,6 +81,8 @@
             this.textEmail.TabIndex = 14;
             this.textEmail.Text = "Email";
             this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
+            this.textEmail.GotFocus += new System.EventHandler(this.RemoveText);
+            this.textEmail.LostFocus += new System.EventHandler(this.AddText);
             // 
             // txtConfirmPassword
             // 
@@ -96,12 +96,14 @@
             this.txtConfirmPassword.TabIndex = 13;
             this.txtConfirmPassword.Text = "Confirm Your Password";
             this.txtConfirmPassword.UseSystemPasswordChar = true;
+            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
+            this.txtConfirmPassword.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtConfirmPassword.LostFocus += new System.EventHandler(this.AddText);
             // 
             // confirm_icon
             // 
             this.confirm_icon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.confirm_icon.BackColor = System.Drawing.Color.Transparent;
-            this.confirm_icon.Image = ((System.Drawing.Image)(resources.GetObject("confirm_icon.Image")));
             this.confirm_icon.Location = new System.Drawing.Point(20, 138);
             this.confirm_icon.Name = "confirm_icon";
             this.confirm_icon.Size = new System.Drawing.Size(20, 20);
@@ -117,12 +119,13 @@
             this.txtLastName.Size = new System.Drawing.Size(126, 23);
             this.txtLastName.TabIndex = 11;
             this.txtLastName.Text = "Last Name";
+            this.txtLastName.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtLastName.LostFocus += new System.EventHandler(this.AddText);
             // 
             // email_icon
             // 
             this.email_icon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.email_icon.BackColor = System.Drawing.Color.Transparent;
-            this.email_icon.Image = ((System.Drawing.Image)(resources.GetObject("email_icon.Image")));
             this.email_icon.Location = new System.Drawing.Point(20, 66);
             this.email_icon.Name = "email_icon";
             this.email_icon.Size = new System.Drawing.Size(20, 15);
@@ -143,6 +146,7 @@
             this.btnCreateAnAccount.Text = "Create Account";
             this.btnCreateAnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateAnAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAnAccount.Click += new System.EventHandler(this.btnCreateAnAccount_Click);
             // 
             // txtFirstName
             // 
@@ -153,6 +157,8 @@
             this.txtFirstName.Size = new System.Drawing.Size(111, 23);
             this.txtFirstName.TabIndex = 4;
             this.txtFirstName.Text = "First Name";
+            this.txtFirstName.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtFirstName.LostFocus += new System.EventHandler(this.AddText);
             // 
             // txtCreatePassword
             // 
@@ -166,12 +172,14 @@
             this.txtCreatePassword.TabIndex = 3;
             this.txtCreatePassword.Text = "Password";
             this.txtCreatePassword.UseSystemPasswordChar = true;
+            this.txtCreatePassword.TextChanged += new System.EventHandler(this.txtCreatePassword_TextChanged);
+            this.txtCreatePassword.GotFocus += new System.EventHandler(this.RemoveText);
+            this.txtCreatePassword.LostFocus += new System.EventHandler(this.AddText);
             // 
             // password_icon
             // 
             this.password_icon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.password_icon.BackColor = System.Drawing.Color.Transparent;
-            this.password_icon.Image = ((System.Drawing.Image)(resources.GetObject("password_icon.Image")));
             this.password_icon.Location = new System.Drawing.Point(21, 100);
             this.password_icon.Name = "password_icon";
             this.password_icon.Size = new System.Drawing.Size(17, 20);
@@ -182,7 +190,6 @@
             // 
             this.usrname_icon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.usrname_icon.BackColor = System.Drawing.Color.Transparent;
-            this.usrname_icon.Image = ((System.Drawing.Image)(resources.GetObject("usrname_icon.Image")));
             this.usrname_icon.Location = new System.Drawing.Point(21, 26);
             this.usrname_icon.Name = "usrname_icon";
             this.usrname_icon.Size = new System.Drawing.Size(17, 20);
@@ -205,7 +212,6 @@
             // Logo
             // 
             this.Logo.BackColor = System.Drawing.Color.Transparent;
-            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.Location = new System.Drawing.Point(12, 12);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(85, 84);
@@ -227,7 +233,6 @@
             // shsu_icon
             // 
             this.shsu_icon.BackColor = System.Drawing.Color.Transparent;
-            this.shsu_icon.Image = ((System.Drawing.Image)(resources.GetObject("shsu_icon.Image")));
             this.shsu_icon.Location = new System.Drawing.Point(515, 341);
             this.shsu_icon.Name = "shsu_icon";
             this.shsu_icon.Size = new System.Drawing.Size(35, 30);
@@ -238,14 +243,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(573, 383);
             this.Controls.Add(this.shsu_icon);
             this.Controls.Add(this.Tnotes_lable);
             this.Controls.Add(this.CreateAccount_lable);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateAccount";
             this.Text = "T-Notes  |  Create An Account ";
             this.panel1.ResumeLayout(false);

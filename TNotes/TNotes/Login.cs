@@ -14,12 +14,20 @@ namespace TNotes
     public partial class Form1 : Form
     {
         User user;
+        string phu = "Username";
+        string php = "Password";
+        Color farbe;
         public Form1(User x)
         {
             this.user = x;
             InitializeComponent();
+            txtUsername.Focus();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            farbe = txtUsername.ForeColor;
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -62,6 +70,39 @@ namespace TNotes
             }
         }
 
-        
+        public void RemoveText(object sender, EventArgs e)
+        {
+            txtUsername.ForeColor = farbe;
+            txtPassword.ForeColor = farbe;
+            if (txtUsername.Text == phu & sender == txtUsername)
+                txtUsername.Text = "";
+            else if (txtPassword.Text == php & sender == txtPassword)
+                txtPassword.Text = "";
+        }
+
+        public void AddText(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtUsername.Text) & sender == txtUsername)
+            {
+                txtUsername.ForeColor = Color.Gray;
+                txtUsername.Text = phu;
+            }
+            else if (String.IsNullOrWhiteSpace(txtPassword.Text) & sender == txtPassword)
+            {
+                txtPassword.ForeColor = Color.Gray;
+                txtPassword.Text = php;
+            }
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new CreateAccount(user)); });
+            myThread.Start();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
