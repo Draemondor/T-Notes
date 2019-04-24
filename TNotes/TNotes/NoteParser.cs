@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 
 namespace TNotes
-{   //This outlines friendly names for filetype management internally.
+{
     enum FileType
     {
         TXT,
@@ -20,7 +20,6 @@ namespace TNotes
         {
 
         }
-        //Take a filename, identify the extension, and parse it appropriately.
         public List<string> parseFile(string filename)
         {
             StreamReader input = new StreamReader(filename);             
@@ -41,10 +40,8 @@ namespace TNotes
             }
             return parseFileType(input, t);
         }
-        // Split on the appropriate fileType, and go. 
         public List<string> parseFileType(StreamReader input, FileType t)
         {
-            // parse the appropriate filetype. 
             switch (t)
             {
                 case FileType.TXT : return parseTXTFile(input);
@@ -52,14 +49,10 @@ namespace TNotes
                 default: return new List<string>();
             }
         }
-        // parseTXTFile takes a txt file StreamReader, and generates a list of Strings 
-        // to be passed into the includeMultiple() function from SQLInterface
         private List<string> parseTXTFile(StreamReader input)
         {
             List<string> tokens = new List<string>();
             string line;
-            //The delimiters specify all of the characters which have no semantic value in a note
-            //for splitting information.
             char[] delims = { ' ', '\t', '\r', ',', '.', '!', '?', '`', '~' , '|'
                             , '(', ')' , '{' , '}', '[', ']', '<', '>', '/' , '\\'
                             , '@', '$' , '%' , '^', '&', '*', '-', '_', '+' , '='
@@ -68,15 +61,12 @@ namespace TNotes
                             };
             while((line = input.ReadLine()) != null)
             {
-                //Split each line of the file over the delimiters:
                 string[] s = line.Split(delims);
-                //Add each string to the token list. 
                 for(int i = 0; i < s.Length; i++)
                 {
                     tokens.Add(s[i].Trim());
                 }
             }
-            //Filter out the garbage, and smile. 
             return removeGarbage(tokens);
         }
         private List<string> parseRTFFile(StreamReader input)
@@ -116,15 +106,10 @@ namespace TNotes
             
             return parseTXTFile(new StreamReader("temp.txt")); 
         }
-        //This should remove meaningless words to prevent filler words from flooding
-        //the keyword database.
         private List<string> removeGarbage(List<string> tokens)
         {
-            //Create the filter for the words that aren't needed from the string list.
             tokens = removeEmpty(tokens);
-            //Article Adjectives:
             string[] aa   = {"a","an","the"};
-            //Prepositions:
             string[] prep = { "of", "with", "at", "from", "into", "during"
                             , "including", "until", "against", "among", "throughout"
                             , "despite", "towards", "upon", "concerning", "to", "in"
@@ -133,12 +118,10 @@ namespace TNotes
                             , "within", "along", "following", "across", "behind", "beyond"
                             , "plus", "except", "but", "up", "out", "around", "down"
                             , "off", "above", "near" };
-            //Common Verb:
             string[] cv   = { "am", "is", "are", "was", "were", "be", "being", "been" };
-            //Pronouns: 
             string[] pn   = { "it", "i", "you", "he", "they", "we", "she", "who", "them"
                             , "me", "him", "one", "her", "us" };
-            //Loop through the list, and remove any copies of the filtered words.
+
             for(int i = tokens.Count; i > -1; i--)
             {
                 string s = tokens.ElementAt(i).ToLower();
@@ -153,7 +136,6 @@ namespace TNotes
             }
             return tokens;
         }
-        //Pass through the list and remove any null or empty strings. 
         private List<string> removeEmpty(List<string> tokens)
         {
             for(int i = tokens.Count; i > -1; i--)

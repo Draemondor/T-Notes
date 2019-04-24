@@ -103,19 +103,10 @@ public class SQLInterface
     //Create login query to the database according to the username and password provided. 
     //Return user_id of logged in user if successful.
     //Retuern -1 if the login failed, or -2 if there's a database error. 
-    //Return -3 if illegal character detected.
     public int login(string un, string pw)
     {
         un = un.Trim();
         pw = pw.Trim();
-
-        //Illegal Character detection and filtration:
-        char[] illegalChars = { '\'', '\"', ';', '@'};
-        for (int i = 0; i < illegalChars.Length; i++)  
-            if (pw.Contains(illegalChars[i]) || un.Contains(illegalChars[i]))
-                return -3;
-
-        //If no illegal characters were detected, proceed.
         int id;
         string q = "select user.user_id, user.first_name, user.last_name from user where user.username = '"+un+"' and user.password = '"+pw+"';";
         Console.WriteLine(q);
@@ -142,12 +133,6 @@ public class SQLInterface
         //Trim input.
         oldUN = oldUN.Trim();
         newUN = newUN.Trim();
-
-        //Illegal Character detection and filtration:
-        char[] illegalChars = { '\'', '\"', ';', '@' };
-        for (int i = 0; i < illegalChars.Length; i++)
-            if (newUN.Contains(illegalChars[i]))
-                return false;
 
         //Pull old information from the database to verify it.
         string q = "select * from user where username = \'" + oldUN + "\' and user_id = " + id;
@@ -182,13 +167,6 @@ public class SQLInterface
         //Trim the information. 
         oldPW = oldPW.Trim();
         newPW = newPW.Trim();
-
-        //Illegal Character detection and filtration:
-        char[] illegalChars = { '\'', '\"', ';', '@' };
-        for (int i = 0; i < illegalChars.Length; i++)
-            if (newPW.Contains(illegalChars[i]))
-                return false;
-
         //Verify existing information.
         string q = "select * from user where password = \'" + oldPW + "\' and user_id = " + id;
         List<List<string>> r = query(q);
@@ -207,17 +185,9 @@ public class SQLInterface
         }
         else return false;
     }
-    //Add a user to the database. Return the user id. Return -1 on failure. 
-    //Return -3 for illegal characters. 
+    //Add a user to the database. Return the user id. Return -1 on failure.
     public int addUser(string username, string password, string first, string last)
     {
-        //Illegal Character detection and filtration:
-        char[] illegalChars = { '\'', '\"', ';', '@' };
-        for (int i = 0; i < illegalChars.Length; i++)
-            if(password.Contains(illegalChars[i]) || username.Contains(illegalChars[i])
-            || first.Contains(illegalChars[i])    || last.Contains(illegalChars[i]))
-                return -3;
-
         //Check to see if username is already taken. 
         string q = "select count(username) from user where username = '" + username + "';";
         List<List<string>> r = query(q);
@@ -333,225 +303,4 @@ public class SQLInterface
         for (int i = 0; i < keys.Count; i++)
             include(keys.ElementAt(i), note_id);
     }
-
-    void deleteNote(int id)
-    {
-        //Delete the note directly.
-        string s = "delete from Note where note_id = " + id + ";";
-        //Delete references to the note in the is_taking relation.
-              s += "delete from is_taking where note_id = " + id + ";";
-        //Delete isolated keywords:
-        //Get the keywords associated with the notes.
-        string t = "select C.keyword_id, count(C.keyword_id) from (select keyword_id, from contains where note_id = " + id + ") as T, contains as C where C.keyword_id = T.keyword_id;";
-        List<List<string>> q = query(t);
-        for(int i = 0; i < q.Count; i++)
-        {
-            if(Convert.ToInt32(q[i][1]) == 1)
-                s += "deleteNote from keywords where keyword_id = "+q[i][0]+";";
-        }
-        //Delete contains entries associated with the note.
-              s += "delete from contains where note_id = " + id + ";";
-        query(s);
-    }
-
-    //UPDATE NOTE:
-    
-    bool changeTitle(int note_id, string title)
-    {
-        //Verify data integrity
-        title = title.Trim();
-        char[] illegalChars = { '\'', '\"', ';', '@' };
-        for (int i = 0; i < illegalChars.Length; i++)
-            if (title.Contains(illegalChars[i]))
-                return false;
-        
-        //Make the change
-        string s = "update note set title = '" + title + "' where note_id = " + note_id + ";";
-
-        //Verify the change
-        s += "select title from note where note_id = " + note_id + ";";
-        List<List<string>> q = query(s);
-
-        //Report success/fail.
-        return q[0][0].Equals(title);
-    }
-    bool changeChapter(int note_id, int chapter)
-    {
-        //Verify input integrity
-        if (chapter < 0) return false;
-        
-        //Make the change
-        string s = "update note set chapter = " + chapter + " where note_id = " + note_id + ";";
-
-        //Verify the change
-        s += "select chapter from note where note_id = " + note_id + ";";
-        List<List<string>> q = query(s);
-
-        //Report success/fail.
-        return q[0][0].Equals(chapter + "");
-    }
-    bool changeSection(int note_id, int section)
-    {
-        //Verify input integrity
-        if (section < 0) return false;
-
-        //Make the change
-        string s = "update note set section = " + section + " where note_id = " + note_id + ";";
-
-        //Verify the change
-        s += "select section from note where note_id = " + note_id + ";";
-        List<List<string>> q = query(s);
-
-        //Report success/fail.
-        return q[0][0].Equals(section + "");
-    }
-    bool changeDate(int note_id, string date)
-    {
-        //Verify input integrity
-        date = date.Trim();
-        char[] illegalChars = { '\'', '\"', ';', '@' };
-        for (int i = 0; i < illegalChars.Length; i++)
-            if (date.Contains(illegalChars[i]))
-                return false;
-        //Make the change
-        string s = "update note set date = '" + date + "' where note_id = " + note_id + ";";
-
-        //Verify the change
-        s += "select date from note where note_id = " + note_id + ";";
-        List<List<string>> q = query(s);
-
-        //Report success/fail.
-        return q[0][0].Equals(date);
-    }
-    bool changeSummary(int note_id, string summary)
-    {
-        summary = summary.Trim();
-        //Verify input integrity
-        char[] illegalChars = { '\'', '\"', ';', '@' };
-        for (int i = 0; i < illegalChars.Length; i++)
-            if (summary.Contains(illegalChars[i]))
-                return false;
-
-        //Make the change
-        string s = "update note set summary = '" + summary + "' where note_id = " + note_id + ";";
-
-        //Verify the change
-        s += "select summary from note where note_id = " + note_id + ";";
-        List<List<string>> q = query(s);
-
-        //Report success/fail.
-        return q[0][0].Equals(summary);
-    }/*
-    bool changeBody(int note_id, byte[] body)
-    {
-        updateKeywords(note_id, body);
-        //update the body
-        string s = "update note set body = '" + body + "' where note_id = " + note_id + ";";
-        //verify the body updated successfully
-        s += "select body from note where note_id = "+note_id + ";";
-        List<List<string>> q = query(s);
-        //Report success/fail.
-        bool good = true; 
-        for(int i = 0; i < body.Count(); i++)
-        {
-            good = good && q[0][0].Equals(body[i] + "");
-        }
-        return good;
-    }/*
-    */
-
-    //get all notes
-    List<List<string>> getAllNotes()
-    {
-        return query("select note_id, note_title, chapter, section, date, summary from note");
-    }
-    //get all notes under a course by id
-    List<List<string>> getNoteByCourse(int id)
-    {
-        return query("select note_id, note_title, chapter, section, date, summary from note, " +
-            "(select note_id from isTaking where course_id = "+id+") as T" +
-            "where note.note_id = T.note_id");
-    }
-    //get note by id
-    List<List<string>> getNoteById(int id)
-    {
-        return query("select * from note where note_id = " + id + ";");
-    }
-    //get notes by keywords
-    //getCourseByKeywords framework: See phone picture
-
-    List<List<string>> getCourseByKeywords(List<string> keywords)
-    {
-        //remove duplicates and SQL injection potentials.
-        List<string> keys = keywords.Distinct().ToList();
-        char[] illegalChars = { '\'', '\"', ';', '@' };
-        for (int i = 0; i < illegalChars.Length; i++)
-            for (int j = keys.Count; j > -1; j--)
-                if (keys.ElementAt(j).Contains(illegalChars[i]))
-                    keys.RemoveAt(j);
-        //generate query
-        string s = "select note.note_id, note.note_title, note.chapter" +
-                   ", note.section, note.date, note.summary from note, (";
-        s += "select L.note_id sum(L.note_id) from (";
-        for(int i = 0; i < keys.Count-1; i++)
-        {
-            s += "( select note_id from keywords, contains where keywords.keyword like '" 
-                + keys.ElementAt(i) + "' and contains.keyword_id = keyword.keyword_id ) union";
-        }
-        s += "( select note_id from keywords, contains where keywords.keyword like '"
-                + keys.ElementAt(keys.Count-1) + "' and contains.keyword_id = keyword.keyword_id )";
-        s += ") AS L group by L.note_id order by sum(L.note_id)) AS T where note.note_id = T.note_id;";
-        return query(s);
-    }
-    //Add course
-    int addCourse(string name, string subject, string prof, int year, string semester)
-    {
-        //Illegal Character detection and filtration:
-        char[] illegalChars = { '\'', '\"', ';', '@' };
-        for (int i = 0; i < illegalChars.Length; i++)
-            if (name.Contains(illegalChars[i]) || subject.Contains(illegalChars[i])
-            || prof.Contains(illegalChars[i]) || semester.Contains(illegalChars[i]))
-                return -3;
-
-        //Check for already existing course with the same attributes.
-
-        string s = "select id from coruse where (((course_name like '"+name+"' and (subject like '"+subject
-            +"'))and ((prof like '"+prof+"') and (semester like '"+semester+"'))) and (year = "+year+")";
-        List<List<string>> q = query(s);
-        //If it does, return its id instead.
-        if (q.Count > 0)
-            return Convert.ToInt32(q.ElementAt(0).ElementAt(0)); 
-
-
-        //Get number of courses for id
-        s = "select count(*) from course;";
-        q = query(s);
-        int id = Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
-        //Generate and execute course addition query
-        s  = "insert into course(course_id, course_name, subject, prof, semester, year) value (";
-        s += id + ", ";
-        s += name + ", ";
-        s += subject + ", ";
-        s += prof + ", ";
-        s += semester + ", ";
-        s += year + "); ";
-        s += "select * from course where course_id = " + id + ";";
-        q = query(s);
-        //test result
-        if (q.Count == 1)
-            return id;
-        return -1; // Something went horribly wrong.
-    }
-
-    //get all courses
-    List<List<string>> getAllCourses()
-    {
-        return query("select * from course;");
-    }
-    //get course by id
-    List<List<string>> getCourseById(int id)
-    {
-        return query("select * from course where course_id = " + id + ";");
-    }
-
 }
