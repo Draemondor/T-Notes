@@ -253,7 +253,7 @@ public class SQLInterface
     {
 
         //Verify that the id and password pair is good. 
-        string s = "select id from user where id = " + id + "and password = '" + password + "';";
+        string s = "select user_id from user where user_id = " + id + "and password = '" + password + "';";
         List<List<string>> r = query(s);
         if (r.Count > 0 && Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
         {

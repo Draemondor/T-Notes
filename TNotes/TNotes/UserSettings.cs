@@ -24,8 +24,10 @@ namespace TNotes
             int user_id = user.login(this.textBox7.Text, this.textBox6.Text);
             if (user_id > 0)
             {
-                user.removeUser(user_id, this.textBox6.Text);
-                this.Close();
+                if(user.removeUser(user_id, this.textBox6.Text))
+                {
+                    this.Close();
+                }              
             }
         }
         //Changes username

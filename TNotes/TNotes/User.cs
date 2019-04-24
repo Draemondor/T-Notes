@@ -81,15 +81,15 @@ namespace TNotes
             }
             else return 0;
         }
-        public int removeUser(int uid, string password)
+        public bool removeUser(int uid, string password)
         {
             //takes in username and password for user to remove
             //passes these to an interface function along with userID
             if (connection.removeUser(uid,  password))
             {
-                return 1;
+                return true;
             }
-            else return 0;
+            else return false;
         }
         public List<List<string>> searchByKeyword(List<string> keywords)
         {
