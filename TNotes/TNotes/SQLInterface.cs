@@ -619,6 +619,40 @@ public class SQLInterface
     }/*
     */
 
+    public int addNote(string note_title, int chapter, int section, string date, string summary, string body)
+    {
+        note_title = note_title.Trim();
+        date = date.Trim();
+        summary = summary.Trim();
+        body = body.Trim();
+
+        //Prevent sql injection from title, summary, or date.
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (date.Contains(illegalChars[i]) || note_title.Contains(illegalChars[i]) 
+                || summary.Contains(illegalChars[i]))
+                return -3;
+
+        //Generate note_id.
+        int note_id;
+        string s = "select count(*) from note;";
+        List<List<string>> q = query(s);
+        note_id = Convert.ToInt32(q.ElementAt(0).ElementAt(0))+1;
+        //add the note.
+        s = "insert into note(note_id,note_title,chapter,Section,Summary,Date,notes) value ("
+          + note_id + ", "
+          + "'" + note_title + "', "
+          + chapter + ", "
+          + section + ", "
+          + "'" + summary + "', "
+          + date + ", "
+          + "'" + body + "');" ;
+        query(s);
+        //handle keyword updates.
+        includeMultiple(tokenize(body), note_id);
+        return -1;
+    }
+
     //get all notes
     List<List<string>> getAllNotes()
     {
