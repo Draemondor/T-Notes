@@ -35,6 +35,7 @@ namespace TNotes
         {
             int user_id = user.login(this.textBox9.Text, this.textBox2.Text);
             user.changeUser(user_id, this.textBox9.Text, this.textBox1.Text);
+            user.setAttributes(this.textBox1.Text, this.textBox2.Text);
         }
         //Changes password
         private void button2_Click(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace TNotes
             {
                 int user_id = user.login(this.textBox8.Text, this.textBox3.Text);
                 user.changePass(user_id, this.textBox3.Text, this.textBox4.Text);
+                user.setAttributes(this.textBox8.Text, this.textBox4.Text);
             }
             else
             {

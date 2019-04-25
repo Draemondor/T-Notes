@@ -140,20 +140,23 @@ namespace TNotes
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            int result = Task.Factory.StartNew(() =>
+            User result = Task.Factory.StartNew(() =>
             {
                 UserSettings settings = new UserSettings(user);
                 Application.Run(settings);
 
-                return 1;
+                return user;
             }).Result;
-            if (result == 1 & user.login(user.getUsername(), user.getPassword()) < 0)
+            if (user.login(user.getUsername(), user.getPassword()) < 0)
             {
                 User newUser = new User();
                 Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
                 myThread.Start();
                 this.Close();
-            }       
+            } else
+            {
+                this.BringToFront();
+            }      
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

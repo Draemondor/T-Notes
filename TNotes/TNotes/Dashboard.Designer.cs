@@ -82,9 +82,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(-1, 89);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(246, 75);
-            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // Home
             // 
@@ -95,9 +93,8 @@
             this.Home.Location = new System.Drawing.Point(75, 112);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(115, 25);
-            this.Home.TabIndex = 2;
             this.Home.Text = "Dashboard";
-            this.Home.TextChanged += new System.EventHandler(this.Home_TextChanged);
+            this.Home.TabStop = false;
             // 
             // btnYear
             // 
@@ -111,7 +108,7 @@
             this.btnYear.Name = "btnYear";
             this.btnYear.Padding = new System.Windows.Forms.Padding(0, 0, 42, 0);
             this.btnYear.Size = new System.Drawing.Size(246, 75);
-            this.btnYear.TabIndex = 14;
+            this.btnYear.TabIndex = 3;
             this.btnYear.Text = "Year";
             this.btnYear.UseVisualStyleBackColor = true;
             // 
@@ -126,7 +123,7 @@
             this.btnSemester.Location = new System.Drawing.Point(-1, 311);
             this.btnSemester.Name = "btnSemester";
             this.btnSemester.Size = new System.Drawing.Size(246, 75);
-            this.btnSemester.TabIndex = 15;
+            this.btnSemester.TabIndex = 4;
             this.btnSemester.Text = "Semester";
             this.btnSemester.UseVisualStyleBackColor = true;
             // 
@@ -142,7 +139,7 @@
             this.btnCourses.Name = "btnCourses";
             this.btnCourses.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
             this.btnCourses.Size = new System.Drawing.Size(246, 75);
-            this.btnCourses.TabIndex = 16;
+            this.btnCourses.TabIndex = 2;
             this.btnCourses.Text = "Courses";
             this.btnCourses.UseVisualStyleBackColor = true;
             this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
@@ -159,7 +156,7 @@
             this.btnProfessor.Name = "btnProfessor";
             this.btnProfessor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnProfessor.Size = new System.Drawing.Size(246, 75);
-            this.btnProfessor.TabIndex = 17;
+            this.btnProfessor.TabIndex = 5;
             this.btnProfessor.Text = "Professor";
             this.btnProfessor.UseVisualStyleBackColor = true;
             this.btnProfessor.Click += new System.EventHandler(this.btnSettings_Click);
@@ -176,7 +173,7 @@
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btnSettings.Size = new System.Drawing.Size(246, 75);
-            this.btnSettings.TabIndex = 18;
+            this.btnSettings.TabIndex = 6;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
@@ -193,7 +190,7 @@
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
             this.btnLogOut.Size = new System.Drawing.Size(246, 75);
-            this.btnLogOut.TabIndex = 19;
+            this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
@@ -203,7 +200,6 @@
             this.yearIcon.Location = new System.Drawing.Point(0, 0);
             this.yearIcon.Name = "yearIcon";
             this.yearIcon.Size = new System.Drawing.Size(100, 50);
-            this.yearIcon.TabIndex = 52;
             this.yearIcon.TabStop = false;
             // 
             // CoursesIcon
@@ -211,7 +207,6 @@
             this.CoursesIcon.Location = new System.Drawing.Point(0, 0);
             this.CoursesIcon.Name = "CoursesIcon";
             this.CoursesIcon.Size = new System.Drawing.Size(100, 50);
-            this.CoursesIcon.TabIndex = 53;
             this.CoursesIcon.TabStop = false;
             // 
             // pictureBox2
@@ -219,7 +214,6 @@
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 54;
             this.pictureBox2.TabStop = false;
             // 
             // projectsIcon
@@ -227,7 +221,6 @@
             this.projectsIcon.Location = new System.Drawing.Point(0, 0);
             this.projectsIcon.Name = "projectsIcon";
             this.projectsIcon.Size = new System.Drawing.Size(100, 50);
-            this.projectsIcon.TabIndex = 51;
             this.projectsIcon.TabStop = false;
             // 
             // labsIcon
@@ -235,7 +228,6 @@
             this.labsIcon.Location = new System.Drawing.Point(0, 0);
             this.labsIcon.Name = "labsIcon";
             this.labsIcon.Size = new System.Drawing.Size(100, 50);
-            this.labsIcon.TabIndex = 50;
             this.labsIcon.TabStop = false;
             // 
             // professorIcon
@@ -243,7 +235,6 @@
             this.professorIcon.Location = new System.Drawing.Point(0, 0);
             this.professorIcon.Name = "professorIcon";
             this.professorIcon.Size = new System.Drawing.Size(100, 50);
-            this.professorIcon.TabIndex = 49;
             this.professorIcon.TabStop = false;
             // 
             // Logo
@@ -252,7 +243,6 @@
             this.Logo.Location = new System.Drawing.Point(1, 2);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(85, 84);
-            this.Logo.TabIndex = 29;
             this.Logo.TabStop = false;
             // 
             // label_Tnotes
@@ -264,8 +254,8 @@
             this.label_Tnotes.Location = new System.Drawing.Point(92, 30);
             this.label_Tnotes.Name = "label_Tnotes";
             this.label_Tnotes.Size = new System.Drawing.Size(120, 37);
-            this.label_Tnotes.TabIndex = 30;
             this.label_Tnotes.Text = "T-Notes";
+            this.label_Tnotes.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -273,7 +263,6 @@
             this.pictureBox3.Location = new System.Drawing.Point(245, -1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(911, 90);
-            this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
             // 
             // directorySearcher1
@@ -288,7 +277,6 @@
             this.pictureBox4.Location = new System.Drawing.Point(814, 30);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox4.TabIndex = 33;
             this.pictureBox4.TabStop = false;
             // 
             // txtSearch
@@ -298,7 +286,7 @@
             this.txtSearch.Location = new System.Drawing.Point(846, 30);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(212, 23);
-            this.txtSearch.TabIndex = 34;
+            this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Search";
             this.txtSearch.GotFocus += new System.EventHandler(this.RemoveText);
             this.txtSearch.LostFocus += new System.EventHandler(this.AddText);
@@ -312,8 +300,8 @@
             this.Headder.Location = new System.Drawing.Point(258, 34);
             this.Headder.Name = "Headder";
             this.Headder.Size = new System.Drawing.Size(252, 20);
-            this.Headder.TabIndex = 35;
             this.Headder.Text = "Note-taking application that works.";
+            this.Headder.TabStop = false;
             // 
             // btnAddNew
             // 
@@ -325,7 +313,7 @@
             this.btnAddNew.Location = new System.Drawing.Point(262, 135);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(145, 29);
-            this.btnAddNew.TabIndex = 36;
+            this.btnAddNew.TabIndex = 8;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
             // 
@@ -334,7 +322,6 @@
             this.pictureBox5.Location = new System.Drawing.Point(35, 331);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox5.TabIndex = 37;
             this.pictureBox5.TabStop = false;
             // 
             // dataGridView1
@@ -343,7 +330,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(262, 170);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(447, 391);
-            this.dataGridView1.TabIndex = 38;
+            this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // buttonUpdate
@@ -356,7 +343,7 @@
             this.buttonUpdate.Location = new System.Drawing.Point(413, 135);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(145, 29);
-            this.buttonUpdate.TabIndex = 39;
+            this.buttonUpdate.TabIndex = 9;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -371,7 +358,7 @@
             this.buttonDelete.Location = new System.Drawing.Point(564, 135);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(145, 29);
-            this.buttonDelete.TabIndex = 40;
+            this.buttonDelete.TabIndex = 10;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
@@ -386,7 +373,7 @@
             this.buttonSave.Location = new System.Drawing.Point(999, 567);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(145, 29);
-            this.buttonSave.TabIndex = 41;
+            this.buttonSave.TabIndex = 14;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             // 
@@ -400,7 +387,7 @@
             this.buttonModify.Location = new System.Drawing.Point(848, 567);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(145, 29);
-            this.buttonModify.TabIndex = 42;
+            this.buttonModify.TabIndex = 13;
             this.buttonModify.Text = "Modify";
             this.buttonModify.UseVisualStyleBackColor = true;
             // 
@@ -412,16 +399,16 @@
             this.CreateYourNote.Location = new System.Drawing.Point(734, 138);
             this.CreateYourNote.Name = "CreateYourNote";
             this.CreateYourNote.Size = new System.Drawing.Size(410, 25);
-            this.CreateYourNote.TabIndex = 47;
             this.CreateYourNote.Text = "Create Your Notes";
             this.CreateYourNote.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CreateYourNote.TabStop = false;
             // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(734, 170);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(410, 391);
-            this.richTextBox1.TabIndex = 46;
+            this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
             // 
             // pictureBox6
@@ -430,7 +417,6 @@
             this.pictureBox6.Location = new System.Drawing.Point(262, 567);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(35, 30);
-            this.pictureBox6.TabIndex = 48;
             this.pictureBox6.TabStop = false;
             // 
             // searchStart
@@ -438,7 +424,7 @@
             this.searchStart.Location = new System.Drawing.Point(1069, 30);
             this.searchStart.Name = "searchStart";
             this.searchStart.Size = new System.Drawing.Size(75, 23);
-            this.searchStart.TabIndex = 57;
+            this.searchStart.TabIndex = 1;
             this.searchStart.Text = "Go!";
             this.searchStart.UseVisualStyleBackColor = true;
             this.searchStart.Click += new System.EventHandler(this.searchStart_Click);
