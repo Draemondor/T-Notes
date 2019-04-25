@@ -253,15 +253,17 @@ public class SQLInterface
     {
 
         //Verify that the id and password pair is good. 
-        string s = "select user_id from user where user_id = " + id + "and password = '" + password + "';";
+        Console.Write(id);
+        string s = "select user.user_id from user where user.user_id = " + id + " and user.password = '" + password + "';";
         List<List<string>> r = query(s);
-        if (r.Count > 0 && Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
+        Console.Write(r.ElementAt(0).ElementAt(0));
+        if (Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
         {
             //Delete user. 
-            s = "delete from User where user_id = " + id + ";";
+            s = "delete from User where user.user_id = " + id + ";";
             r = query(s);
             //Generate cascade of id adjustments for remainder of users.
-            s = "update User set user_id = user_id - 1 where user_id > " + id + ";";
+            s = "update User set user.user_id = user.user_id - 1 where user.user_id > " + id + ";";
             r = query(s);
 
             //report success.

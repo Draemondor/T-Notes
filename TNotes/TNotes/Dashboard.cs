@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TNotes
@@ -111,16 +112,6 @@ namespace TNotes
             this.Close();
         }
 
-        private void UserSettings_FormClosing(object sender, EventArgs e)
-        {
-            if (user.login(user.getUsername(), user.getPassword())<0) {
-                User newUser = new User();
-                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
-                myThread.Start();
-                this.Close();
-            }
-        }
-
         private void searchStart_Click(object sender, EventArgs e)
         {
             string keywords = this.txtSearch.Text;
@@ -149,8 +140,20 @@ namespace TNotes
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new UserSettings(user)); });
-            myThread.Start();
+            int result = Task.Factory.StartNew(() =>
+            {
+                UserSettings settings = new UserSettings(user);
+                Application.Run(settings);
+
+                return 1;
+            }).Result;
+            if (result == 1 & user.login(user.getUsername(), user.getPassword()) < 0)
+            {
+                User newUser = new User();
+                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
+                myThread.Start();
+                this.Close();
+            }       
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

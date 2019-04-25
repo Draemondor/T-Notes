@@ -484,6 +484,7 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Notes | Dashboard";
+            //thi += new System.EventHandler(this.Dashboard_GetFocus);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearIcon)).EndInit();
