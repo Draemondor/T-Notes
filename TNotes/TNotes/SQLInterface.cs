@@ -508,17 +508,17 @@ public class SQLInterface
         return true;
     }
 
-    private void updateKeywords(int note_id, string body)
+    //This will take a note body and pull the keywords from it.
+    private List<string> tokenize(string body)
     {
-        //Generate a list of candidate keywords from the new body.
         List<string> tokens = new List<string>();
         string token = "";
         char t;
-        for(int i = 0; i < body.Length; i++)
+        for (int i = 0; i < body.Length; i++)
         {
             t = body[i];
             bool good = notJunk(t);
-            token += good ? ""+t : "";
+            token += good ? "" + t : "";
             if (!good)
             {
                 tokens.Add(token.Trim());
@@ -526,7 +526,13 @@ public class SQLInterface
             }
         }
         tokens = removeGarbage(tokens);
-        tokens.Sort();
+        return tokens;
+    }
+
+    private void updateKeywords(int note_id, string body)
+    {
+        //Generate a list of candidate keywords from the new body.
+        List<string> tokens = tokenize(body);
 
 
         // Collect the list of current keywords.
