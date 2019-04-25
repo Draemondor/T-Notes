@@ -654,19 +654,19 @@ public class SQLInterface
     }
 
     //get all notes
-    List<List<string>> getAllNotes()
+    public List<List<string>> getAllNotes()
     {
         return query("select note_id, note_title, chapter, section, date, summary from note");
     }
     //get all notes under a course by id
-    List<List<string>> getNoteByCourse(int id)
+    public List<List<string>> getNoteByCourse(int id)
     {
         return query("select note_id, note_title, chapter, section, date, summary from note, " +
             "(select note_id from isTaking where course_id = "+id+") as T" +
             "where note.note_id = T.note_id");
     }
     //get note by id
-    List<List<string>> getNoteById(int id)
+    public List<List<string>> getNoteById(int id)
     {
         return query("select * from note where note_id = " + id + ";");
     }
@@ -697,7 +697,7 @@ public class SQLInterface
         return query(s);
     }
     //Add course
-    int addCourse(string name, string subject, string prof, int year, string semester)
+    public int addCourse(string name, string subject, string prof, int year, string semester)
     {
         //Illegal Character detection and filtration:
         char[] illegalChars = { '\'', '\"', ';', '@' };
@@ -737,12 +737,12 @@ public class SQLInterface
     }
 
     //get all courses
-    List<List<string>> getAllCourses()
+    public List<List<string>> getAllCourses()
     {
         return query("select * from course;");
     }
     //get course by id
-    List<List<string>> getCourseById(int id)
+    public List<List<string>> getCourseById(int id)
     {
         return query("select * from course where course_id = " + id + ";");
     }
