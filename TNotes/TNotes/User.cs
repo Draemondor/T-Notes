@@ -93,7 +93,7 @@ namespace TNotes
         }
         public List<List<string>> searchByKeyword(List<string> keywords)
         {
-            return connection.getCourseByKeywords(keywords);
+            return connection.getNotesByKeywords(keywords);
         }
     }
 }
