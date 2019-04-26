@@ -96,5 +96,10 @@ namespace TNotes
                 textBox1.Text = "Username";
             }
         }
+
+        private void ForgotPassword_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
