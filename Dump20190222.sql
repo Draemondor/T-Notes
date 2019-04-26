@@ -57,7 +57,7 @@ DROP TABLE IF EXISTS `is_taking`;
 CREATE TABLE `is_taking` (
   `course_id` int(11) NOT NULL REFERENCES Course(course_id),
   `user_id` int(11) NOT NULL REFERENCES User(user_id),
-  `note_id` int(11) NOT NULL REFERENCES Note(note_id),
+  `note-id` int(11) NOT NULL REFERENCES Note(Note_id),
   PRIMARY KEY (course_id, user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
