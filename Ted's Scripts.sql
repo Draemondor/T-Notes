@@ -1,1 +1,1 @@
-SELECT * FROM `t-notes`.keyword;
+SELECT * FROM `t-notes`.is_taking;
