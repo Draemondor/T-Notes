@@ -137,7 +137,7 @@ CREATE TABLE `note` (
   `Section` int(11) DEFAULT NULL,
   `Summary` varchar(1000) DEFAULT NULL,
   `Date` date NOT NULL,
-  `notes` blob NOT NULL,
+  `notes` longtext NOT NULL,
   PRIMARY KEY (`note_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

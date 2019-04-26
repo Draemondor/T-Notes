@@ -12,22 +12,30 @@ namespace TNotes
 {
     public partial class UserSettings : Form
     {
-        User user = new User();
-        public UserSettings()
+        User user;
+        public UserSettings(User user)
         {
+            this.user = user;
             InitializeComponent();
         }
         //Removes user account
         private void button3_Click(object sender, EventArgs e)
         {
             int user_id = user.login(this.textBox7.Text, this.textBox6.Text);
-            user.removeUser(user_id, this.textBox2.Text);
+            if (user_id > 0)
+            {
+                if(user.removeUser(user_id, this.textBox6.Text))
+                {
+                    this.Close();
+                }              
+            }
         }
         //Changes username
         private void button1_Click(object sender, EventArgs e)
         {
             int user_id = user.login(this.textBox9.Text, this.textBox2.Text);
             user.changeUser(user_id, this.textBox9.Text, this.textBox1.Text);
+            user.setAttributes(this.textBox1.Text, this.textBox2.Text);
         }
         //Changes password
         private void button2_Click(object sender, EventArgs e)
@@ -36,6 +44,7 @@ namespace TNotes
             {
                 int user_id = user.login(this.textBox8.Text, this.textBox3.Text);
                 user.changePass(user_id, this.textBox3.Text, this.textBox4.Text);
+                user.setAttributes(this.textBox8.Text, this.textBox4.Text);
             }
             else
             {
