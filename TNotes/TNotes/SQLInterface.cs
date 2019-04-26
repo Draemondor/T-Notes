@@ -259,12 +259,23 @@ public class SQLInterface
         Console.Write(r.ElementAt(0).ElementAt(0));
         if (Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
         {
-            //Delete user. 
-            s = "delete from User where user.user_id = " + id + ";";
+            //Build the query:
+            //Delete user and associated notes. 
+            s = "delete from User where user.user_id = " + id + "; ";
+            s += "delete from Note where note_id = (select note_id from is_taking where user_id = " + id + "); ";
+            
+            //Generate cascade of id adjustments for remainder of users and notes.
+            s += "update User set user.user_id = user.user_id - 1 where user.user_id > " + id + "; ";
+            s += "update is_taking set is_taking.user_id = is_taking.user_id - 1 where user.user_id > " + id + ";";
+            s += "update Note set Note.note_id = Note.note_id - 1 where Note.note_id = (select note_id from is_taking where user_id = " + id + ");";
+            s += "update is_taking set is_taking.note_id = is_taking.note_id - 1 where is_taking.note_id = (select note_id from is_taking where user_id = " + id + ");";
+            
+            //Launch the query
             r = query(s);
-            //Generate cascade of id adjustments for remainder of users.
-            s = "update User set user.user_id = user.user_id - 1 where user.user_id > " + id + ";";
-            r = query(s);
+
+            //This is a dirty fix to a problem with the database schema. 
+            //The database needs to be re-normalized to preserve the functional dependencies.
+            //We can't do that mid-project.
 
             //report success.
             return true;
