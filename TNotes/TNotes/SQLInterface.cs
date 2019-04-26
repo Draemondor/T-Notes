@@ -506,7 +506,7 @@ public class SQLInterface
         return query(s);
     }
     //Add course
-    int addCourse(string name, string subject, string prof, int year, string semester)
+    public int addCourse(string name, string subject, string prof, int year, string semester)
     {
         //Illegal Character detection and filtration:
         char[] illegalChars = { '\'', '\"', ';', '@' };

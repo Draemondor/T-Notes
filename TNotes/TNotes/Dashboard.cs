@@ -134,7 +134,6 @@ namespace TNotes
                 var result = form.ShowDialog();
                 if(result == DialogResult.OK)
                 {
-                    string course = form.course;
 
                 }
             }

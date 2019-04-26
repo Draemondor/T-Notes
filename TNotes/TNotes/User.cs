@@ -64,6 +64,10 @@ namespace TNotes
             }
             else return 0;
         }
+        public int addCourse(string course, string subject, string prof, string semester, int year)
+        {
+            return connection.addCourse(course, subject, prof, year, semester);
+        }
         public DataTable dtCourses()
         {
             return connection.dtAllCourses();

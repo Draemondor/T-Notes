@@ -30,11 +30,11 @@
         {
             this.listCourses = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.coursetb = new System.Windows.Forms.TextBox();
+            this.subjtb = new System.Windows.Forms.TextBox();
+            this.proftb = new System.Windows.Forms.TextBox();
+            this.semestertb = new System.Windows.Forms.TextBox();
+            this.yeartb = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -57,50 +57,61 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // coursetb
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 160);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 30);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Course";
+            this.coursetb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coursetb.Location = new System.Drawing.Point(12, 160);
+            this.coursetb.Name = "coursetb";
+            this.coursetb.Size = new System.Drawing.Size(125, 30);
+            this.coursetb.TabIndex = 2;
+            this.coursetb.Text = "Course";
+            this.coursetb.GotFocus += new System.EventHandler(this.clear_OnFocus);
+            this.coursetb.LostFocus += new System.EventHandler(this.resetText_OnLostFocus);
             // 
-            // textBox2
+            // subjtb
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(143, 160);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 30);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Subject";
+            this.subjtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subjtb.Location = new System.Drawing.Point(143, 160);
+            this.subjtb.Name = "subjtb";
+            this.subjtb.Size = new System.Drawing.Size(125, 30);
+            this.subjtb.TabIndex = 3;
+            this.subjtb.Text = "Subject";
+            this.subjtb.GotFocus += new System.EventHandler(this.clear_OnFocus);
+            this.subjtb.LostFocus += new System.EventHandler(this.resetText_OnLostFocus);
             // 
-            // textBox3
+            // proftb
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(274, 160);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 30);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "Professor";
+            this.proftb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proftb.Location = new System.Drawing.Point(274, 160);
+            this.proftb.Name = "proftb";
+            this.proftb.Size = new System.Drawing.Size(125, 30);
+            this.proftb.TabIndex = 4;
+            this.proftb.Text = "Professor";
+            this.proftb.GotFocus += new System.EventHandler(this.clear_OnFocus);
+            this.proftb.LostFocus += new System.EventHandler(this.resetText_OnLostFocus);
             // 
-            // textBox4
+            // semestertb
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(405, 160);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 30);
-            this.textBox4.TabIndex = 5;
-            this.textBox4.Text = "Semester";
+            this.semestertb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.semestertb.Location = new System.Drawing.Point(405, 160);
+            this.semestertb.Name = "semestertb";
+            this.semestertb.Size = new System.Drawing.Size(125, 30);
+            this.semestertb.TabIndex = 5;
+            this.semestertb.Text = "Semester";
+            this.semestertb.GotFocus += new System.EventHandler(this.clear_OnFocus);
+            this.semestertb.LostFocus += new System.EventHandler(this.resetText_OnLostFocus);
             // 
-            // textBox5
+            // yeartb
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(536, 160);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 30);
-            this.textBox5.TabIndex = 6;
-            this.textBox5.Text = "Year";
+            this.yeartb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yeartb.Location = new System.Drawing.Point(536, 160);
+            this.yeartb.Name = "yeartb";
+            this.yeartb.Size = new System.Drawing.Size(125, 30);
+            this.yeartb.TabIndex = 6;
+            this.yeartb.Text = "Year";
+            this.yeartb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yeartb_KeyPress);
+            this.yeartb.GotFocus += new System.EventHandler(this.clear_OnFocus);
+            this.yeartb.LostFocus += new System.EventHandler(this.resetText_OnLostFocus);
             // 
             // button2
             // 
@@ -110,6 +121,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Save To New Course";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SelectCourse
             // 
@@ -117,11 +129,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 266);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.yeartb);
+            this.Controls.Add(this.semestertb);
+            this.Controls.Add(this.proftb);
+            this.Controls.Add(this.subjtb);
+            this.Controls.Add(this.coursetb);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listCourses);
             this.Name = "SelectCourse";
@@ -135,11 +147,11 @@
 
         private System.Windows.Forms.ListBox listCourses;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox coursetb;
+        private System.Windows.Forms.TextBox subjtb;
+        private System.Windows.Forms.TextBox proftb;
+        private System.Windows.Forms.TextBox semestertb;
+        private System.Windows.Forms.TextBox yeartb;
         private System.Windows.Forms.Button button2;
     }
 }
