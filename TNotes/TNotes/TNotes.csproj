@@ -89,6 +89,7 @@
     <Compile Include="ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="NoteParser.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +164,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\incorrect1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\calendar.png" />
+    <Content Include="Resources\clipboard.png" />
+    <Content Include="Resources\dashboard icon.png" />
+    <Content Include="Resources\Email-icon.png" />
+    <Content Include="Resources\email_icon.png" />
+    <Content Include="Resources\folder %281%29.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\icon.ico" />
+    <Content Include="Resources\icon.png" />
+    <Content Include="Resources\icons8-lock-26.png" />
+    <Content Include="Resources\icons8-user-male-26.png" />
+    <Content Include="Resources\kisspng-computer-icons-directory-folder-icon-5b2630874cbcc1.6051724515292294473143.png" />
+    <Content Include="Resources\open-book.png" />
+    <Content Include="Resources\PasswordCheck-icon.png" />
+    <Content Include="Resources\PasswordLock-icon.png" />
+    <Content Include="Resources\password_icon.png" />
+    <Content Include="Resources\project.png" />
+    <Content Include="Resources\samhouston_icon.png" />
+    <Content Include="Resources\scientist.png" />
+    <Content Include="Resources\Username-icon.png" />
+    <Content Include="Resources\username_icon.png" />
+    <Content Include="Resources\website.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

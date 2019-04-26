@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TNotes
@@ -83,10 +84,6 @@ namespace TNotes
 
         }
 
-        private void btnCreateAnAccount_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -145,5 +142,59 @@ namespace TNotes
                 dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
+        private void searchStart_Click(object sender, EventArgs e)
+        {
+            string keywords = this.txtSearch.Text;
+            string[] keywordsArray = keywords.Split(',');
+            List<string> keywordsList = new List<string>();
+            foreach (string s in keywordsArray)
+            {
+                keywordsList.Add(s);
+            }
+
+        }
+
+        public void RemoveText(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Equals("Search") & sender == txtSearch)
+                txtSearch.Text = "";
+        }
+
+        public void AddText(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtSearch.Text) & sender == txtSearch)
+            {
+                txtSearch.Text = "Search";
+            }
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            User result = Task.Factory.StartNew(() =>
+            {
+                UserSettings settings = new UserSettings(user);
+                Application.Run(settings);
+
+                return user;
+            }).Result;
+            if (user.login(user.getUsername(), user.getPassword()) < 0)
+            {
+                User newUser = new User();
+                Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
+                myThread.Start();
+                this.Close();
+            } else
+            {
+                this.BringToFront();
+            }      
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            User newUser = new User();
+            Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
+            myThread.Start();
+            this.Close();
+        }
     }
 }

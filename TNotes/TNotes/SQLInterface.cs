@@ -255,16 +255,29 @@ public class SQLInterface
     {
 
         //Verify that the id and password pair is good. 
-        string s = "select id from user where id = " + id + "and password = '" + password + "';";
+        Console.Write(id);
+        string s = "select user.user_id from user where user.user_id = " + id + " and user.password = '" + password + "';";
         List<List<string>> r = query(s);
+        Console.Write(r.ElementAt(0).ElementAt(0));
         if (Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == id)
         {
-            //Delete user. 
-            s = "delete from User where user_id = " + id + ";";
+            //Build the query:
+            //Delete user and associated notes. 
+            s = "delete from User where user.user_id = " + id + "; ";
+            s += "delete from Note where note_id = (select note_id from is_taking where user_id = " + id + "); ";
+            
+            //Generate cascade of id adjustments for remainder of users and notes.
+            s += "update User set user.user_id = user.user_id - 1 where user.user_id > " + id + "; ";
+            s += "update is_taking set is_taking.user_id = is_taking.user_id - 1 where user.user_id > " + id + ";";
+            s += "update Note set Note.note_id = Note.note_id - 1 where Note.note_id = (select note_id from is_taking where user_id = " + id + ");";
+            s += "update is_taking set is_taking.note_id = is_taking.note_id - 1 where is_taking.note_id = (select note_id from is_taking where user_id = " + id + ");";
+            
+            //Launch the query
             r = query(s);
-            //Generate cascade of id adjustments for remainder of users.
-            s = "update User set user_id = user_id - 1 where user_id > " + id + ";";
-            r = query(s);
+
+            //This is a dirty fix to a problem with the database schema. 
+            //The database needs to be re-normalized to preserve the functional dependencies.
+            //We can't do that mid-project.
 
             //report success.
             return true;
@@ -323,7 +336,7 @@ public class SQLInterface
         }
     }
     //Associate a list of keywords with a note by note_id.
-    public void includeMultiple(List<string> keysIn, int note_id)
+    private void includeMultiple(List<string> keysIn, int note_id)
     {
         List<string> keywords = new List<string>();
         //Trim the elements of the list: 
@@ -336,7 +349,7 @@ public class SQLInterface
             include(keys.ElementAt(i), note_id);
     }
 
-    void deleteNote(int id)
+    public void deleteNote(int id)
     {
         //Delete the note directly.
         string s = "delete from Note where note_id = " + id + ";";
@@ -358,7 +371,7 @@ public class SQLInterface
 
     //UPDATE NOTE:
 
-    bool changeTitle(int note_id, string title)
+    public bool changeTitle(int note_id, string title)
     {
         //Verify data integrity
         title = title.Trim();
@@ -377,7 +390,7 @@ public class SQLInterface
         //Report success/fail.
         return q[0][0].Equals(title);
     }
-    bool changeChapter(int note_id, int chapter)
+    public bool changeChapter(int note_id, int chapter)
     {
         //Verify input integrity
         if (chapter < 0) return false;
@@ -392,7 +405,7 @@ public class SQLInterface
         //Report success/fail.
         return q[0][0].Equals(chapter + "");
     }
-    bool changeSection(int note_id, int section)
+    public bool changeSection(int note_id, int section)
     {
         //Verify input integrity
         if (section < 0) return false;
@@ -407,7 +420,7 @@ public class SQLInterface
         //Report success/fail.
         return q[0][0].Equals(section + "");
     }
-    bool changeDate(int note_id, string date)
+    public bool changeDate(int note_id, string date)
     {
         //Verify input integrity
         date = date.Trim();
@@ -425,7 +438,7 @@ public class SQLInterface
         //Report success/fail.
         return q[0][0].Equals(date);
     }
-    bool changeSummary(int note_id, string summary)
+    public bool changeSummary(int note_id, string summary)
     {
         summary = summary.Trim();
         //Verify input integrity
@@ -443,46 +456,237 @@ public class SQLInterface
 
         //Report success/fail.
         return q[0][0].Equals(summary);
-    }/*
-    bool changeBody(int note_id, byte[] body)
+    }
+
+    private List<string> removeGarbage(List<string> tokens)
+    {
+        //Create the filter for the words that aren't needed from the string list.
+        tokens = removeEmpty(tokens);
+        //Article Adjectives:
+        string[] aa = { "a", "an", "the" };
+        //Prepositions:
+        string[] prep = { "of", "with", "at", "from", "into", "during"
+                            , "including", "until", "against", "among", "throughout"
+                            , "despite", "towards", "upon", "concerning", "to", "in"
+                            , "for", "on", "by", "about", "like", "through", "over"
+                            , "before", "between", "after", "since", "without", "under"
+                            , "within", "along", "following", "across", "behind", "beyond"
+                            , "plus", "except", "but", "up", "out", "around", "down"
+                            , "off", "above", "near" };
+        //Common Verb:
+        string[] cv = { "am", "is", "are", "was", "were", "be", "being", "been" };
+        //Pronouns: 
+        string[] pn = { "it", "i", "you", "he", "they", "we", "she", "who", "them"
+                            , "me", "him", "one", "her", "us" };
+        //Loop through the list, and remove any copies of the filtered words.
+        for (int i = tokens.Count; i > -1; i--)
+        {
+            string s = tokens.ElementAt(i).ToLower();
+            if (aa.Contains(s)
+              || prep.Contains(s)
+              || cv.Contains(s)
+              || pn.Contains(s)
+              )
+            {
+                tokens.RemoveAt(i);
+            }
+        }
+        return tokens;
+    }
+    //Pass through the list and remove any null or empty strings. 
+    private List<string> removeEmpty(List<string> tokens)
+    {
+        for (int i = tokens.Count; i > -1; i--)
+        {
+            string s = tokens.ElementAt(i);
+            if (s.Equals("")
+              || s.Equals(null))
+            {
+                tokens.RemoveAt(i);
+            }
+        }
+        return tokens;
+    }
+    private bool notJunk(char c)
+    {
+        char[] delims = { ' ', '\t', '\r', ',', '.', '!', '?', '`', '~' , '|'
+                            , '(', ')' , '{' , '}', '[', ']', '<', '>', '/' , '\\'
+                            , '@', '$' , '%' , '^', '&', '*', '-', '_', '+' , '='
+                            , '1', '2' , '3' , '4', '5', '6', '7', '8', '9' , '0'
+                            , ':', ';' , '\'', '\"'
+                            };
+        for (int i = 0; i < delims.Count(); i++)
+            if (c == delims[i])
+                return false;
+        return true;
+    }
+
+    //This will take a note body and pull the keywords from it.
+    private List<string> tokenize(string body)
+    {
+        List<string> tokens = new List<string>();
+        string token = "";
+        char t;
+        for (int i = 0; i < body.Length; i++)
+        {
+            t = body[i];
+            bool good = notJunk(t);
+            token += good ? "" + t : "";
+            if (!good)
+            {
+                tokens.Add(token.Trim());
+                token = "";
+            }
+        }
+        tokens = removeGarbage(tokens);
+        return tokens;
+    }
+
+    private void updateKeywords(int note_id, string body)
+    {
+        //Generate a list of candidate keywords from the new body.
+        List<string> tokens = tokenize(body);
+
+
+        // Collect the list of current keywords.
+        string s = "";
+        List<List<string>> q;
+
+        s+= "select keywords.keyword, count(note_id) from keywords, contains where contains.note_id = " +note_id+ " and " +
+            "keywords.keyword_id = contains.keyword_id;";
+        q = query(s);
+
+        //Flatten the query and generate potential hanging keywords.
+        List<string> oldTokens = new List<string>();
+
+        List<string> hangingWords = new List<string>();
+
+        for (int i = 0; i < q.Count(); i++)
+        {
+            List<string> temp = q.ElementAt(i);
+            string word = temp.ElementAt(0);
+            tokens.Add(word);
+            if (Convert.ToInt32(temp.ElementAt(1)) == 1)
+                hangingWords.Add(word);
+        }
+
+
+
+        //Generate add and remove lists
+        List<string> add = new List<string>();
+        List<string> remove = new List<string>();
+
+        //Note: This is inefficient. Consider revision.
+        //Generate positive difference list
+        for (int i = 0; i < tokens.Count(); i++)
+            if (!oldTokens.Contains(tokens.ElementAt(i)))
+                add.Add(tokens.ElementAt(i));
+        //Generate negative difference list
+        for (int i = 0; i < oldTokens.Count(); i++)
+            if (!tokens.Contains(oldTokens.ElementAt(i)))
+                remove.Add(oldTokens.ElementAt(i));
+
+        //Prune hanging words.
+        for (int i = hangingWords.Count(); i > 0; i--)
+            if (!remove.Contains(hangingWords.ElementAt(i)))
+                hangingWords.RemoveAt(i);
+
+        //remove negative difference
+        if (remove.Count() > 0) {
+            s = "remove from contains where note_id = " + note_id + " and keyword_id = (" +
+                "select keyword_id from keywords where keyword = \"" + remove.ElementAt(0);
+            if(remove.Count() > 1)
+            {
+                for (int i = 0; i < remove.Count(); i++)
+                {
+                    s += " or keyword = \"" + remove.ElementAt(i) + "\"";
+                }
+            }
+            s += "); ";
+        }
+
+        //eliminate hanging keywords
+        for(int i = 0; i < hangingWords.Count(); i++)
+        {
+            s += "remove from keyword where keyword = \"" + hangingWords.ElementAt(i) + "\"; ";
+        }
+
+        query(s);
+
+        //add positive difference
+        includeMultiple(add, note_id);
+    }
+
+    public bool updateBody(int note_id, string body)
     {
         updateKeywords(note_id, body);
         //update the body
-        string s = "update note set body = '" + body + "' where note_id = " + note_id + ";";
+        string s = "update note set notes = '" + body + "' where note_id = " + note_id + ";";
         //verify the body updated successfully
-        s += "select body from note where note_id = "+note_id + ";";
+        s += "select notes from note where note_id = "+note_id + ";";
         List<List<string>> q = query(s);
         //Report success/fail.
-        bool good = true; 
-        for(int i = 0; i < body.Count(); i++)
-        {
-            good = good && q[0][0].Equals(body[i] + "");
-        }
-        return good;
+        string newBody = q.ElementAt(0).ElementAt(0);
+
+        return body.Equals(newBody);
     }/*
     */
 
+    public int addNote(string note_title, int chapter, int section, string date, string summary, string body)
+    {
+        note_title = note_title.Trim();
+        date = date.Trim();
+        summary = summary.Trim();
+        body = body.Trim();
+
+        //Prevent sql injection from title, summary, or date.
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (date.Contains(illegalChars[i]) || note_title.Contains(illegalChars[i]) 
+                || summary.Contains(illegalChars[i]))
+                return -3;
+
+        //Generate note_id.
+        int note_id;
+        string s = "select count(*) from note;";
+        List<List<string>> q = query(s);
+        note_id = Convert.ToInt32(q.ElementAt(0).ElementAt(0))+1;
+        //add the note.
+        s = "insert into note(note_id,note_title,chapter,Section,Summary,Date,notes) value ("
+          + note_id + ", "
+          + "'" + note_title + "', "
+          + chapter + ", "
+          + section + ", "
+          + "'" + summary + "', "
+          + date + ", "
+          + "'" + body + "');" ;
+        query(s);
+        //handle keyword updates.
+        includeMultiple(tokenize(body), note_id);
+        return -1;
+    }
+
     //get all notes
-    List<List<string>> getAllNotes()
+    public List<List<string>> getAllNotes()
     {
         return query("select note_id, note_title, chapter, section, date, summary from note");
     }
     //get all notes under a course by id
-    List<List<string>> getNoteByCourse(int id)
+    public List<List<string>> getNoteByCourse(int id)
     {
         return query("select note_id, note_title, chapter, section, date, summary from note, " +
             "(select note_id from isTaking where course_id = " + id + ") as T" +
             "where note.note_id = T.note_id");
     }
     //get note by id
-    List<List<string>> getNoteById(int id)
+    public List<List<string>> getNoteById(int id)
     {
         return query("select * from note where note_id = " + id + ";");
     }
     //get notes by keywords
     //getCourseByKeywords framework: See phone picture
 
-    List<List<string>> getCourseByKeywords(List<string> keywords)
+    public List<List<string>> getNotesByKeywords(List<string> keywords)
     {
         //remove duplicates and SQL injection potentials.
         List<string> keys = keywords.Distinct().ToList();
@@ -546,7 +750,7 @@ public class SQLInterface
     }
 
     //get all courses
-    List<List<string>> getAllCourses()
+    public List<List<string>> getAllCourses()
     {
         return query("select * from course;");
     }
@@ -562,9 +766,40 @@ public class SQLInterface
     }
 
     //get course by id
-    List<List<string>> getCourseById(int id)
+    public List<List<string>> getCourseById(int id)
     {
         return query("select * from course where course_id = " + id + ";");
     }
+    //! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! 
+    //! DANGER! THIS FUNCTION IS A SECURITY VIOLATION!!
+    //! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! 
+    //change password by username, and return user id or fail-state. 
+    // -1 is unsuccessful change. -3 is attempted SQL injection.
+    public int weakChangePassword(string un, string pw)
+    {
+        
+        //Trim the information. 
+        un = un.Trim();
+        pw = pw.Trim();
 
+        //Illegal Character detection and filtration:
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
+            if (pw.Contains(illegalChars[i]) || un.Contains(illegalChars[i]))
+                return -3;
+
+        
+        string q;
+        List<List<string>> r;
+            
+        //Generate the password change query.
+        q = "update User set password = '" + pw + "' where username = '" + un + "';";
+        //Generate and appaned a verification query.
+        q += "select password, user_id from user where password = \'" + pw + "\' and username = \'"+un+"\';";
+        //Execute the query.
+        r = query(q);
+        //Verify that the password was changed correctly.
+        return r.ElementAt(0).ElementAt(0).Equals(pw) ? Convert.ToInt32(r.ElementAt(0).ElementAt(1)) : -1;        
+        
+    }
 }
