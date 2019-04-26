@@ -1,1 +1,1 @@
-coursecourseSELECT * FROM `t-notes`.user;
+SELECT * FROM `t-notes`.keyword;
