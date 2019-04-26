@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Home = new System.Windows.Forms.TextBox();
             this.btnYear = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.label_Tnotes = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Headder = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
@@ -58,7 +58,6 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.CreateYourNote = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.searchStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearIcon)).BeginInit();
@@ -69,10 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.professorIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -82,6 +79,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(-1, 89);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(246, 75);
+            this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
             // Home
@@ -93,8 +91,9 @@
             this.Home.Location = new System.Drawing.Point(75, 112);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(115, 25);
-            this.Home.Text = "Dashboard";
+            this.Home.TabIndex = 27;
             this.Home.TabStop = false;
+            this.Home.Text = "Dashboard";
             // 
             // btnYear
             // 
@@ -159,7 +158,6 @@
             this.btnProfessor.TabIndex = 5;
             this.btnProfessor.Text = "Professor";
             this.btnProfessor.UseVisualStyleBackColor = true;
-            this.btnProfessor.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnSettings
             // 
@@ -197,52 +195,69 @@
             // 
             // yearIcon
             // 
-            this.yearIcon.Location = new System.Drawing.Point(0, 0);
+            this.yearIcon.Image = ((System.Drawing.Image)(resources.GetObject("yearIcon.Image")));
+            this.yearIcon.Location = new System.Drawing.Point(35, 259);
             this.yearIcon.Name = "yearIcon";
-            this.yearIcon.Size = new System.Drawing.Size(100, 50);
+            this.yearIcon.Size = new System.Drawing.Size(32, 32);
+            this.yearIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.yearIcon.TabIndex = 24;
             this.yearIcon.TabStop = false;
             // 
             // CoursesIcon
             // 
-            this.CoursesIcon.Location = new System.Drawing.Point(0, 0);
+            this.CoursesIcon.Image = ((System.Drawing.Image)(resources.GetObject("CoursesIcon.Image")));
+            this.CoursesIcon.Location = new System.Drawing.Point(35, 185);
             this.CoursesIcon.Name = "CoursesIcon";
-            this.CoursesIcon.Size = new System.Drawing.Size(100, 50);
+            this.CoursesIcon.Size = new System.Drawing.Size(32, 32);
+            this.CoursesIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.CoursesIcon.TabIndex = 25;
             this.CoursesIcon.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(35, 108);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.TabIndex = 26;
             this.pictureBox2.TabStop = false;
             // 
             // projectsIcon
             // 
-            this.projectsIcon.Location = new System.Drawing.Point(0, 0);
+            this.projectsIcon.Location = new System.Drawing.Point(35, 554);
             this.projectsIcon.Name = "projectsIcon";
-            this.projectsIcon.Size = new System.Drawing.Size(100, 50);
+            this.projectsIcon.Size = new System.Drawing.Size(32, 32);
+            this.projectsIcon.TabIndex = 23;
             this.projectsIcon.TabStop = false;
             // 
             // labsIcon
             // 
-            this.labsIcon.Location = new System.Drawing.Point(0, 0);
+            this.labsIcon.Location = new System.Drawing.Point(35, 480);
             this.labsIcon.Name = "labsIcon";
-            this.labsIcon.Size = new System.Drawing.Size(100, 50);
+            this.labsIcon.Size = new System.Drawing.Size(32, 32);
+            this.labsIcon.TabIndex = 22;
             this.labsIcon.TabStop = false;
             // 
             // professorIcon
             // 
-            this.professorIcon.Location = new System.Drawing.Point(0, 0);
+            this.professorIcon.Image = ((System.Drawing.Image)(resources.GetObject("professorIcon.Image")));
+            this.professorIcon.Location = new System.Drawing.Point(35, 403);
             this.professorIcon.Name = "professorIcon";
-            this.professorIcon.Size = new System.Drawing.Size(100, 50);
+            this.professorIcon.Size = new System.Drawing.Size(32, 32);
+            this.professorIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.professorIcon.TabIndex = 21;
             this.professorIcon.TabStop = false;
             // 
             // Logo
             // 
             this.Logo.BackColor = System.Drawing.Color.Transparent;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.InitialImage = null;
             this.Logo.Location = new System.Drawing.Point(1, 2);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(85, 84);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logo.TabIndex = 20;
             this.Logo.TabStop = false;
             // 
             // label_Tnotes
@@ -254,8 +269,8 @@
             this.label_Tnotes.Location = new System.Drawing.Point(92, 30);
             this.label_Tnotes.Name = "label_Tnotes";
             this.label_Tnotes.Size = new System.Drawing.Size(120, 37);
+            this.label_Tnotes.TabIndex = 19;
             this.label_Tnotes.Text = "T-Notes";
-            this.label_Tnotes.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -263,6 +278,7 @@
             this.pictureBox3.Location = new System.Drawing.Point(245, -1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(911, 90);
+            this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
             // directorySearcher1
@@ -270,14 +286,6 @@
             this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
             this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
             this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.pictureBox4.Location = new System.Drawing.Point(814, 30);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox4.TabStop = false;
             // 
             // txtSearch
             // 
@@ -300,8 +308,8 @@
             this.Headder.Location = new System.Drawing.Point(258, 34);
             this.Headder.Name = "Headder";
             this.Headder.Size = new System.Drawing.Size(252, 20);
+            this.Headder.TabIndex = 16;
             this.Headder.Text = "Note-taking application that works.";
-            this.Headder.TabStop = false;
             // 
             // btnAddNew
             // 
@@ -319,9 +327,12 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(35, 331);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
             // 
             // dataGridView1
@@ -399,9 +410,10 @@
             this.CreateYourNote.Location = new System.Drawing.Point(734, 138);
             this.CreateYourNote.Name = "CreateYourNote";
             this.CreateYourNote.Size = new System.Drawing.Size(410, 25);
+            this.CreateYourNote.TabIndex = 3;
+            this.CreateYourNote.TabStop = false;
             this.CreateYourNote.Text = "Create Your Notes";
             this.CreateYourNote.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CreateYourNote.TabStop = false;
             // 
             // richTextBox1
             // 
@@ -411,19 +423,16 @@
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Location = new System.Drawing.Point(262, 567);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 30);
-            this.pictureBox6.TabStop = false;
-            // 
             // searchStart
             // 
-            this.searchStart.Location = new System.Drawing.Point(1069, 30);
+            this.searchStart.AutoSize = true;
+            this.searchStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.searchStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.searchStart.Location = new System.Drawing.Point(1069, 27);
             this.searchStart.Name = "searchStart";
-            this.searchStart.Size = new System.Drawing.Size(75, 23);
+            this.searchStart.Size = new System.Drawing.Size(75, 29);
             this.searchStart.TabIndex = 1;
             this.searchStart.Text = "Go!";
             this.searchStart.UseVisualStyleBackColor = true;
@@ -436,7 +445,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1156, 608);
             this.Controls.Add(this.searchStart);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.CreateYourNote);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonModify);
@@ -448,7 +456,6 @@
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.Headder);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label_Tnotes);
             this.Controls.Add(this.Logo);
@@ -470,7 +477,6 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Notes | Dashboard";
-            //thi += new System.EventHandler(this.Dashboard_GetFocus);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearIcon)).EndInit();
@@ -481,10 +487,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.professorIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,7 +514,6 @@
         private System.Windows.Forms.Label label_Tnotes;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label Headder;
         private System.Windows.Forms.Button btnAddNew;
@@ -522,7 +525,6 @@
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.TextBox CreateYourNote;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button searchStart;
     }
 }
