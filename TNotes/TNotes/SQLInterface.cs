@@ -341,7 +341,7 @@ public class SQLInterface
         List<string> keywords = new List<string>();
         //Trim the elements of the list: 
         for (int i = 0; i < keysIn.Count; i++)
-            keywords.Add(keywords.ElementAt(i).Trim());
+            keywords.Add(keysIn.ElementAt(i).Trim());
         //Eliminate Duplicates.
         List<string> keys = keywords.Distinct().ToList();
         //For each keyword, include it in the database.
