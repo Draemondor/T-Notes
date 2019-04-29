@@ -633,7 +633,7 @@ public class SQLInterface
     }/*
     */
 
-    public int addNote(string note_title, int chapter, int section, string date, string summary, string body)
+    public int addNote(string note_title, int chapter, int section, string date, string summary, string body, int user_id, int course_id)
     {
         note_title = note_title.Trim();
         date = date.Trim();
@@ -660,7 +660,8 @@ public class SQLInterface
           + section + ", "
           + "'" + summary + "', "
           + date + ", "
-          + "'" + body + "');" ;
+          + "'" + body + "');" +
+          "insert into is_taking value ("+course_id+", "+user_id+", "+note_id+")" ;
         query(s);
         //handle keyword updates.
         includeMultiple(tokenize(body), note_id);
