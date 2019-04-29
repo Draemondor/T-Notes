@@ -497,7 +497,7 @@ public class SQLInterface
     //Pass through the list and remove any null or empty strings. 
     private List<string> removeEmpty(List<string> tokens)
     {
-        for (int i = tokens.Count; i > -1; i--)
+        for (int i = tokens.Count-1; i > -1; i--)
         {
             string s = tokens.ElementAt(i);
             if (s.Equals("")
