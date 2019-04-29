@@ -98,7 +98,7 @@ namespace TNotes
         }
         public DataTable dtCourses()
         {
-            return connection.dtAllCourses();
+            return connection.dtAllCourses(this.user_id);
         }
     }
 }
