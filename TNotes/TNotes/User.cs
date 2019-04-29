@@ -102,7 +102,8 @@ namespace TNotes
         }
         public int addNotes(string title, int chapter, int section, string summary, string body, int course_id)
         {
-            return connection.addNote(title, chapter, section, DateTime.Today.ToString("MM/dd/yyyy"), summary, body, user_id, course_id);
+            string date = DateTime.Today.ToString("dd\\/MM\\/yyyy");
+            return connection.addNote(title, chapter, section, date, summary, body, user_id, course_id);
         }
         public DataTable dtCourses()
         {

@@ -13,6 +13,7 @@ namespace TNotes
     public partial class SelectCourse : Form
     {
         User user;
+        public int course_id { get; set; } = -5;
 
         public string course { get; set; }
         public string subj { get; set; }
@@ -35,11 +36,19 @@ namespace TNotes
         {
             this.user = x;
             InitializeComponent();
+            DataTable courseTable = user.dtCourses();
+            CourseCB.ValueMember = "course_id";
+            CourseCB.DisplayMember = "course_name";
+            CourseCB.DataSource = courseTable;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(CourseCB.SelectedValue);
+            this.course_id = Convert.ToInt32(CourseCB.SelectedValue);
 
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

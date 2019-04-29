@@ -187,10 +187,10 @@ namespace TNotes
         {
             int course_id=-1;
 
-            String note_title = Prompt.ShowDialog("Note Information", "Title");
-            int note_chapter = Convert.ToInt32(Prompt.ShowDialog("Note Information", "Chapter"));
-            int note_section = Convert.ToInt32(Prompt.ShowDialog("Note Information", "Section"));
-            String note_summary = Prompt.ShowDialog("Note Information", "Summary");
+            String note_title = Prompt.ShowDialog("What's The Title?", "Title");
+            int note_chapter = Convert.ToInt32(Prompt.ShowDialog("Chapter?", "Chapter"));
+            int note_section = Convert.ToInt32(Prompt.ShowDialog("Section?", "Section"));
+            String note_summary = Prompt.ShowDialog("Short Summary?", "Summary");
 
             using (var courseForm = new SelectCourse(user))
             {
@@ -202,9 +202,10 @@ namespace TNotes
                     string prof = courseForm.prof;
                     string semester = courseForm.semester;
                     int year = Convert.ToInt32(courseForm.year);
-
-                    course_id = user.addCourse(course, subject, prof, semester, year);
-                    Console.WriteLine("Course ID: " + course_id);
+                    if (courseForm.course_id == -5)
+                        course_id = user.addCourse(course, subject, prof, semester, year);
+                    else
+                        course_id = courseForm.course_id;
                 }
             }
             if(course_id>-1)
