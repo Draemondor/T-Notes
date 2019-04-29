@@ -1,0 +1,23 @@
+The Federal Court System
+With the exception of the Supreme Court, the Constitution left the organization of the federal court system up to Congress. Congress accomplished this task through the Judiciary Act of 1789, which created the three federal court levels: the district courts, the courts of appeal, and the Supreme Court. In addition, legislative and special courts deal with specific types of cases involving narrow legal issues.
+District courts
+The 94 federal district courts function as both trial and appellate courts. These courts are assigned specific geographic areas in the nation. As a trial court, they have jurisdiction over such federal crimes as mail fraud, counterfeiting, smuggling, and bank robbery. Federal civil cases may involve water rights, interstate commerce, and environmental controversies. About half of the cases tried in district courts are decided by juries.
+
+District courts also serve as the first federal courts to hear state cases involving constitutional questions. The case of Gideon v. Wainright (1963), in which the Supreme Court ruled that even a poor defendant has the right to an attorney, began when Clarence Gideon appealed his conviction in a superior court trial.
+
+Courts of appeal
+Decisions of the district courts and rulings by federal administrative agencies can be brought to federal courts of appeal. There are 13 such courts, each covering a geographic area called a circuit. Eleven of the circuits take in multistate areas. The U.S. Court of Appeals for the Ninth Circuit, for example, includes eight Western states and Alaska. There is a court in the District of Columbia and one that specializes in patents and contract claims against the federal government. The courts of appeal hand down decisions based on the majority vote of a three-judge panel.
+
+As in the state system, there is a winnowing of cases as the appeals are brought to the next level. Of the approximately 276,000 cases heard by the district courts each year, about 48,500 reach the courts of appeal, and the vast majority is resolved there. The Supreme Court may receive as many as 7,000 requests for review, but it takes under consideration fewer than 100 per year.
+
+Legislative and special courts
+Some federal courts deal with technical matters of law or specific areas of jurisprudence. These courts include the U.S. Tax Court, the U.S. Court of Military Appeals, and the U.S. Court of Veterans Appeals. Cases tried in any of these courts can be appealed to the district courts.
+
+Other special courts are related to espionage and the war on terrorism. The Foreign Intelligence Surveillance Act (1978) established a court to authorize electronic surveillance and/or physical search of individuals involved in spying or international terror. The FISA court meets in secret and its proceedings are not made public. In response to the first attack on the World Trade Center (1993) and the bombing of the federal building in Oklahoma City (1995), Congress passed the Anti-Terrorism and Effective Death Penalty Act in 1996. It created a removal court made up of five federal district court judges appointed by the Chief Justice of the Supreme Court to determine if there were probable cause to deport an "alien terrorist."
+
+The Supreme Court
+The Constitution establishes the Supreme Court as the highest court in the federal system, and its decisions are the supreme law of the land. The Court currently consists of nine members — one Chief Justice and eight associate justices. Two types of cases come to the Supreme Court: appeals from the courts of appeal (here the Court is said to have appellate jurisdiction) and cases involving original jurisdiction. As specified in Article III, Section 2, these cases are disputes involving the states or diplomatic personnel from other countries.
+
+The appointment of federal judges
+The president appoints all federal judges, including the justices of the Supreme Court, for a life term. The American Bar Association, the national organization of attorneys, rates candidates for the federal bench on a scale ranging from "exceptionally well qualified" to "not qualified." However, the president is under no obligation to pay any attention to the ratings. Federal judges are confirmed by a majority vote of the Senate, often following hearings before the Senate Judiciary Committee. Federal judges may be impeached and removed from office if found guilty of the charges. Judges in the district courts and courts of appeal are required to live within the geographical boundaries of their courts.
+

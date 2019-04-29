@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System.Linq;
+using System.Data;
 
 public class SQLInterface
 {
@@ -110,21 +111,22 @@ public class SQLInterface
         pw = pw.Trim();
 
         //Illegal Character detection and filtration:
-        char[] illegalChars = { '\'', '\"', ';', '@'};
-        for (int i = 0; i < illegalChars.Length; i++)  
+        char[] illegalChars = { '\'', '\"', ';', '@' };
+        for (int i = 0; i < illegalChars.Length; i++)
             if (pw.Contains(illegalChars[i]) || un.Contains(illegalChars[i]))
                 return -3;
 
         //If no illegal characters were detected, proceed.
         int id;
-        string q = "select user.user_id, user.first_name, user.last_name from user where user.username = '"+un+"' and user.password = '"+pw+"';";
+        string q = "select user.user_id, user.first_name, user.last_name from user where user.username = '" + un + "' and user.password = '" + pw + "';";
         Console.WriteLine(q);
         List<List<string>> result = query(q);
         if (result.Count == 1)
         {
             Console.WriteLine("Welcome, " + result.ElementAt(0).ElementAt(1) + " " + result.ElementAt(0).ElementAt(2) + "!");
             id = Convert.ToInt32(result.ElementAt(0).ElementAt(0));
-        }else if(result.Count > 1)
+        }
+        else if (result.Count > 1)
         {
             Console.WriteLine("Database Error: Multiple username, password pairs identified.");
             id = -2;
@@ -167,9 +169,9 @@ public class SQLInterface
             } //Otherwise, continue.
 
             //Generate the update query.
-            q =  "update User set username = '"+newUN+"' where username = '"+oldUN+ "' and user_id = " + id+";";
+            q = "update User set username = '" + newUN + "' where username = '" + oldUN + "' and user_id = " + id + ";";
             //Generate and append verification query.            
-            q += "select username from user where username = \'" + newUN + "\' and user_id = " + id +";";
+            q += "select username from user where username = \'" + newUN + "\' and user_id = " + id + ";";
             r = query(q);
             //Verify the update query succeeded in changing the username.
             return r.ElementAt(0).ElementAt(0).Equals(newUN);
@@ -196,7 +198,7 @@ public class SQLInterface
         if (r.Count == 1)
         {
             //Generate the password change query.
-            q =  "update User set password = '" + newPW + "' where password = '" + oldPW + "' and user_id = " + id + ";";
+            q = "update User set password = '" + newPW + "' where password = '" + oldPW + "' and user_id = " + id + ";";
             //Generate and appaned a verification query.
             q += "select password from user where password = \'" + newPW + "\' and user_id = " + id + ";";
             //Execute the query.
@@ -214,15 +216,15 @@ public class SQLInterface
         //Illegal Character detection and filtration:
         char[] illegalChars = { '\'', '\"', ';', '@' };
         for (int i = 0; i < illegalChars.Length; i++)
-            if(password.Contains(illegalChars[i]) || username.Contains(illegalChars[i])
-            || first.Contains(illegalChars[i])    || last.Contains(illegalChars[i]))
+            if (password.Contains(illegalChars[i]) || username.Contains(illegalChars[i])
+            || first.Contains(illegalChars[i]) || last.Contains(illegalChars[i]))
                 return -3;
 
         //Check to see if username is already taken. 
         string q = "select count(username) from user where username = '" + username + "';";
         List<List<string>> r = query(q);
         //If it's not, then proceed to add the user. 
-        if(Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == 0)
+        if (Convert.ToInt32(r.ElementAt(0).ElementAt(0)) == 0)
         {
             //Get the current count of users.
             q = "select count(*) from user;";
@@ -279,7 +281,7 @@ public class SQLInterface
 
             //report success.
             return true;
-        }        
+        }
         //Report Failure.
         return false;
     }
@@ -298,18 +300,18 @@ public class SQLInterface
         {
             //See if the keyword is already associated with the note_id provided. 
             int keyword_id = Convert.ToInt32(r.ElementAt(0).ElementAt(0));
-            s = "select keyword_id, note_id from contains where keyword_id = " + keyword_id + " and note_id = " +note_id + ";";
+            s = "select keyword_id, note_id from contains where keyword_id = " + keyword_id + " and note_id = " + note_id + ";";
             r = query(s);
             // If they're already associated, say so.
-            if(r.Count > 0)
+            if (r.Count > 0)
             {
-                Console.WriteLine(keyword + " is alreardy registered for Note ID "+note_id+".");
+                Console.WriteLine(keyword + " is alreardy registered for Note ID " + note_id + ".");
             }
             //If the keyword isn't associated, we need to add an entry in the contains table.
             else
             {
                 //Generate the value.
-                string value = "("+keyword_id+","+note_id+")";
+                string value = "(" + keyword_id + "," + note_id + ")";
                 //Generate the query.
                 s = "insert into contains(keyword_id, note_id) value " + value + ";";
                 //Execture the query.
@@ -328,7 +330,7 @@ public class SQLInterface
             //Generate contains table record.
             value = "(" + keyword_id + "," + note_id + ")";
             //Generate and append an instruction to add the contains record.
-            s += "insert into contains(keyword_id, note_id) value "+value+";";
+            s += "insert into contains(keyword_id, note_id) value " + value + ";";
             //Execute the query.
             query(s);
         }
@@ -338,7 +340,7 @@ public class SQLInterface
     {
         List<string> keywords = new List<string>();
         //Trim the elements of the list: 
-        for(int i = 0; i < keysIn.Count; i++)
+        for (int i = 0; i < keysIn.Count; i++)
             keywords.Add(keywords.ElementAt(i).Trim());
         //Eliminate Duplicates.
         List<string> keys = keywords.Distinct().ToList();
@@ -352,24 +354,25 @@ public class SQLInterface
         //Delete the note directly.
         string s = "delete from Note where note_id = " + id + ";";
         //Delete references to the note in the is_taking relation.
-              s += "delete from is_taking where note_id = " + id + ";";
+        s += "delete from is_taking where note_id = " + id + ";";
         //Delete isolated keywords:
         //Get the keywords associated with the notes.
         string t = "select C.keyword_id, count(C.keyword_id) from (select keyword_id, from contains where note_id = " + id + ") as T, contains as C where C.keyword_id = T.keyword_id;";
         List<List<string>> q = query(t);
-        for(int i = 0; i < q.Count; i++)
+        for (int i = 0; i < q.Count; i++)
         {
-            if(Convert.ToInt32(q[i][1]) == 1)
-                s += "deleteNote from keywords where keyword_id = "+q[i][0]+";";
+            if (Convert.ToInt32(q[i][1]) == 1)
+                s += "deleteNote from keywords where keyword_id = " + q[i][0] + ";";
         }
         //Delete contains entries associated with the note.
-              s += "delete from contains where note_id = " + id + ";";
+        s += "delete from contains where note_id = " + id + ";";
         query(s);
     }
 
     //UPDATE NOTE:
 
-    public bool changeTitle(int note_id, string title)
+
+    bool changeTitle(int note_id, string title)
     {
         //Verify data integrity
         title = title.Trim();
@@ -377,7 +380,7 @@ public class SQLInterface
         for (int i = 0; i < illegalChars.Length; i++)
             if (title.Contains(illegalChars[i]))
                 return false;
-        
+
         //Make the change
         string s = "update note set title = '" + title + "' where note_id = " + note_id + ";";
 
@@ -392,7 +395,7 @@ public class SQLInterface
     {
         //Verify input integrity
         if (chapter < 0) return false;
-        
+
         //Make the change
         string s = "update note set chapter = " + chapter + " where note_id = " + note_id + ";";
 
@@ -674,7 +677,7 @@ public class SQLInterface
     public List<List<string>> getNoteByCourse(int id)
     {
         return query("select note_id, note_title, chapter, section, date, summary from note, " +
-            "(select note_id from isTaking where course_id = "+id+") as T" +
+            "(select note_id from isTaking where course_id = " + id + ") as T" +
             "where note.note_id = T.note_id");
     }
     //get note by id
@@ -698,13 +701,13 @@ public class SQLInterface
         string s = "select note.note_id, note.note_title, note.chapter" +
                    ", note.section, note.date, note.summary from note, (";
         s += "select L.note_id sum(L.note_id) from (";
-        for(int i = 0; i < keys.Count-1; i++)
+        for (int i = 0; i < keys.Count - 1; i++)
         {
-            s += "( select note_id from keywords, contains where keywords.keyword like '" 
+            s += "( select note_id from keywords, contains where keywords.keyword like '"
                 + keys.ElementAt(i) + "' and contains.keyword_id = keyword.keyword_id ) union";
         }
         s += "( select note_id from keywords, contains where keywords.keyword like '"
-                + keys.ElementAt(keys.Count-1) + "' and contains.keyword_id = keyword.keyword_id )";
+                + keys.ElementAt(keys.Count - 1) + "' and contains.keyword_id = keyword.keyword_id )";
         s += ") AS L group by L.note_id order by sum(L.note_id)) AS T where note.note_id = T.note_id;";
         return query(s);
     }
@@ -720,12 +723,12 @@ public class SQLInterface
 
         //Check for already existing course with the same attributes.
 
-        string s = "select id from coruse where (((course_name like '"+name+"' and (subject like '"+subject
-            +"'))and ((prof like '"+prof+"') and (semester like '"+semester+"'))) and (year = "+year+")";
+        string s = "select id from coruse where (((course_name like '" + name + "' and (subject like '" + subject
+            + "'))and ((prof like '" + prof + "') and (semester like '" + semester + "'))) and (year = " + year + ")";
         List<List<string>> q = query(s);
         //If it does, return its id instead.
         if (q.Count > 0)
-            return Convert.ToInt32(q.ElementAt(0).ElementAt(0)); 
+            return Convert.ToInt32(q.ElementAt(0).ElementAt(0));
 
 
         //Get number of courses for id
@@ -733,7 +736,7 @@ public class SQLInterface
         q = query(s);
         int id = Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
         //Generate and execute course addition query
-        s  = "insert into course(course_id, course_name, subject, prof, semester, year) value (";
+        s = "insert into course(course_id, course_name, subject, prof, semester, year) value (";
         s += id + ", ";
         s += name + ", ";
         s += subject + ", ";
@@ -753,6 +756,17 @@ public class SQLInterface
     {
         return query("select * from course;");
     }
+
+    public DataTable dtAllCourses(int id)
+    {
+        conn.Open();
+        DataTable dtCourse = new DataTable();
+        MySqlDataAdapter da = new MySqlDataAdapter("select * from course NATURAL JOIN is_taking where user_id = " + id + " GROUP BY course_id;", conn);
+        da.Fill(dtCourse);
+        conn.Close();
+        return dtCourse;
+    }
+
     //get course by id
     public List<List<string>> getCourseById(int id)
     {
@@ -775,7 +789,6 @@ public class SQLInterface
         for (int i = 0; i < illegalChars.Length; i++)
             if (pw.Contains(illegalChars[i]) || un.Contains(illegalChars[i]))
                 return -3;
-
         
         string q;
         List<List<string>> r;

@@ -14,6 +14,8 @@ namespace TNotes
     public partial class Dashboard : Form
     {
         User user;
+        String noteString;
+
         public Dashboard(User x)
         {
             this.user = x;
@@ -90,6 +92,20 @@ namespace TNotes
 
         private void btnCourses_Click(object sender, EventArgs e)
         {
+            DataTable courses = user.dtCourses();
+
+            DataTable courses_copy = courses;
+
+            courses.Columns.Remove("course_id");
+            courses.Columns.Remove("user_id");
+            courses.Columns.Remove("note-id");
+            courses.Columns["course_name"].ColumnName = "Courses";
+            courses.Columns["subject"].ColumnName = "Subject";
+            courses.Columns["prof"].ColumnName = "Professor";
+            courses.Columns["semester"].ColumnName = "Semester";
+            courses.Columns["year"].ColumnName = "Year";
+            dataGridView1.DataSource = courses;
+            gridResize(dataGridView1);
 
         }
 
@@ -165,6 +181,55 @@ namespace TNotes
             Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
             myThread.Start();
             this.Close();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            using (var form = new SelectCourse(user))
+            {
+                var result = form.ShowDialog();
+                if(result == DialogResult.OK)
+                {
+                    string course = form.course;
+
+                }
+            }
+        }
+
+        private void gridResize(DataGridView dgv)
+        {
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Width = 447;
+            richTextBox1.Show();
+            buttonModify.Show();
+            buttonSave.Show();
+            buttonClose.Show();
+            CreateYourNote.Show();
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Width = 447;
+            richTextBox1.Show();
+            buttonModify.Show();
+            buttonSave.Show();
+            buttonClose.Show();
+            CreateYourNote.Show();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Width = 873;
+            richTextBox1.Hide();
+            buttonModify.Hide();
+            buttonSave.Hide();
+            buttonClose.Hide();
+            CreateYourNote.Hide();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace TNotes
+﻿using System;
+
+namespace TNotes
 {
     partial class Dashboard
     {
@@ -59,6 +61,7 @@
             this.CreateYourNote = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.searchStart = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CoursesIcon)).BeginInit();
@@ -324,6 +327,7 @@
             this.btnAddNew.TabIndex = 8;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // pictureBox5
             // 
@@ -340,7 +344,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(262, 170);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(447, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(873, 391);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -358,6 +362,7 @@
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -384,9 +389,11 @@
             this.buttonSave.Location = new System.Drawing.Point(999, 567);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(145, 29);
-            this.buttonSave.TabIndex = 14;
+            this.buttonSave.TabIndex = 15;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSave.Hide();
             // 
             // buttonModify
             // 
@@ -398,9 +405,26 @@
             this.buttonModify.Location = new System.Drawing.Point(848, 567);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(145, 29);
-            this.buttonModify.TabIndex = 13;
+            this.buttonModify.TabIndex = 14;
             this.buttonModify.Text = "Modify";
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Hide();
+            //
+            // buttonClose
+            //
+            this.buttonClose.AutoSize = true;
+            this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.buttonClose.Location = new System.Drawing.Point(697, 567);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(145, 29);
+            this.buttonClose.TabIndex = 13;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Hide();
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // CreateYourNote
             // 
@@ -414,6 +438,7 @@
             this.CreateYourNote.TabStop = false;
             this.CreateYourNote.Text = "Create Your Notes";
             this.CreateYourNote.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CreateYourNote.Hide();
             // 
             // richTextBox1
             // 
@@ -422,6 +447,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(410, 391);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
+            this.richTextBox1.Hide();
             // 
             // searchStart
             // 
@@ -473,6 +499,7 @@
             this.Controls.Add(this.btnYear);
             this.Controls.Add(this.Home);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -491,7 +518,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -526,5 +552,6 @@
         private System.Windows.Forms.TextBox CreateYourNote;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button searchStart;
+        private System.Windows.Forms.Button buttonClose;
     }
 }

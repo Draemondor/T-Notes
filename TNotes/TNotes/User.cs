@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using static SQLInterface;
 using System.Collections.Generic;
 namespace TNotes
@@ -94,6 +95,10 @@ namespace TNotes
         public List<List<string>> searchByKeyword(List<string> keywords)
         {
             return connection.getNotesByKeywords(keywords);
+        }
+        public DataTable dtCourses()
+        {
+            return connection.dtAllCourses(this.user_id);
         }
     }
 }
