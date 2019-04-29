@@ -100,6 +100,10 @@ namespace TNotes
         {
             return connection.addCourse(course, subject, prof, year, semester);
         }
+        public int addNotes(string title, int chapter, int section, string summary, string body, int course_id)
+        {
+            return connection.addNote(title, chapter, section, DateTime.Today.ToString("MM/dd/yyyy"), summary, body, user_id, course_id);
+        }
         public DataTable dtCourses()
         {
             return connection.dtAllCourses(this.user_id);

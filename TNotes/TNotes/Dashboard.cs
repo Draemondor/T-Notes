@@ -185,21 +185,31 @@ namespace TNotes
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            using (var form = new SelectCourse(user))
-            {
-                var result = form.ShowDialog();
-                if(result == DialogResult.OK)
-                {
-                    string course = form.course;
-                    string subject = form.subj;
-                    string prof = form.prof;
-                    string semester = form.semester;
-                    int year = Convert.ToInt32(form.year);
+            int course_id=-1;
 
-                    int course_id = user.addCourse(course, subject, prof,semester,year);
-                    Console.WriteLine("Course ID: "+course_id);
+            String note_title = Prompt.ShowDialog("Note Information", "Title");
+            int note_chapter = Convert.ToInt32(Prompt.ShowDialog("Note Information", "Chapter"));
+            int note_section = Convert.ToInt32(Prompt.ShowDialog("Note Information", "Section"));
+            String note_summary = Prompt.ShowDialog("Note Information", "Summary");
+
+            using (var courseForm = new SelectCourse(user))
+            {
+                var result = courseForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string course = courseForm.course;
+                    string subject = courseForm.subj;
+                    string prof = courseForm.prof;
+                    string semester = courseForm.semester;
+                    int year = Convert.ToInt32(courseForm.year);
+
+                    course_id = user.addCourse(course, subject, prof, semester, year);
+                    Console.WriteLine("Course ID: " + course_id);
                 }
             }
+            if(course_id>-1)
+                user.addNotes(note_title, note_chapter, note_section, note_summary, richTextBox1.Text,course_id);
+            richTextBox1.Clear();
         }
 
         private void gridResize(DataGridView dgv)
@@ -236,6 +246,31 @@ namespace TNotes
             buttonSave.Hide();
             buttonClose.Hide();
             CreateYourNote.Hide();
+        }
+    }
+
+    internal class Prompt
+    {
+        internal static string ShowDialog(string text, string caption)
+        {
+            Form prompt = new Form()
+            {
+                Width = 500,
+                Height = 150,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = caption,
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
+            TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
+            Button confirmation = new Button() { Text = "Ok", Left = 350, Width = 100, Top = 70, DialogResult = DialogResult.OK };
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+            prompt.Controls.Add(textBox);
+            prompt.Controls.Add(confirmation);
+            prompt.Controls.Add(textLabel);
+            prompt.AcceptButton = confirmation;
+
+            return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
         }
     }
 }
