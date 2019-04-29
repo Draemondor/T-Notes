@@ -480,7 +480,7 @@ public class SQLInterface
         string[] pn = { "it", "i", "you", "he", "they", "we", "she", "who", "them"
                             , "me", "him", "one", "her", "us" };
         //Loop through the list, and remove any copies of the filtered words.
-        for (int i = tokens.Count; i > -1; i--)
+        for (int i = tokens.Count-1; i > -1; i--)
         {
             string s = tokens.ElementAt(i).ToLower();
             if (aa.Contains(s)
