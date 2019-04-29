@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()
@@ -723,7 +723,7 @@ public class SQLInterface
 
         //Check for already existing course with the same attributes.
 
-        string s = "select id from coruse where (((course_name like '" + name + "' and (subject like '" + subject
+        string s = "select id from course where (((course_name like '" + name + "' and (subject like '" + subject
             + "'))and ((prof like '" + prof + "') and (semester like '" + semester + "'))) and (year = " + year + ")";
         List<List<string>> q = query(s);
         //If it does, return its id instead.
