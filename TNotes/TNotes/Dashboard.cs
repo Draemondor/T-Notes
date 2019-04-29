@@ -94,7 +94,6 @@ namespace TNotes
         {
             DataTable courses = user.dtCourses();
             courses.Columns.Remove("course_id");
-            courses.Columns.Remove("user_id");
             courses.Columns["course_name"].ColumnName = "Courses";
             courses.Columns["subject"].ColumnName = "Subject";
             courses.Columns["prof"].ColumnName = "Professor";
