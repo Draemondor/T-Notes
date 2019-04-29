@@ -76,8 +76,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 110);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 89);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(246, 75);
             this.pictureBox1.TabIndex = 28;
@@ -89,8 +88,7 @@
             this.Home.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.Home.Location = new System.Drawing.Point(100, 138);
-            this.Home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home.Location = new System.Drawing.Point(75, 112);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(115, 25);
             this.Home.TabIndex = 27;
@@ -105,8 +103,7 @@
             this.btnYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnYear.Location = new System.Drawing.Point(-1, 292);
-            this.btnYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnYear.Location = new System.Drawing.Point(-1, 237);
             this.btnYear.Name = "btnYear";
             this.btnYear.Padding = new System.Windows.Forms.Padding(0, 0, 42, 0);
             this.btnYear.Size = new System.Drawing.Size(246, 75);
@@ -122,8 +119,7 @@
             this.btnSemester.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSemester.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnSemester.Location = new System.Drawing.Point(-1, 383);
-            this.btnSemester.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSemester.Location = new System.Drawing.Point(-1, 311);
             this.btnSemester.Name = "btnSemester";
             this.btnSemester.Size = new System.Drawing.Size(246, 75);
             this.btnSemester.TabIndex = 4;
@@ -138,8 +134,7 @@
             this.btnCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnCourses.Location = new System.Drawing.Point(-1, 201);
-            this.btnCourses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCourses.Location = new System.Drawing.Point(-1, 163);
             this.btnCourses.Name = "btnCourses";
             this.btnCourses.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
             this.btnCourses.Size = new System.Drawing.Size(246, 75);
@@ -156,8 +151,7 @@
             this.btnProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnProfessor.Location = new System.Drawing.Point(-1, 474);
-            this.btnProfessor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProfessor.Location = new System.Drawing.Point(-1, 385);
             this.btnProfessor.Name = "btnProfessor";
             this.btnProfessor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnProfessor.Size = new System.Drawing.Size(246, 75);
@@ -260,7 +254,6 @@
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.InitialImage = null;
             this.Logo.Location = new System.Drawing.Point(1, 2);
-            this.Logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(85, 84);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -273,8 +266,7 @@
             this.label_Tnotes.BackColor = System.Drawing.Color.Transparent;
             this.label_Tnotes.Font = new System.Drawing.Font("Times New Roman", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Tnotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.label_Tnotes.Location = new System.Drawing.Point(123, 37);
-            this.label_Tnotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_Tnotes.Location = new System.Drawing.Point(92, 30);
             this.label_Tnotes.Name = "label_Tnotes";
             this.label_Tnotes.Size = new System.Drawing.Size(120, 37);
             this.label_Tnotes.TabIndex = 19;
@@ -283,8 +275,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.pictureBox3.Location = new System.Drawing.Point(327, -1);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(245, -1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(911, 90);
             this.pictureBox3.TabIndex = 18;
@@ -314,8 +305,7 @@
             this.Headder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.Headder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Headder.ForeColor = System.Drawing.Color.White;
-            this.Headder.Location = new System.Drawing.Point(344, 42);
-            this.Headder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Headder.Location = new System.Drawing.Point(258, 34);
             this.Headder.Name = "Headder";
             this.Headder.Size = new System.Drawing.Size(252, 20);
             this.Headder.TabIndex = 16;
@@ -328,8 +318,7 @@
             this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.btnAddNew.Location = new System.Drawing.Point(349, 166);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddNew.Location = new System.Drawing.Point(262, 135);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(145, 29);
             this.btnAddNew.TabIndex = 8;
@@ -349,8 +338,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(349, 209);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(262, 170);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(447, 391);
             this.dataGridView1.TabIndex = 11;
@@ -363,8 +351,7 @@
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonUpdate.Location = new System.Drawing.Point(551, 166);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonUpdate.Location = new System.Drawing.Point(413, 135);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(145, 29);
             this.buttonUpdate.TabIndex = 9;
@@ -379,8 +366,7 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonDelete.Location = new System.Drawing.Point(752, 166);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Location = new System.Drawing.Point(564, 135);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(145, 29);
             this.buttonDelete.TabIndex = 10;
@@ -395,8 +381,7 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonSave.Location = new System.Drawing.Point(1332, 698);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Location = new System.Drawing.Point(999, 567);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(145, 29);
             this.buttonSave.TabIndex = 14;
@@ -411,8 +396,7 @@
             this.buttonModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonModify.Location = new System.Drawing.Point(1131, 698);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModify.Location = new System.Drawing.Point(848, 567);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(145, 29);
             this.buttonModify.TabIndex = 13;
@@ -424,8 +408,7 @@
             this.CreateYourNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CreateYourNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateYourNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.CreateYourNote.Location = new System.Drawing.Point(979, 170);
-            this.CreateYourNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateYourNote.Location = new System.Drawing.Point(734, 138);
             this.CreateYourNote.Name = "CreateYourNote";
             this.CreateYourNote.Size = new System.Drawing.Size(410, 25);
             this.CreateYourNote.TabIndex = 3;
@@ -435,8 +418,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(979, 209);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Location = new System.Drawing.Point(734, 170);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(410, 391);
             this.richTextBox1.TabIndex = 12;
@@ -459,7 +441,7 @@
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1156, 608);
@@ -493,7 +475,6 @@
             this.Controls.Add(this.Home);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Notes | Dashboard";

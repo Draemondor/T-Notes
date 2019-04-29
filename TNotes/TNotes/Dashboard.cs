@@ -124,24 +124,6 @@ namespace TNotes
             this.Close();
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            using (var form = new SelectCourse(user))
-            {
-                var result = form.ShowDialog();
-                if(result == DialogResult.OK)
-                {
-
-                }
-            }
-        }
-
-        private void gridResize(DataGridView dgv)
-        {
-            for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        }
-
         private void searchStart_Click(object sender, EventArgs e)
         {
             string keywords = this.txtSearch.Text;
@@ -195,6 +177,25 @@ namespace TNotes
             Thread myThread = new Thread((ThreadStart)delegate { Application.Run(new Form1(newUser)); });
             myThread.Start();
             this.Close();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            using (var form = new SelectCourse(user))
+            {
+                var result = form.ShowDialog();
+                if(result == DialogResult.OK)
+                {
+                    string course = form.course;
+
+                }
+            }
+        }
+
+        private void gridResize(DataGridView dgv)
+        {
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
     }
 }

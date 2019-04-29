@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()
@@ -371,7 +371,8 @@ public class SQLInterface
 
     //UPDATE NOTE:
 
-    public bool changeTitle(int note_id, string title)
+
+    bool changeTitle(int note_id, string title)
     {
         //Verify data integrity
         title = title.Trim();
@@ -787,7 +788,6 @@ public class SQLInterface
         for (int i = 0; i < illegalChars.Length; i++)
             if (pw.Contains(illegalChars[i]) || un.Contains(illegalChars[i]))
                 return -3;
-
         
         string q;
         List<List<string>> r;
