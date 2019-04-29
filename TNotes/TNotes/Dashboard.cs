@@ -191,7 +191,13 @@ namespace TNotes
                 if(result == DialogResult.OK)
                 {
                     string course = form.course;
+                    string subject = form.subj;
+                    string prof = form.prof;
+                    string semester = form.semester;
+                    int year = Convert.ToInt32(form.year);
 
+                    int course_id = user.addCourse(course, subject, prof,semester,year);
+                    Console.WriteLine("Course ID: "+course_id);
                 }
             }
         }
