@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()
@@ -724,7 +724,7 @@ public class SQLInterface
         //Check for already existing course with the same attributes.
 
         string s = "select id from course where (((course_name like '" + name + "' and (subject like '" + subject
-            + "'))and ((prof like '" + prof + "') and (semester like '" + semester + "'))) and (year = " + year + ")";
+            + "')) and ((prof like '" + prof + "') and (semester like '" + semester + "'))) and (year = " + year + ")";
         List<List<string>> q = query(s);
         //If it does, return its id instead.
         if (q.Count > 0)
@@ -737,11 +737,11 @@ public class SQLInterface
         int id = Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
         //Generate and execute course addition query
         s = "insert into course(course_id, course_name, subject, prof, semester, year) value (";
-        s += id + ", ";
-        s += name + ", ";
-        s += subject + ", ";
-        s += prof + ", ";
-        s += semester + ", ";
+        s += id + ", '";
+        s += name + "', '";
+        s += subject + "', '";
+        s += prof + "', '";
+        s += semester + "', ";
         s += year + "); ";
         s += "select * from course where course_id = " + id + ";";
         q = query(s);
