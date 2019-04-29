@@ -756,11 +756,11 @@ public class SQLInterface
         return query("select * from course;");
     }
 
-    public DataTable dtAllCourses()
+    public DataTable dtAllCourses(int id)
     {
         conn.Open();
         DataTable dtCourse = new DataTable();
-        MySqlDataAdapter da = new MySqlDataAdapter("select * from course;", conn);
+        MySqlDataAdapter da = new MySqlDataAdapter("select * from course NATURAL JOIN is_taking where user_id = " + id + " GROUP BY course_id;", conn);
         da.Fill(dtCourse);
         conn.Close();
         return dtCourse;

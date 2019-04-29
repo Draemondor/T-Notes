@@ -39,7 +39,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'tk','idon\'tknow','ted','king'),(2,'tssk','asksted','ted is stikk','king'),(3,'ted\'sbro','asksted\'sbro','ted\'s','bro'),(4,'ted\'sis','askted\'sis','ted\'s','sis'),(5,'ted\'sfirstcousin','asksted\'sfirstcousin','ted\'s','firstcousin'),(6,'ted\'ssecondcousin','asksted\'ssecondcousin','ted\'s','secondcousin'),(7,'ted\'swife','asksted\'swife','ted\'s','wife'),(8,'ted\'smotherinlaw','asksted\'smotherinlaw','ted\'s','motherinlaw'),(9,'ted\'sfatherinlaw','asksted\'sfatherinlaw','ted\'s','fatherinlaw'),(10,'ted\'schild','asksted\'schild','ted\'s','child');
+INSERT INTO `user` VALUES (1,'tk','idontknow','ted','king'),(2,'tssk','asksted','ted is stikk','king'),(3,'tedsbro','asktedsbro','teds','bro'),(4,'tedsis','asktedsis','teds','sis'),(5,'tedsfirstcousin','askstedsfirstcousin','teds','firstcousin'),(6,'tedssecondcousin','askstedssecondcousin','teds','secondcousin'),(7,'tedswife','askstedswife','teds','wife'),(8,'tedsmotherinlaw','askstedsmotherinlaw','teds','motherinlaw'),(9,'tedsfatherinlaw','askstedsfatherinlaw','teds','fatherinlaw'),(10,'tedschild','askstedschild','teds','child');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
