@@ -666,7 +666,6 @@ public class SQLInterface
           + date + "', "
           + "\"" + body + "\");" +
           "insert into is_taking value ("+course_id+", "+user_id+", "+note_id+")" ;
-        Console.WriteLine(s);
         query(s);
         //handle keyword updates.
         includeMultiple(tokenize(body), note_id);
@@ -729,8 +728,8 @@ public class SQLInterface
 
         //Check for already existing course with the same attributes.
 
-        string s = "select id from course where (((course_name like '" + name + "' and (subject like '" + subject
-            + "')) and ((prof like '" + prof + "') and (semester like '" + semester + "'))) and (year = " + year + ")";
+        string s = "select course_id from course where (((course_name like '" + name + "' and (subject like '" + subject
+            + "')) and ((prof like '" + prof + "') and (semester like '" + semester + "'))) and (year = " + year + "));";
         List<List<string>> q = query(s);
         //If it does, return its id instead.
         if (q.Count > 0)
@@ -743,11 +742,11 @@ public class SQLInterface
         int id = Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
         //Generate and execute course addition query
         s = "insert into course(course_id, course_name, subject, prof, semester, year) value (";
-        s += id + ", '";
-        s += name + "', '";
-        s += subject + "', '";
-        s += prof + "', '";
-        s += semester + "', ";
+        s += id + ", \"";
+        s += name + "\", \"";
+        s += subject + "\", \"";
+        s += prof + "\", \"";
+        s += semester + "\", ";
         s += year + "); ";
         s += "select * from course where course_id = " + id + ";";
         q = query(s);
