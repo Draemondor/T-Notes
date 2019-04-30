@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()
@@ -709,13 +709,13 @@ public class SQLInterface
         //generate query
         string s = "select note.note_id, note.note_title, note.chapter" +
                    ", note.section, note.date, note.summary from note, (";
-        s += "select L.note_id sum(L.note_id) from (";
+        s += "select L.note_id, sum(L.note_id) from (";
         for (int i = 0; i < keys.Count - 1; i++)
         {
-            s += "( select note_id from keywords, contains where keywords.keyword like '"
+            s += "( select note_id from keyword, contains where keyword.keyword like '"
                 + keys.ElementAt(i) + "' and contains.keyword_id = keyword.keyword_id ) union";
         }
-        s += "( select note_id from keywords, contains where keywords.keyword like '"
+        s += "( select note_id from keyword, contains where keyword.keyword like '"
                 + keys.ElementAt(keys.Count - 1) + "' and contains.keyword_id = keyword.keyword_id )";
         s += ") AS L group by L.note_id order by sum(L.note_id)) AS T where note.note_id = T.note_id;";
         return query(s);
