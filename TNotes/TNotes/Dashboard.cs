@@ -27,6 +27,7 @@ namespace TNotes
         int year;
         int course_id = -1;
         string note_date;
+        string y, z;
         public Dashboard(User x)
         {
             this.user = x;
@@ -117,12 +118,20 @@ namespace TNotes
                     sb.Append(dataGridView1.SelectedRows[i].Index.ToString());
                     sb.Append(Environment.NewLine);
                 }
-
-                // sb.Append("Total: " + selectedRowCount.ToString());
-                // MessageBox.Show(sb.ToString(), "Selected Rows");
                 int x = Convert.ToInt32(sb.ToString());
-                string y = dataGridView1.Rows[x].Cells["Note ID"].Value.ToString();
-                this.note_id = Convert.ToInt32(y);
+                if (x < 0)
+                    return;
+                
+                try {  this.y = dataGridView1.Rows[x].Cells["Note ID"].Value.ToString(); }
+                catch
+                {
+                };
+                try {  this.z = dataGridView1.Rows[x].Cells["Course ID"].Value.ToString(); }
+                catch { };
+                if(z!=null)
+                     this.course_id = Convert.ToInt32(z);
+                if(y!=null)
+                    this.note_id = Convert.ToInt32(y);
             }
         }
 
@@ -132,9 +141,9 @@ namespace TNotes
 
             DataTable courses_copy = courses;
 
-            courses.Columns.Remove("course_id");
+            courses.Columns["course_id"].ColumnName = "Course ID";
             courses.Columns.Remove("user_id");
-            courses.Columns.Remove("note-id");
+            courses.Columns.Remove("note_id");
             courses.Columns["course_name"].ColumnName = "Courses";
             courses.Columns["subject"].ColumnName = "Subject";
             courses.Columns["prof"].ColumnName = "Professor";
@@ -147,7 +156,7 @@ namespace TNotes
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
+            user.deleteNote(note_id);
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
@@ -232,9 +241,9 @@ namespace TNotes
 
             courses.DefaultView.RowFilter = "Convert(year,'System.String') LIKE '%" + year + "%'";
 
-            courses.Columns.Remove("course_id");
+            courses.Columns["course_id"].ColumnName = "Course ID";
             courses.Columns.Remove("user_id");
-            courses.Columns.Remove("note-id");
+            courses.Columns.Remove("note_id");
             courses.Columns["course_name"].ColumnName = "Courses";
             courses.Columns["subject"].ColumnName = "Subject";
             courses.Columns["prof"].ColumnName = "Professor";
@@ -253,9 +262,9 @@ namespace TNotes
 
             courses.DefaultView.RowFilter = "Convert(semester,'System.String') LIKE '%" + semester + "%'";
 
-            courses.Columns.Remove("course_id");
+            courses.Columns["course_id"].ColumnName = "Course ID";
             courses.Columns.Remove("user_id");
-            courses.Columns.Remove("note-id");
+            courses.Columns.Remove("note_id");
             courses.Columns["course_name"].ColumnName = "Courses";
             courses.Columns["subject"].ColumnName = "Subject";
             courses.Columns["prof"].ColumnName = "Professor";
@@ -273,9 +282,9 @@ namespace TNotes
 
             courses.DefaultView.RowFilter = "Convert(prof,'System.String') LIKE '%" + prof + "%'";
 
-            courses.Columns.Remove("course_id");
+            courses.Columns["course_id"].ColumnName = "Course ID";
             courses.Columns.Remove("user_id");
-            courses.Columns.Remove("note-id");
+            courses.Columns.Remove("note_id");
             courses.Columns["course_name"].ColumnName = "Courses";
             courses.Columns["subject"].ColumnName = "Subject";
             courses.Columns["prof"].ColumnName = "Professor";
@@ -313,7 +322,10 @@ namespace TNotes
                 }
             }
             if(course_id > -1)
-                user.addNotes(note_title, note_chapter, note_section, note_summary, richTextBox1.Text, course_id);
+                this.note_id = user.addNotes(note_title, note_chapter, note_section, note_summary, "placeholder", course_id);
+            richTextBox1.Clear();
+            noteString = user.openNote(this.note_id);
+            richTextBox1.Text = noteString.ElementAt(6);
             richTextBox1.Clear();
         }
 
@@ -345,25 +357,20 @@ namespace TNotes
 
                     noteString = user.openNote(this.note_id);
                     richTextBox1.Text = noteString.ElementAt(6);
-                    this.note_id = Convert.ToInt32(noteString.ElementAt(0));
-                    this.note_title = noteString.ElementAt(1);
-                    this.note_chapter = Convert.ToInt32(noteString.ElementAt(2));
-                    this.note_section = Convert.ToInt32(noteString.ElementAt(3));
-                    this.note_summary = noteString.ElementAt(4);
-                    this.note_date = noteString.ElementAt(5);
-                    
-                    
-
-
-
+                    dataGridView1.Width = 447;
+                    richTextBox1.Show();
+                    buttonModify.Show();
+                    buttonSave.Show();
+                    buttonClose.Show();
+                    CreateYourNote.Show();
+                    break;
+                case "Course ID":
+                    DataTable notes = user.getNotesByCourse(this.course_id);
+                    dataGridView1.DataSource = notes;
+                    dataGridView1.Refresh();
                     break;
             }
-            dataGridView1.Width = 447;
-            richTextBox1.Show();
-            buttonModify.Show();
-            buttonSave.Show();
-            buttonClose.Show();
-            CreateYourNote.Show();            
+                       
             
         }
 
@@ -374,12 +381,21 @@ namespace TNotes
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            dataGridView1.Width = 873;
-            richTextBox1.Hide();
-            buttonModify.Hide();
-            buttonSave.Hide();
-            buttonClose.Hide();
-            CreateYourNote.Hide();
+          DialogResult result = MessageBox.Show("Are you sure?", "Close Note", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
+
+            }
+            else if (result == DialogResult.Yes)
+            {
+                dataGridView1.Width = 873;
+                richTextBox1.Hide();
+                buttonModify.Hide();
+                buttonSave.Hide();
+                buttonClose.Hide();
+                CreateYourNote.Hide();
+                richTextBox1.Clear();
+            }
         }
     }
 

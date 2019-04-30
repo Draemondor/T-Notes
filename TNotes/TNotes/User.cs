@@ -201,5 +201,83 @@ namespace TNotes
         {
             connection.updateBody(note_id, body);
         }
+
+        public DataTable getNotesByCourse(int course_id)
+        {
+            List<List<string>> arr = new List<List<string>>();
+            arr = connection.getNoteByCourse(course_id, this.user_id);
+
+
+            DataTable notes;
+            DataColumn column;
+            DataRow row;
+            if (arr.Count <= 0)
+                return null;
+            int i = arr.ElementAt(0).Count;
+            int j = arr.Count;
+            notes = new DataTable("Notes");
+
+            //add first column
+            column = new DataColumn("Note ID");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Note ID";
+            column.ReadOnly = true;
+            column.Unique = true;
+            notes.Columns.Add(column);
+            //add second column
+            column = new DataColumn("Note Name");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Note Name";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+            //add third column
+            column = new DataColumn("Chapter");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Chapter";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+            //add fourth column
+            column = new DataColumn("Section");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Section";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+            //add fifth column
+            column = new DataColumn("Date");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Date";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+            //add sixth column
+            column = new DataColumn("Summary");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Summary";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+
+            //add rows of data
+
+            while (0 < j)
+            {
+                row = notes.NewRow();
+                row["Note ID"] = (arr.ElementAt(j - 1).ElementAt(0));
+                row["Note Name"] = arr.ElementAt(j - 1).ElementAt(1);
+                row["Chapter"] = arr.ElementAt(j - 1).ElementAt(2);
+                row["Section"] = arr.ElementAt(j - 1).ElementAt(3);
+                row["Date"] = arr.ElementAt(j - 1).ElementAt(4);
+                row["Summary"] = arr.ElementAt(j - 1).ElementAt(5);
+                notes.Rows.Add(row);
+                j--;
+            }
+            if (notes != null)
+                Console.Write("Success");
+            return notes;
+        }
+
+
+        public void deleteNote(int note_id)
+        {
+            connection.deleteNote(note_id);
+        }
     }
 }

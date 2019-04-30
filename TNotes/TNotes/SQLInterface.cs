@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()
@@ -680,7 +680,7 @@ public class SQLInterface
         query(s);
         //handle keyword updates.
         includeMultiple(tokenize(body.ToLower()), note_id);
-        return -1;
+        return note_id;
     }
 
     //get all notes
@@ -691,9 +691,8 @@ public class SQLInterface
     //get all notes under a course by id
     public List<List<string>> getNoteByCourse(int course_id, int user_id)
     {
-        return query("select note_id, note_title, chapter, section, date, summary from note, " +
-            "(select note_id from isTaking where course_id = " + course_id + " and user_id = "+user_id+") as T" +
-            "where note.note_id = T.note_id");
+        return query("select note_id, note_title, chapter, section, date, summary from note Natural Join " +
+            "is_taking where course_id = '" + course_id + " and user_id = " + user_id + "'");
     }
     //get note by id
     public List<List<string>> getNoteById(int id)
