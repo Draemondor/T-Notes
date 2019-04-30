@@ -151,14 +151,20 @@ namespace TNotes
 
         private void searchStart_Click(object sender, EventArgs e)
         {
+            Console.Write(this.txtSearch.Text);
             string keywords = this.txtSearch.Text;
+            Console.Write(keywords);
             string[] keywordsArray = keywords.Split(',');
             List<string> keywordsList = new List<string>();
             foreach (string s in keywordsArray)
             {
                 keywordsList.Add(s);
             }
-
+            if (keywordsList.Count != 0)
+            {
+                DataTable notes = user.searchByKeyword(keywordsList);
+                dataGridView1.DataSource = notes;
+            }
         }
 
         public void RemoveText(object sender, EventArgs e)

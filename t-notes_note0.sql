@@ -29,7 +29,7 @@ CREATE TABLE `note` (
   `Section` int(11) DEFAULT NULL,
   `Summary` varchar(1000) DEFAULT NULL,
   `Date` date NOT NULL,
-  `notes` blob NOT NULL,
+  `notes` longtext NOT NULL,
   PRIMARY KEY (`note_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +40,7 @@ CREATE TABLE `note` (
 
 LOCK TABLES `note` WRITE;
 /*!40000 ALTER TABLE `note` DISABLE KEYS */;
-INSERT INTO `note` VALUES (36157,'The Heavenly Sword and Dragon Saber',8,10,'Boy with Luv','0000-00-00',_binary 'Uptown girl'),(36248,'The Deer and the Cauldron',5,7,'Without me','0000-00-00',_binary 'Who let the dogs out?'),(36948,'White Horse Neighs in the Western Wind',10,8,'Please me','0000-00-00',_binary 'The battle of pigs'),(45686,'The Book and the Sword',1,3,'Old Town Road','0000-00-00',_binary 'A lot of homework'),(59463,'The Legend of the Condor Heroes',3,9,'Sun Flower','0000-00-00',_binary 'Please don\'t let me study it'),(59874,'Fox Volant of the Snowy Mountain',4,1,'7 rings','0000-00-00',_binary 'I really like it'),(65157,'The Smiling, Proud Wanderer',7,4,'Dancing with a stranger','0000-00-00',_binary 'Gangnam style'),(82427,'Sword Stained with Royal Blood',2,2,'Wow','0000-00-00',_binary 'I hate the instructor'),(97518,'Blade-dance of the Two Lovers',9,6,'Bad guy','0000-00-00',_binary 'The day of Judgement'),(97845,'Demi-Gods and Semi-Devils',6,5,'Sucker','0000-00-00',_binary 'For whom the bell tolls?');
+INSERT INTO `note` VALUES (36157,'The Heavenly Sword and Dragon Saber',8,10,'Boy with Luv','0000-00-00','Uptown girl'),(36248,'The Deer and the Cauldron',5,7,'Without me','0000-00-00','Who let the dogs out?'),(36948,'White Horse Neighs in the Western Wind',10,8,'Please me','0000-00-00','The battle of pigs'),(45686,'The Book and the Sword',1,3,'Old Town Road','0000-00-00','A lot of homework'),(59463,'The Legend of the Condor Heroes',3,9,'Sun Flower','0000-00-00','Please don\'t let me study it'),(59874,'Fox Volant of the Snowy Mountain',4,1,'7 rings','0000-00-00','I really like it'),(65157,'The Smiling, Proud Wanderer',7,4,'Dancing with a stranger','0000-00-00','Gangnam style'),(82427,'Sword Stained with Royal Blood',2,2,'Wow','0000-00-00','I hate the instructor'),(97518,'Blade-dance of the Two Lovers',9,6,'Bad guy','0000-00-00','The day of Judgement'),(97845,'Demi-Gods and Semi-Devils',6,5,'Sucker','0000-00-00','For whom the bell tolls?');
 /*!40000 ALTER TABLE `note` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

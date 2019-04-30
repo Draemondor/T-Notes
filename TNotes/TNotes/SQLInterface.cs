@@ -697,8 +697,9 @@ public class SQLInterface
         //remove duplicates and SQL injection potentials.
         List<string> keys = keywords.Distinct().ToList();
         char[] illegalChars = { '\'', '\"', ';', '@' };
+        int j = 0;
         for (int i = 0; i < illegalChars.Length; i++)
-            for (int j = keys.Count; j > -1; j--)
+            for (  ; j < keys.Count; j++)
                 if (keys.ElementAt(j).Contains(illegalChars[i]))
                     keys.RemoveAt(j);
         //generate query
