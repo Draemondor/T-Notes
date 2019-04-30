@@ -329,6 +329,7 @@ namespace TNotes
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            this.btnAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
             // pictureBox5
             // 
@@ -347,7 +348,12 @@ namespace TNotes
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(873, 391);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionChanged += new EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridView1.Click += new EventHandler(this.dataGridView1_Click);
+            this.dataGridView1.Enabled = true;
             // 
             // buttonUpdate
             // 
@@ -393,7 +399,7 @@ namespace TNotes
             this.buttonSave.TabIndex = 15;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSave.Click += new EventHandler(this.buttonSave_Click);
             this.buttonSave.Hide();
             // 
             // buttonModify

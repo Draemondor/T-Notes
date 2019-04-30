@@ -691,7 +691,7 @@ public class SQLInterface
     //get note by id
     public List<List<string>> getNoteById(int id)
     {
-        return query("select * from note where note_id = " + id + ";");
+        return query("select * from note where note_id = '" + id + "';");
     }
     //get notes by keywords
     //getCourseByKeywords framework: See phone picture

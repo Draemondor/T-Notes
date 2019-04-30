@@ -12,6 +12,7 @@ namespace TNotes
         int user_id;
         string username;
         string password;
+        List<List<string>> arr = new List<List<string>>();
         public User()
         {
 
@@ -96,9 +97,9 @@ namespace TNotes
         }
         public DataTable searchByKeyword(List<string> keywords)
         {
-            List<List<string>> arr = new List<List<string>>();
-            arr = connection.getNotesByKeywords(keywords);
-            DataSet results = new DataSet();
+            
+            this.arr = connection.getNotesByKeywords(keywords);
+
             DataTable notes;
             DataColumn column;
             DataRow row;
@@ -110,7 +111,7 @@ namespace TNotes
             
             //add first column
             column = new DataColumn("Note ID");
-            column.DataType = System.Type.GetType("System.Int32");
+            column.DataType = System.Type.GetType("System.String");
             column.Caption = "Note ID";
             column.ReadOnly = true;
             column.Unique = true;
@@ -151,7 +152,7 @@ namespace TNotes
             while (0 < j)
             {
                 row = notes.NewRow();
-                row["Note ID"] = Convert.ToInt32(arr.ElementAt(j - 1).ElementAt(0));
+                row["Note ID"] = (arr.ElementAt(j - 1).ElementAt(0));
                 row["Note Name"] = arr.ElementAt(j - 1).ElementAt(1);
                 row["Chapter"] = arr.ElementAt(j - 1).ElementAt(2);
                 row["Section"] = arr.ElementAt(j - 1).ElementAt(3);
@@ -166,6 +167,12 @@ namespace TNotes
 
             return notes;
         }
+
+        public List<List<string>> getNoteArr()
+        {
+            return this.arr;
+        }
+
         public int addCourse(string course, string subject, string prof, string semester, int year)
         {
             return connection.addCourse(course, subject, prof, year, semester);
@@ -179,6 +186,20 @@ namespace TNotes
         public DataTable dtCourses()
         {
             return connection.dtAllCourses(this.user_id);
+        }
+
+        public List<string> openNote(int note_id)
+        {
+            List<List<string>> response = new List<List<string>>();
+            response = connection.getNoteById(note_id);
+            Console.WriteLine("Retrieved");
+            List<string> note = response.ElementAt(0);
+            return note;
+        }
+
+        public void updateBody(int note_id, string body)
+        {
+            connection.updateBody(note_id, body);
         }
     }
 }

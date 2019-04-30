@@ -14,8 +14,19 @@ namespace TNotes
     public partial class Dashboard : Form
     {
         User user;
-        String noteString;
-
+        List<string> noteString;
+        int note_id;
+        String note_title;
+        int note_chapter;
+        int note_section;
+        String note_summary;
+        string course;
+        string subject;
+        string prof;
+        string semester;
+        int year;
+        int course_id = -1;
+        string note_date;
         public Dashboard(User x)
         {
             this.user = x;
@@ -85,9 +96,34 @@ namespace TNotes
         }
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            object[] arr = new object[dataGridView1.Columns.Count];
+            string sent = e.ToString();
 
+        }
+
+        private void dataGridView1_Click(object sender, System.EventArgs e)
+        {
+            Int32 selectedRowCount =
+                dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if (selectedRowCount > 0)
+            {
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+                    sb.Append(dataGridView1.SelectedRows[i].Index.ToString());
+                    sb.Append(Environment.NewLine);
+                }
+
+                // sb.Append("Total: " + selectedRowCount.ToString());
+                // MessageBox.Show(sb.ToString(), "Selected Rows");
+                int x = Convert.ToInt32(sb.ToString());
+                string y = dataGridView1.Rows[x].Cells["Note ID"].Value.ToString();
+                this.note_id = Convert.ToInt32(y);
+            }
         }
 
         private void btnCourses_Click(object sender, EventArgs e)
@@ -209,34 +245,34 @@ namespace TNotes
 
 
         }
-
-        private void buttonSave_Click(object sender, EventArgs e)
+        
+        private void buttonAddNew_Click(object sender, EventArgs e)
         {
-            int course_id=-1;
 
-            String note_title = Prompt.ShowDialog("What's The Title?", "Title");
-            int note_chapter = Convert.ToInt32(Prompt.ShowDialog("Chapter?", "Chapter"));
-            int note_section = Convert.ToInt32(Prompt.ShowDialog("Section?", "Section"));
-            String note_summary = Prompt.ShowDialog("Short Summary?", "Summary");
+            this.note_title = Prompt.ShowDialog("What's The Title?", "Title");
+            this.note_chapter = Convert.ToInt32(Prompt.ShowDialog("Chapter?", "Chapter"));
+            this.note_section = Convert.ToInt32(Prompt.ShowDialog("Section?", "Section"));
+            this.note_summary = Prompt.ShowDialog("Short Summary?", "Summary");
+            
 
             using (var courseForm = new SelectCourse(user))
             {
                 var result = courseForm.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    string course = courseForm.course;
-                    string subject = courseForm.subj;
-                    string prof = courseForm.prof;
-                    string semester = courseForm.semester;
-                    int year = Convert.ToInt32(courseForm.year);
+                    this.course = courseForm.course;
+                    this.subject = courseForm.subj;
+                    this.prof = courseForm.prof;
+                    this.semester = courseForm.semester;
+                    this.year = Convert.ToInt32(courseForm.year);
                     if (courseForm.course_id == -5)
-                        course_id = user.addCourse(course, subject, prof, semester, year);
+                        this.course_id = user.addCourse(this.course, this.subject, this.prof, this.semester, this.year);
                     else
-                        course_id = courseForm.course_id;
+                        this.course_id = courseForm.course_id;
                 }
             }
-            if(course_id>-1)
-                user.addNotes(note_title, note_chapter, note_section, note_summary, richTextBox1.Text,course_id);
+            if(course_id > -1)
+                user.addNotes(note_title, note_chapter, note_section, note_summary, richTextBox1.Text, course_id);
             richTextBox1.Clear();
         }
 
@@ -258,12 +294,41 @@ namespace TNotes
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            object[] arr = new object[dataGridView1.Columns.Count];
+            dataGridView1.Columns.CopyTo(arr, 0);
+            String x = arr[0].ToString();
+            x = x.Substring(33, x.IndexOf(',') - 33);
+            switch (x)
+            {
+                case "Note ID":
+
+                    noteString = user.openNote(this.note_id);
+                    richTextBox1.Text = noteString.ElementAt(6);
+                    this.note_id = Convert.ToInt32(noteString.ElementAt(0));
+                    this.note_title = noteString.ElementAt(1);
+                    this.note_chapter = Convert.ToInt32(noteString.ElementAt(2));
+                    this.note_section = Convert.ToInt32(noteString.ElementAt(3));
+                    this.note_summary = noteString.ElementAt(4);
+                    this.note_date = noteString.ElementAt(5);
+                    
+                    
+
+
+
+                    break;
+            }
             dataGridView1.Width = 447;
             richTextBox1.Show();
             buttonModify.Show();
             buttonSave.Show();
             buttonClose.Show();
-            CreateYourNote.Show();
+            CreateYourNote.Show();            
+            
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            user.updateBody(this.note_id, richTextBox1.Text);
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
