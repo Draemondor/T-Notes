@@ -662,10 +662,11 @@ public class SQLInterface
           + "\"" + note_title + "\", "
           + chapter + ", "
           + section + ", "
-          + "\"" + summary + "\", \""
-          + date + "\", "
-          + "`" + body + "`);" +
+          + "\"" + summary + "\", '"
+          + date + "', "
+          + "\"" + body + "\");" +
           "insert into is_taking value ("+course_id+", "+user_id+", "+note_id+")" ;
+        Console.WriteLine(s);
         query(s);
         //handle keyword updates.
         includeMultiple(tokenize(body), note_id);
