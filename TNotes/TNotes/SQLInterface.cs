@@ -668,7 +668,7 @@ public class SQLInterface
           "insert into is_taking value ("+course_id+", "+user_id+", "+note_id+")" ;
         query(s);
         //handle keyword updates.
-        includeMultiple(tokenize(body), note_id);
+        includeMultiple(tokenize(body.ToLower()), note_id);
         return -1;
     }
 
