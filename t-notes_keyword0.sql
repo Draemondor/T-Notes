@@ -37,7 +37,7 @@ CREATE TABLE `keyword` (
 
 LOCK TABLES `keyword` WRITE;
 /*!40000 ALTER TABLE `keyword` DISABLE KEYS */;
-INSERT INTO `keyword` VALUES (17236,'Brave New World'),(15236,'Don Quixote'),(12236,'Frankenstein'),(11236,'Huckleberry Finn'),(16236,'Journey to the End of the Night'),(19236,'Nineteen Eighty-Four'),(14236,'Pilgrim\'s Progress'),(13236,'Robinson Crusoe'),(10236,'The Call of the Wild'),(18236,'The Pursuit Of Love');
+INSERT INTO `keyword` VALUES (17236,'Brave'),(15236,'Don'),(12236,'Frankenstein'),(11236,'Finn'),(16236,'Journey'),(19236,'Nineteen'),(14236,'Pilgrim'),(13236,'Robinson'),(10236,'Call'),(18236,'Pursuit');
 /*!40000 ALTER TABLE `keyword` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

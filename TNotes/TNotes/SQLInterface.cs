@@ -291,7 +291,7 @@ public class SQLInterface
         //Trim the keyword of leading and trailing spaces.
         keyword = keyword.Trim();
         //Check to see if the keyword is already registered as a keyword.
-        string s = "keyword_id from keyword where keyword LIKE '" + keyword + "';";
+        string s = "select keyword_id from keyword where keyword LIKE \"" + keyword + "\";";
         List<List<string>> r = query(s);
         int count = r.Count;
 
@@ -311,9 +311,9 @@ public class SQLInterface
             else
             {
                 //Generate the value.
-                string value = "(" + keyword_id + "," + note_id + ")";
+                string value = "(" + note_id + "," + keyword_id + ")";
                 //Generate the query.
-                s = "insert into contains(keyword_id, note_id) value " + value + ";";
+                s = "insert into contains value " + value + ";";
                 //Execture the query.
                 query(s);
             }
@@ -322,9 +322,11 @@ public class SQLInterface
         else
         {
             //The keyword id will be one more than the number of existing keywords.
-            int keyword_id = count + 1;
+            s = "select count(keyword_id) from keyword;";
+            List<List<string>> q = query(s);
+            int keyword_id =  Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
             //Generate keyword table record.
-            string value = "(" + keyword_id + "," + keyword + ")";
+            string value = "(" + keyword_id + ",'" + keyword + "')";
             //Generate instruction to add record to keyword.
             s = "insert into keyword(keyword_id, keyword) value " + value + ";";
             //Generate contains table record.
@@ -535,11 +537,13 @@ public class SQLInterface
             token += good ? "" + t : "";
             if (!good)
             {
+                Console.WriteLine("TOKEN: " + token.Trim());
                 tokens.Add(token.Trim());
                 token = "";
             }
         }
         tokens = removeGarbage(tokens);
+        Console.WriteLine(tokens.ToString());
         return tokens;
     }
 
@@ -595,8 +599,8 @@ public class SQLInterface
         //remove negative difference
         if (remove.Count() > 0) {
             s = "remove from contains where note_id = " + note_id + " and keyword_id = (" +
-                "select keyword_id from keywords where keyword = \"" + remove.ElementAt(0);
-            if(remove.Count() > 1)
+                "select keyword_id from keywords where keyword = \"" + remove.ElementAt(0) + "\"";
+            if (remove.Count() > 1)
             {
                 for (int i = 0; i < remove.Count(); i++)
                 {
@@ -622,7 +626,7 @@ public class SQLInterface
     {
         updateKeywords(note_id, body);
         //update the body
-        string s = "update note set notes = '" + body + "' where note_id = " + note_id + ";";
+        string s = "update note set notes = `" + body + "` where note_id = " + note_id + ";";
         //verify the body updated successfully
         s += "select notes from note where note_id = "+note_id + ";";
         List<List<string>> q = query(s);
@@ -655,13 +659,14 @@ public class SQLInterface
         //add the note.
         s = "insert into note(note_id,note_title,chapter,Section,Summary,Date,notes) value ("
           + note_id + ", "
-          + "'" + note_title + "', "
+          + "\"" + note_title + "\", "
           + chapter + ", "
           + section + ", "
-          + "'" + summary + "', "
-          + date + ", "
-          + "'" + body + "');" +
+          + "\"" + summary + "\", '"
+          + date + "', "
+          + "\"" + body + "\");" +
           "insert into is_taking value ("+course_id+", "+user_id+", "+note_id+")" ;
+        Console.WriteLine(s);
         query(s);
         //handle keyword updates.
         includeMultiple(tokenize(body), note_id);
@@ -693,8 +698,9 @@ public class SQLInterface
         //remove duplicates and SQL injection potentials.
         List<string> keys = keywords.Distinct().ToList();
         char[] illegalChars = { '\'', '\"', ';', '@' };
+        int j = 0;
         for (int i = 0; i < illegalChars.Length; i++)
-            for (int j = keys.Count; j > -1; j--)
+            for (  ; j < keys.Count; j++)
                 if (keys.ElementAt(j).Contains(illegalChars[i]))
                     keys.RemoveAt(j);
         //generate query
