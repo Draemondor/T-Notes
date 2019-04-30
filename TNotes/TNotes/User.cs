@@ -205,7 +205,7 @@ namespace TNotes
         public DataTable getNotesByCourse(int course_id)
         {
             List<List<string>> arr = new List<List<string>>();
-            arr = connection.getNoteByCourse(course_id);
+            arr = connection.getNoteByCourse(course_id, this.user_id);
 
 
             DataTable notes;

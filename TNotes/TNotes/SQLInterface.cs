@@ -364,7 +364,7 @@ public class SQLInterface
         for (int i = 0; i < q.Count; i++)
         {
             if (Convert.ToInt32(q[i][1]) == 1)
-                s += "deleteNote from keywords where keyword_id = " + q[i][0] + ";";
+                s += "delete from keyword where keyword_id = " + q[i][0] + ";";
         }
         //Delete contains entries associated with the note.
         s += "delete from contains where note_id = " + id + ";";
@@ -537,7 +537,6 @@ public class SQLInterface
             token += good ? "" + t : "";
             if (!good)
             {
-                Console.WriteLine("TOKEN: " + token.Trim());
                 tokens.Add(token.Trim());
                 token = "";
             }
@@ -561,9 +560,10 @@ public class SQLInterface
         string s = "";
         List<List<string>> q;
 
-        s+= "select keywords.keyword, count(note_id) from keywords, contains where contains.note_id = " +note_id+ " and " +
-            "keywords.keyword_id = contains.keyword_id;";
+        s+= "select keyword.keyword from keyword, contains where contains.note_id = " +note_id+ " and " +
+            "keyword.keyword_id = contains.keyword_id;";
         q = query(s);
+        query_to_string(s);
 
         //Flatten the query and generate potential hanging keywords.
         List<string> oldTokens = new List<string>();
@@ -574,12 +574,18 @@ public class SQLInterface
         {
             List<string> temp = q.ElementAt(i);
             string word = temp.ElementAt(0);
-            tokens.Add(word);
-            if (Convert.ToInt32(temp.ElementAt(1)) == 1)
-                hangingWords.Add(word);
+            oldTokens.Add(word);
         }
 
-
+        Console.WriteLine("Tokens:       " + tokens);
+        for (int i = 0; i < tokens.Count(); i++) Console.Write(tokens.ElementAt(i) + " ");
+        Console.WriteLine();
+        Console.WriteLine("oldTokens:    " + oldTokens);
+        for (int i = 0; i < oldTokens.Count(); i++) Console.Write(oldTokens.ElementAt(i) + " ");
+        Console.WriteLine();
+        Console.WriteLine("hangingWords: " + hangingWords);
+        for (int i = 0; i < hangingWords.Count(); i++) Console.Write(hangingWords.ElementAt(i) + " ");
+        Console.WriteLine();
 
         //Generate add and remove lists
         List<string> add = new List<string>();
@@ -602,16 +608,17 @@ public class SQLInterface
 
         //remove negative difference
         if (remove.Count() > 0) {
-            s = "remove from contains where note_id = " + note_id + " and keyword_id = (" +
-                "select keyword_id from keywords where keyword = \"" + remove.ElementAt(0) + "\"";
+            s = "SET SQL_SAFE_UPDATES = 0; delete from contains where note_id = " + note_id + " and keyword_id = (" +
+                "select keyword_id from keyword where keyword = \"" + remove.ElementAt(0) + "\");";
             if (remove.Count() > 1)
             {
                 for (int i = 0; i < remove.Count(); i++)
                 {
-                    s += " or keyword = \"" + remove.ElementAt(i) + "\"";
+                    s += "delete from contains where note_id = " + note_id + " and keyword_id = (" +
+                         "select keyword_id from keyword where keyword = \"" + remove.ElementAt(0) + "\");";
                 }
             }
-            s += "); ";
+            Console.WriteLine(s);
         }
 
         //eliminate hanging keywords
@@ -682,10 +689,10 @@ public class SQLInterface
         return query("select note_id, note_title, chapter, section, date, summary from note");
     }
     //get all notes under a course by id
-    public List<List<string>> getNoteByCourse(int id)
+    public List<List<string>> getNoteByCourse(int course_id, int user_id)
     {
         return query("select note_id, note_title, chapter, section, date, summary from note Natural Join " +
-            "is_taking where course_id = '" + id + "'");
+            "is_taking where course_id = '" + course_id + " and user_id = " + user_id + "'");
     }
     //get note by id
     public List<List<string>> getNoteById(int id)
