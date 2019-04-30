@@ -79,10 +79,9 @@ namespace TNotes
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 110);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 89);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(327, 92);
+            this.pictureBox1.Size = new System.Drawing.Size(246, 75);
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
@@ -92,10 +91,9 @@ namespace TNotes
             this.Home.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.Home.Location = new System.Drawing.Point(100, 138);
-            this.Home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home.Location = new System.Drawing.Point(75, 112);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(153, 31);
+            this.Home.Size = new System.Drawing.Size(115, 25);
             this.Home.TabIndex = 27;
             this.Home.TabStop = false;
             this.Home.Text = "Dashboard";
@@ -108,15 +106,13 @@ namespace TNotes
             this.btnYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnYear.Location = new System.Drawing.Point(-1, 292);
-            this.btnYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnYear.Location = new System.Drawing.Point(-1, 237);
             this.btnYear.Name = "btnYear";
-            this.btnYear.Padding = new System.Windows.Forms.Padding(0, 0, 56, 0);
-            this.btnYear.Size = new System.Drawing.Size(328, 92);
+            this.btnYear.Padding = new System.Windows.Forms.Padding(0, 0, 42, 0);
+            this.btnYear.Size = new System.Drawing.Size(246, 75);
             this.btnYear.TabIndex = 3;
             this.btnYear.Text = "Year";
             this.btnYear.UseVisualStyleBackColor = true;
-            this.btnYear.Click += new System.EventHandler(this.btnYear_Click);
             // 
             // btnSemester
             // 
@@ -126,10 +122,9 @@ namespace TNotes
             this.btnSemester.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSemester.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnSemester.Location = new System.Drawing.Point(-1, 383);
-            this.btnSemester.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSemester.Location = new System.Drawing.Point(-1, 311);
             this.btnSemester.Name = "btnSemester";
-            this.btnSemester.Size = new System.Drawing.Size(328, 92);
+            this.btnSemester.Size = new System.Drawing.Size(246, 75);
             this.btnSemester.TabIndex = 4;
             this.btnSemester.Text = "Semester";
             this.btnSemester.UseVisualStyleBackColor = true;
@@ -142,11 +137,10 @@ namespace TNotes
             this.btnCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnCourses.Location = new System.Drawing.Point(-1, 201);
-            this.btnCourses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCourses.Location = new System.Drawing.Point(-1, 163);
             this.btnCourses.Name = "btnCourses";
-            this.btnCourses.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
-            this.btnCourses.Size = new System.Drawing.Size(328, 92);
+            this.btnCourses.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
+            this.btnCourses.Size = new System.Drawing.Size(246, 75);
             this.btnCourses.TabIndex = 2;
             this.btnCourses.Text = "Courses";
             this.btnCourses.UseVisualStyleBackColor = true;
@@ -160,11 +154,10 @@ namespace TNotes
             this.btnProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnProfessor.Location = new System.Drawing.Point(-1, 474);
-            this.btnProfessor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProfessor.Location = new System.Drawing.Point(-1, 385);
             this.btnProfessor.Name = "btnProfessor";
             this.btnProfessor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnProfessor.Size = new System.Drawing.Size(328, 92);
+            this.btnProfessor.Size = new System.Drawing.Size(246, 75);
             this.btnProfessor.TabIndex = 5;
             this.btnProfessor.Text = "Professor";
             this.btnProfessor.UseVisualStyleBackColor = true;
@@ -177,11 +170,10 @@ namespace TNotes
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnSettings.Location = new System.Drawing.Point(-1, 565);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSettings.Location = new System.Drawing.Point(-1, 459);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.btnSettings.Size = new System.Drawing.Size(328, 92);
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btnSettings.Size = new System.Drawing.Size(246, 75);
             this.btnSettings.TabIndex = 6;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -195,11 +187,10 @@ namespace TNotes
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.btnLogOut.Location = new System.Drawing.Point(-1, 656);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOut.Location = new System.Drawing.Point(-1, 533);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Padding = new System.Windows.Forms.Padding(0, 0, 23, 0);
-            this.btnLogOut.Size = new System.Drawing.Size(328, 92);
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(246, 75);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -208,10 +199,9 @@ namespace TNotes
             // yearIcon
             // 
             this.yearIcon.Image = ((System.Drawing.Image)(resources.GetObject("yearIcon.Image")));
-            this.yearIcon.Location = new System.Drawing.Point(47, 319);
-            this.yearIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.yearIcon.Location = new System.Drawing.Point(35, 259);
             this.yearIcon.Name = "yearIcon";
-            this.yearIcon.Size = new System.Drawing.Size(43, 39);
+            this.yearIcon.Size = new System.Drawing.Size(32, 32);
             this.yearIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.yearIcon.TabIndex = 24;
             this.yearIcon.TabStop = false;
@@ -219,10 +209,9 @@ namespace TNotes
             // CoursesIcon
             // 
             this.CoursesIcon.Image = ((System.Drawing.Image)(resources.GetObject("CoursesIcon.Image")));
-            this.CoursesIcon.Location = new System.Drawing.Point(47, 228);
-            this.CoursesIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CoursesIcon.Location = new System.Drawing.Point(35, 185);
             this.CoursesIcon.Name = "CoursesIcon";
-            this.CoursesIcon.Size = new System.Drawing.Size(43, 39);
+            this.CoursesIcon.Size = new System.Drawing.Size(32, 32);
             this.CoursesIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.CoursesIcon.TabIndex = 25;
             this.CoursesIcon.TabStop = false;
@@ -230,38 +219,34 @@ namespace TNotes
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(47, 133);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(35, 108);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.TabIndex = 26;
             this.pictureBox2.TabStop = false;
             // 
             // projectsIcon
             // 
-            this.projectsIcon.Location = new System.Drawing.Point(47, 682);
-            this.projectsIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.projectsIcon.Location = new System.Drawing.Point(35, 554);
             this.projectsIcon.Name = "projectsIcon";
-            this.projectsIcon.Size = new System.Drawing.Size(43, 39);
+            this.projectsIcon.Size = new System.Drawing.Size(32, 32);
             this.projectsIcon.TabIndex = 23;
             this.projectsIcon.TabStop = false;
             // 
             // labsIcon
             // 
-            this.labsIcon.Location = new System.Drawing.Point(47, 591);
-            this.labsIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labsIcon.Location = new System.Drawing.Point(35, 480);
             this.labsIcon.Name = "labsIcon";
-            this.labsIcon.Size = new System.Drawing.Size(43, 39);
+            this.labsIcon.Size = new System.Drawing.Size(32, 32);
             this.labsIcon.TabIndex = 22;
             this.labsIcon.TabStop = false;
             // 
             // professorIcon
             // 
             this.professorIcon.Image = ((System.Drawing.Image)(resources.GetObject("professorIcon.Image")));
-            this.professorIcon.Location = new System.Drawing.Point(47, 496);
-            this.professorIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.professorIcon.Location = new System.Drawing.Point(35, 403);
             this.professorIcon.Name = "professorIcon";
-            this.professorIcon.Size = new System.Drawing.Size(43, 39);
+            this.professorIcon.Size = new System.Drawing.Size(32, 32);
             this.professorIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.professorIcon.TabIndex = 21;
             this.professorIcon.TabStop = false;
@@ -272,9 +257,8 @@ namespace TNotes
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.InitialImage = null;
             this.Logo.Location = new System.Drawing.Point(1, 2);
-            this.Logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(113, 103);
+            this.Logo.Size = new System.Drawing.Size(85, 84);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 20;
             this.Logo.TabStop = false;
@@ -285,20 +269,18 @@ namespace TNotes
             this.label_Tnotes.BackColor = System.Drawing.Color.Transparent;
             this.label_Tnotes.Font = new System.Drawing.Font("Times New Roman", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Tnotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(168)))), ((int)(((byte)(221)))));
-            this.label_Tnotes.Location = new System.Drawing.Point(123, 37);
-            this.label_Tnotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_Tnotes.Location = new System.Drawing.Point(92, 30);
             this.label_Tnotes.Name = "label_Tnotes";
-            this.label_Tnotes.Size = new System.Drawing.Size(152, 48);
+            this.label_Tnotes.Size = new System.Drawing.Size(120, 37);
             this.label_Tnotes.TabIndex = 19;
             this.label_Tnotes.Text = "T-Notes";
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.pictureBox3.Location = new System.Drawing.Point(327, -1);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(245, -1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1215, 111);
+            this.pictureBox3.Size = new System.Drawing.Size(911, 90);
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
@@ -312,10 +294,9 @@ namespace TNotes
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(173)))), ((int)(((byte)(223)))));
-            this.txtSearch.Location = new System.Drawing.Point(1128, 37);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Location = new System.Drawing.Point(846, 30);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(281, 26);
+            this.txtSearch.Size = new System.Drawing.Size(212, 23);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Search";
             this.txtSearch.GotFocus += new System.EventHandler(this.RemoveText);
@@ -327,10 +308,9 @@ namespace TNotes
             this.Headder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             this.Headder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Headder.ForeColor = System.Drawing.Color.White;
-            this.Headder.Location = new System.Drawing.Point(344, 42);
-            this.Headder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Headder.Location = new System.Drawing.Point(258, 34);
             this.Headder.Name = "Headder";
-            this.Headder.Size = new System.Drawing.Size(308, 25);
+            this.Headder.Size = new System.Drawing.Size(252, 20);
             this.Headder.TabIndex = 16;
             this.Headder.Text = "Note-taking application that works.";
             // 
@@ -341,10 +321,9 @@ namespace TNotes
             this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.btnAddNew.Location = new System.Drawing.Point(349, 166);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddNew.Location = new System.Drawing.Point(262, 135);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(193, 36);
+            this.btnAddNew.Size = new System.Drawing.Size(145, 29);
             this.btnAddNew.TabIndex = 8;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -353,10 +332,9 @@ namespace TNotes
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(47, 407);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(35, 331);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
@@ -364,10 +342,9 @@ namespace TNotes
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(349, 209);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(262, 170);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1164, 481);
+            this.dataGridView1.Size = new System.Drawing.Size(873, 391);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -378,10 +355,9 @@ namespace TNotes
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonUpdate.Location = new System.Drawing.Point(551, 166);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonUpdate.Location = new System.Drawing.Point(413, 135);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(193, 36);
+            this.buttonUpdate.Size = new System.Drawing.Size(145, 29);
             this.buttonUpdate.TabIndex = 9;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -395,10 +371,9 @@ namespace TNotes
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonDelete.Location = new System.Drawing.Point(752, 166);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Location = new System.Drawing.Point(564, 135);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(193, 36);
+            this.buttonDelete.Size = new System.Drawing.Size(145, 29);
             this.buttonDelete.TabIndex = 10;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -411,14 +386,14 @@ namespace TNotes
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonSave.Location = new System.Drawing.Point(1332, 698);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Location = new System.Drawing.Point(999, 567);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(193, 36);
+            this.buttonSave.Size = new System.Drawing.Size(145, 29);
             this.buttonSave.TabIndex = 15;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSave.Hide();
             // 
             // buttonModify
             // 
@@ -427,36 +402,52 @@ namespace TNotes
             this.buttonModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonModify.Location = new System.Drawing.Point(1131, 698);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModify.Location = new System.Drawing.Point(848, 567);
             this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(193, 36);
+            this.buttonModify.Size = new System.Drawing.Size(145, 29);
             this.buttonModify.TabIndex = 14;
             this.buttonModify.Text = "Modify";
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Hide();
+            //
+            // buttonClose
+            //
+            this.buttonClose.AutoSize = true;
+            this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
+            this.buttonClose.Location = new System.Drawing.Point(697, 567);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(145, 29);
+            this.buttonClose.TabIndex = 13;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Hide();
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // CreateYourNote
             // 
             this.CreateYourNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CreateYourNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateYourNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.CreateYourNote.Location = new System.Drawing.Point(979, 170);
-            this.CreateYourNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateYourNote.Location = new System.Drawing.Point(734, 138);
             this.CreateYourNote.Name = "CreateYourNote";
-            this.CreateYourNote.Size = new System.Drawing.Size(547, 31);
+            this.CreateYourNote.Size = new System.Drawing.Size(410, 25);
             this.CreateYourNote.TabIndex = 3;
             this.CreateYourNote.TabStop = false;
             this.CreateYourNote.Text = "Create Your Notes";
             this.CreateYourNote.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CreateYourNote.Hide();
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(979, 209);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Location = new System.Drawing.Point(734, 170);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(545, 480);
+            this.richTextBox1.Size = new System.Drawing.Size(410, 391);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
+            this.richTextBox1.Hide();
             // 
             // searchStart
             // 
@@ -465,37 +456,20 @@ namespace TNotes
             this.searchStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.searchStart.Location = new System.Drawing.Point(1425, 33);
-            this.searchStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchStart.Location = new System.Drawing.Point(1069, 27);
             this.searchStart.Name = "searchStart";
-            this.searchStart.Size = new System.Drawing.Size(100, 36);
+            this.searchStart.Size = new System.Drawing.Size(75, 29);
             this.searchStart.TabIndex = 1;
             this.searchStart.Text = "Go!";
             this.searchStart.UseVisualStyleBackColor = true;
             this.searchStart.Click += new System.EventHandler(this.searchStart_Click);
             // 
-            // buttonClose
-            // 
-            this.buttonClose.AutoSize = true;
-            this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(142)))), ((int)(((byte)(30)))));
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(73)))), ((int)(((byte)(144)))));
-            this.buttonClose.Location = new System.Drawing.Point(929, 698);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(193, 36);
-            this.buttonClose.TabIndex = 13;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1541, 748);
+            this.ClientSize = new System.Drawing.Size(1156, 608);
             this.Controls.Add(this.searchStart);
             this.Controls.Add(this.CreateYourNote);
             this.Controls.Add(this.richTextBox1);
@@ -527,7 +501,6 @@ namespace TNotes
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Notes | Dashboard";
@@ -545,7 +518,6 @@ namespace TNotes
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -109,27 +109,6 @@ namespace TNotes
 
         }
 
-        private void btnYear_Click(object sender, EventArgs e)
-        {
-            string year = Prompt.ShowDialog("What Year Are You Looking For?", "Year");
-            DataTable courses = user.dtCourses();
-
-            courses.DefaultView.RowFilter = "Convert(year,'System.String') LIKE '%" + year + "%'";
-
-            courses.Columns.Remove("course_id");
-            courses.Columns.Remove("user_id");
-            courses.Columns.Remove("note-id");
-            courses.Columns["course_name"].ColumnName = "Courses";
-            courses.Columns["subject"].ColumnName = "Subject";
-            courses.Columns["prof"].ColumnName = "Professor";
-            courses.Columns["semester"].ColumnName = "Semester";
-            courses.Columns["year"].ColumnName = "Year";
-            dataGridView1.DataSource = courses;
-            gridResize(dataGridView1);
-
-
-        }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
 
