@@ -136,7 +136,9 @@
             this.Controls.Add(this.coursetb);
             this.Controls.Add(this.button1);
             this.Name = "SelectCourse";
-            this.Text = "Select Course";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "T-Notes | Select Course";
             this.ResumeLayout(false);
             this.PerformLayout();
 

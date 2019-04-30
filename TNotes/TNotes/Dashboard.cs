@@ -227,7 +227,7 @@ namespace TNotes
 
         private void btnYear_Click(object sender, EventArgs e)
         {
-            string year = Prompt.ShowDialog("What Year Are You Looking For?", "Year");
+            string year = Prompt.ShowDialog("Year?", "Year");
             DataTable courses = user.dtCourses();
 
             courses.DefaultView.RowFilter = "Convert(year,'System.String') LIKE '%" + year + "%'";
@@ -245,7 +245,48 @@ namespace TNotes
 
 
         }
-        
+
+        private void btnSemester_Click(object sender, EventArgs e)
+        {
+            string semester = Prompt.ShowDialog("Semester?", "Semester");
+            DataTable courses = user.dtCourses();
+
+            courses.DefaultView.RowFilter = "Convert(semester,'System.String') LIKE '%" + semester + "%'";
+
+            courses.Columns.Remove("course_id");
+            courses.Columns.Remove("user_id");
+            courses.Columns.Remove("note-id");
+            courses.Columns["course_name"].ColumnName = "Courses";
+            courses.Columns["subject"].ColumnName = "Subject";
+            courses.Columns["prof"].ColumnName = "Professor";
+            courses.Columns["semester"].ColumnName = "Semester";
+            courses.Columns["year"].ColumnName = "Year";
+            dataGridView1.DataSource = courses;
+            gridResize(dataGridView1);
+
+
+        }
+        private void btnProfessor_Click(object sender, EventArgs e)
+        {
+            string prof = Prompt.ShowDialog("Professor?", "Professor");
+            DataTable courses = user.dtCourses();
+
+            courses.DefaultView.RowFilter = "Convert(prof,'System.String') LIKE '%" + prof + "%'";
+
+            courses.Columns.Remove("course_id");
+            courses.Columns.Remove("user_id");
+            courses.Columns.Remove("note-id");
+            courses.Columns["course_name"].ColumnName = "Courses";
+            courses.Columns["subject"].ColumnName = "Subject";
+            courses.Columns["prof"].ColumnName = "Professor";
+            courses.Columns["semester"].ColumnName = "Semester";
+            courses.Columns["year"].ColumnName = "Year";
+            dataGridView1.DataSource = courses;
+            gridResize(dataGridView1);
+
+
+        }
+
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
 
@@ -350,10 +391,13 @@ namespace TNotes
             {
                 Width = 500,
                 Height = 150,
+                AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font,
                 FormBorderStyle = FormBorderStyle.FixedDialog,
-                Text = caption,
-                StartPosition = FormStartPosition.CenterScreen
-            };
+                Text = "T-Notes | "+caption,
+                StartPosition = FormStartPosition.CenterScreen,
+                ShowIcon = false,
+                ShowInTaskbar = false
+        };
             Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
             TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
             Button confirmation = new Button() { Text = "Ok", Left = 350, Width = 100, Top = 70, DialogResult = DialogResult.OK };

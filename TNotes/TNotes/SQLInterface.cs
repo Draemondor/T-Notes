@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()

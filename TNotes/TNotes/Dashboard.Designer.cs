@@ -129,6 +129,7 @@ namespace TNotes
             this.btnSemester.TabIndex = 4;
             this.btnSemester.Text = "Semester";
             this.btnSemester.UseVisualStyleBackColor = true;
+            this.btnSemester.Click += new System.EventHandler(this.btnSemester_Click);
             // 
             // btnCourses
             // 
@@ -162,6 +163,7 @@ namespace TNotes
             this.btnProfessor.TabIndex = 5;
             this.btnProfessor.Text = "Professor";
             this.btnProfessor.UseVisualStyleBackColor = true;
+            this.btnProfessor.Click += new System.EventHandler(this.btnProfessor_Click);
             // 
             // btnSettings
             // 
@@ -507,6 +509,7 @@ namespace TNotes
             this.Controls.Add(this.Home);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonClose);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
