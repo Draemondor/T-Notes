@@ -58,7 +58,7 @@ CREATE TABLE `is_taking` (
   `course_id` int(11) NOT NULL REFERENCES Course(course_id),
   `user_id` int(11) NOT NULL REFERENCES User(user_id),
   `note-id` int(11) NOT NULL REFERENCES Note(Note_id),
-  PRIMARY KEY (course_id, user_id)
+  PRIMARY KEY (`course_id`, `user_id`, `note-id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -91,12 +91,6 @@ CREATE TABLE `keyword` (
 
 LOCK TABLES `keyword` WRITE;
 /*!40000 ALTER TABLE `keyword` DISABLE KEYS */;
-INSERT INTO `keyword` VALUES 
-(1,'Pain'),
-(2,'Suffering'),
-(3,'hatred'),
-(4,'test'),
-(5,NULL);
 /*!40000 ALTER TABLE `keyword` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,9 +102,9 @@ DROP TABLE IF EXISTS `contains`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `contains` (
-  `note_id` int(11) NOT NULL unique references note(note_id),
-  `keyword_id` int(11) NOT NULL unique references keyword(keyword_id),
-  PRIMARY KEY (`keyword_id`)
+  `note_id` int(11) NOT NULL  references note(note_id),
+  `keyword_id` int(11) NOT NULL  references keyword(keyword_id),
+  PRIMARY KEY (`note_id`,`keyword_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -131,7 +125,7 @@ DROP TABLE IF EXISTS `note`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `note` (
-  `note_id` int(11) NOT NULL,
+  `note_id` int(11) NOT NULL unique,
   `note_title` varchar(45) DEFAULT NULL,
   `chapter` int(11) DEFAULT NULL,
   `Section` int(11) DEFAULT NULL,
