@@ -624,9 +624,9 @@ public class SQLInterface
 
     public bool updateBody(int note_id, string body)
     {
-        updateKeywords(note_id, body);
+        updateKeywords(note_id, body.ToLower());
         //update the body
-        string s = "update note set notes = `" + body + "` where note_id = " + note_id + ";";
+        string s = "update note set notes = \"" + body + "\" where note_id = " + note_id + ";";
         //verify the body updated successfully
         s += "select notes from note where note_id = "+note_id + ";";
         List<List<string>> q = query(s);
