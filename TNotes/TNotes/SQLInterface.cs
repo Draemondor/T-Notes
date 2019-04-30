@@ -542,6 +542,10 @@ public class SQLInterface
                 token = "";
             }
         }
+        if (!token.Equals(""))
+        {
+            tokens.Add(token.Trim());
+        }
         tokens = removeGarbage(tokens);
         Console.WriteLine(tokens.ToString());
         return tokens;
@@ -624,9 +628,9 @@ public class SQLInterface
 
     public bool updateBody(int note_id, string body)
     {
-        updateKeywords(note_id, body);
+        updateKeywords(note_id, body.ToLower());
         //update the body
-        string s = "update note set notes = `" + body + "` where note_id = " + note_id + ";";
+        string s = "update note set notes = \"" + body + "\" where note_id = " + note_id + ";";
         //verify the body updated successfully
         s += "select notes from note where note_id = "+note_id + ";";
         List<List<string>> q = query(s);
@@ -668,7 +672,7 @@ public class SQLInterface
           "insert into is_taking value ("+course_id+", "+user_id+", "+note_id+")" ;
         query(s);
         //handle keyword updates.
-        includeMultiple(tokenize(body), note_id);
+        includeMultiple(tokenize(body.ToLower()), note_id);
         return -1;
     }
 
