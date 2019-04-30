@@ -191,7 +191,7 @@ namespace TNotes
 
         private void btnYear_Click(object sender, EventArgs e)
         {
-            string year = Prompt.ShowDialog("Year You're Looking For?", "Year");
+            string year = Prompt.ShowDialog("Year?", "Year");
             DataTable courses = user.dtCourses();
 
             courses.DefaultView.RowFilter = "Convert(year,'System.String') LIKE '%" + year + "%'";
@@ -212,7 +212,7 @@ namespace TNotes
 
         private void btnSemester_Click(object sender, EventArgs e)
         {
-            string semester = Prompt.ShowDialog("Semester You're Looking For?", "Semester");
+            string semester = Prompt.ShowDialog("Semester?", "Semester");
             DataTable courses = user.dtCourses();
 
             courses.DefaultView.RowFilter = "Convert(semester,'System.String') LIKE '%" + semester + "%'";
@@ -232,7 +232,7 @@ namespace TNotes
         }
         private void btnProfessor_Click(object sender, EventArgs e)
         {
-            string prof = Prompt.ShowDialog("Professor You're Looking For?", "Professor");
+            string prof = Prompt.ShowDialog("Professor?", "Professor");
             DataTable courses = user.dtCourses();
 
             courses.DefaultView.RowFilter = "Convert(prof,'System.String') LIKE '%" + prof + "%'";
