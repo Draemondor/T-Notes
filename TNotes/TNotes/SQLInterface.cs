@@ -684,9 +684,8 @@ public class SQLInterface
     //get all notes under a course by id
     public List<List<string>> getNoteByCourse(int id)
     {
-        return query("select note_id, note_title, chapter, section, date, summary from note, " +
-            "(select note_id from isTaking where course_id = " + id + ") as T" +
-            "where note.note_id = T.note_id");
+        return query("select note_id, note_title, chapter, section, date, summary from note Natural Join " +
+            "is_taking where course_id = '" + id + "'");
     }
     //get note by id
     public List<List<string>> getNoteById(int id)
