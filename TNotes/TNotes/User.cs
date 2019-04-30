@@ -2,6 +2,8 @@
 using System.Data;
 using static SQLInterface;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace TNotes
 {
     public class User
@@ -92,9 +94,76 @@ namespace TNotes
             }
             else return false;
         }
-        public List<List<string>> searchByKeyword(List<string> keywords)
+        public DataTable searchByKeyword(List<string> keywords)
         {
-            return connection.getNotesByKeywords(keywords);
+            List<List<string>> arr = new List<List<string>>();
+            arr = connection.getNotesByKeywords(keywords);
+            DataSet results = new DataSet();
+            DataTable notes;
+            DataColumn column;
+            DataRow row;
+            if (arr.Count <= 0)
+                return null;
+            int i = arr.ElementAt(0).Count;
+            int j = arr.Count;
+            notes = new DataTable("Notes");
+            
+            //add first column
+            column = new DataColumn("Note ID");
+            column.DataType = System.Type.GetType("System.Integer");
+            column.Caption = "Note ID";
+            column.ReadOnly = true;
+            column.Unique = true;
+            notes.Columns.Add(column);
+            //add second column
+            column = new DataColumn("Note Name");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Note Name";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+            //add third column
+            column = new DataColumn("Chapter");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Chapter";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+            //add fourth column
+            column = new DataColumn("Section");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Section";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+            //add fifth column
+            column = new DataColumn("Date");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Date";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+            //add sixth column
+            column = new DataColumn("Summary");
+            column.DataType = System.Type.GetType("System.String");
+            column.Caption = "Summary";
+            column.ReadOnly = true;
+            notes.Columns.Add(column);
+
+            //add rows of data
+
+            while (0 < j)
+            {
+                row = notes.NewRow();
+                row["Note ID"] = Convert.ToInt32(arr.ElementAt(j - 1).ElementAt(0));
+                row["Note Name"] = arr.ElementAt(j - 1).ElementAt(1);
+                row["Chapter"] = arr.ElementAt(j - 1).ElementAt(2);
+                row["Section"] = arr.ElementAt(j - 1).ElementAt(3);
+                row["Date"] = arr.ElementAt(j - 1).ElementAt(4);
+                row["Summary"] = arr.ElementAt(j - 1).ElementAt(5);
+                j--;
+            }
+            
+
+
+
+            return notes;
         }
         public DataTable dtCourses()
         {
