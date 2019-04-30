@@ -110,7 +110,7 @@ namespace TNotes
             
             //add first column
             column = new DataColumn("Note ID");
-            column.DataType = System.Type.GetType("System.Integer");
+            column.DataType = System.Type.GetType("System.Int32");
             column.Caption = "Note ID";
             column.ReadOnly = true;
             column.Unique = true;
@@ -157,6 +157,7 @@ namespace TNotes
                 row["Section"] = arr.ElementAt(j - 1).ElementAt(3);
                 row["Date"] = arr.ElementAt(j - 1).ElementAt(4);
                 row["Summary"] = arr.ElementAt(j - 1).ElementAt(5);
+                notes.Rows.Add(row);
                 j--;
             }
             
