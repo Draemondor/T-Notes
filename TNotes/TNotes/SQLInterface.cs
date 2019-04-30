@@ -542,6 +542,10 @@ public class SQLInterface
                 token = "";
             }
         }
+        if (!token.Equals(""))
+        {
+            tokens.Add(token.Trim());
+        }
         tokens = removeGarbage(tokens);
         Console.WriteLine(tokens.ToString());
         return tokens;
