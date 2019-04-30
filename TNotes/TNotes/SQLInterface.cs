@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()
@@ -673,7 +673,7 @@ public class SQLInterface
         query(s);
         //handle keyword updates.
         includeMultiple(tokenize(body.ToLower()), note_id);
-        return -1;
+        return note_id;
     }
 
     //get all notes

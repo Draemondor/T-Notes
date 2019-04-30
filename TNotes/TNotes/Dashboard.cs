@@ -121,6 +121,8 @@ namespace TNotes
                 // sb.Append("Total: " + selectedRowCount.ToString());
                 // MessageBox.Show(sb.ToString(), "Selected Rows");
                 int x = Convert.ToInt32(sb.ToString());
+                if (x < 0)
+                    return;
                 string y = dataGridView1.Rows[x].Cells["Note ID"].Value.ToString();
                 this.note_id = Convert.ToInt32(y);
             }
@@ -313,7 +315,10 @@ namespace TNotes
                 }
             }
             if(course_id > -1)
-                user.addNotes(note_title, note_chapter, note_section, note_summary, richTextBox1.Text, course_id);
+                this.note_id = user.addNotes(note_title, note_chapter, note_section, note_summary, "placeholder", course_id);
+            richTextBox1.Clear();
+            noteString = user.openNote(this.note_id);
+            richTextBox1.Text = noteString.ElementAt(6);
             richTextBox1.Clear();
         }
 
@@ -345,12 +350,7 @@ namespace TNotes
 
                     noteString = user.openNote(this.note_id);
                     richTextBox1.Text = noteString.ElementAt(6);
-                    this.note_id = Convert.ToInt32(noteString.ElementAt(0));
-                    this.note_title = noteString.ElementAt(1);
-                    this.note_chapter = Convert.ToInt32(noteString.ElementAt(2));
-                    this.note_section = Convert.ToInt32(noteString.ElementAt(3));
-                    this.note_summary = noteString.ElementAt(4);
-                    this.note_date = noteString.ElementAt(5);
+                   
                     
                     
 
