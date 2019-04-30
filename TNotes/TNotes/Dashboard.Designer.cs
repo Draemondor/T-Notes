@@ -113,6 +113,7 @@ namespace TNotes
             this.btnYear.TabIndex = 3;
             this.btnYear.Text = "Year";
             this.btnYear.UseVisualStyleBackColor = true;
+            this.btnYear.Click += new System.EventHandler(this.btnYear_Click);
             // 
             // btnSemester
             // 
