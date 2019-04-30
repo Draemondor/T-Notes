@@ -118,9 +118,6 @@ namespace TNotes
                     sb.Append(dataGridView1.SelectedRows[i].Index.ToString());
                     sb.Append(Environment.NewLine);
                 }
-
-                // sb.Append("Total: " + selectedRowCount.ToString());
-                // MessageBox.Show(sb.ToString(), "Selected Rows");
                 int x = Convert.ToInt32(sb.ToString());
                 if (x < 0)
                     return;
