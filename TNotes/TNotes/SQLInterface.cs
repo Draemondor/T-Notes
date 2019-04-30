@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()
@@ -322,9 +322,9 @@ public class SQLInterface
         else
         {
             //The keyword id will be one more than the number of existing keywords.
-            s = "select count(keyword_id) from keyword;";
+            s = "select max(keyword_id) from keyword;";
             List<List<string>> q = query(s);
-            int keyword_id =  Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
+            int keyword_id =  q.ElementAt(0).ElementAt(0).Equals("") ? 0  : Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
             //Generate keyword table record.
             string value = "(" + keyword_id + ",'" + keyword + "')";
             //Generate instruction to add record to keyword.
@@ -563,7 +563,7 @@ public class SQLInterface
         s+= "select keyword.keyword from keyword, contains where contains.note_id = " +note_id+ " and " +
             "keyword.keyword_id = contains.keyword_id;";
         q = query(s);
-        query_to_string(s);
+        //query_to_string(s);
 
         //Flatten the query and generate potential hanging keywords.
         List<string> oldTokens = new List<string>();
@@ -577,15 +577,15 @@ public class SQLInterface
             oldTokens.Add(word);
         }
 
-        Console.WriteLine("Tokens:       " + tokens);
-        for (int i = 0; i < tokens.Count(); i++) Console.Write(tokens.ElementAt(i) + " ");
-        Console.WriteLine();
-        Console.WriteLine("oldTokens:    " + oldTokens);
-        for (int i = 0; i < oldTokens.Count(); i++) Console.Write(oldTokens.ElementAt(i) + " ");
-        Console.WriteLine();
-        Console.WriteLine("hangingWords: " + hangingWords);
-        for (int i = 0; i < hangingWords.Count(); i++) Console.Write(hangingWords.ElementAt(i) + " ");
-        Console.WriteLine();
+        s = "select keyword, count(keyword) from keyword, contains where keyword.keyword_id = contains.keyword_id group by keyword;";
+        q = query(s);
+        for(int i = 0; i < q.Count(); i++)
+        {
+            if(oldTokens.Contains(q.ElementAt(i).ElementAt(0)) && Convert.ToInt32(q.ElementAt(i).ElementAt(1)) == 1)
+            {
+                hangingWords.Add(q.ElementAt(i).ElementAt(0));
+            }
+        }
 
         //Generate add and remove lists
         List<string> add = new List<string>();
@@ -602,7 +602,7 @@ public class SQLInterface
                 remove.Add(oldTokens.ElementAt(i));
 
         //Prune hanging words.
-        for (int i = hangingWords.Count(); i > 0; i--)
+        for (int i = hangingWords.Count()-1; i > 0; i--)
             if (!remove.Contains(hangingWords.ElementAt(i)))
                 hangingWords.RemoveAt(i);
 
@@ -624,7 +624,7 @@ public class SQLInterface
         //eliminate hanging keywords
         for(int i = 0; i < hangingWords.Count(); i++)
         {
-            s += "remove from keyword where keyword = \"" + hangingWords.ElementAt(i) + "\"; ";
+            s += "delete from keyword where keyword = \"" + hangingWords.ElementAt(i) + "\"; ";
         }
 
         query(s);
