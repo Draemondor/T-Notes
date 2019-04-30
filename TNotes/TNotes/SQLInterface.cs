@@ -7,7 +7,7 @@ using System.Data;
 public class SQLInterface
 {
     // You may need to change "port" in the string below to reflect the port you used in the initial setup.
-    string connStr = "server=localhost;user=root;database=t-notes;port=1286;password=pain";
+    string connStr = "server=localhost;user=root;database=t-notes;port=3306;password=pain";
     MySqlConnection conn;
 
     public SQLInterface()
@@ -324,7 +324,7 @@ public class SQLInterface
             //The keyword id will be one more than the number of existing keywords.
             s = "select max(keyword_id) from keyword;";
             List<List<string>> q = query(s);
-            int keyword_id =  Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
+            int keyword_id =  q.ElementAt(0).ElementAt(0).Equals("") ? 0  : Convert.ToInt32(q.ElementAt(0).ElementAt(0)) + 1;
             //Generate keyword table record.
             string value = "(" + keyword_id + ",'" + keyword + "')";
             //Generate instruction to add record to keyword.
